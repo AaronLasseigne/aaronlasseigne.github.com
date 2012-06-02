@@ -13,31 +13,6 @@ function getNav() {
   });
 }
 
-function addSidebarToggler() {
-  if(!$('body').hasClass('sidebar-footer')) {
-    $('#content').append('<span class="toggle-sidebar"></span>');
-    $('.toggle-sidebar').bind('click', function(e) {
-      e.preventDefault();
-      if ($('body').hasClass('collapse-sidebar')) {
-        $('body').removeClass('collapse-sidebar');
-      } else {
-        $('body').addClass('collapse-sidebar');
-      }
-    });
-  }
-  var sections = $('aside.sidebar > section');
-  if (sections.length > 1) {
-    sections.each(function(section, index){
-      if ((sections.length >= 3) && index % 3 === 0) {
-        $(section).addClass("first");
-      }
-      var count = ((index +1) % 2) ? "odd" : "even";
-      $(section).addClass(count);
-    });
-  }
-  if (sections.length >= 3){ $('aside.sidebar').addClass('thirds'); }
-}
-
 function testFeatures() {
   var features = ['maskImage'];
   $(features).map(function(feature) {
@@ -52,22 +27,6 @@ function testFeatures() {
   } else {
     $('html').addClass('no-placeholder');
   }
-}
-
-function addCodeLineNumbers() {
-  if (navigator.appName === 'Microsoft Internet Explorer') { return; }
-  $('div.gist-highlight').each(function(code) {
-    var tableStart = '<table><tbody><tr><td class="gutter">',
-        lineNumbers = '<pre class="line-numbers">',
-        tableMiddle = '</pre></td><td class="code">',
-        tableEnd = '</td></tr></tbody></table>',
-        count = $('.line', code).length;
-    for (var i=1;i<=count; i++) {
-      lineNumbers += '<span class="line-number">'+i+'</span>\n';
-    }
-    var table = tableStart + lineNumbers + tableMiddle + '<pre>'+$('pre', code).html()+'</pre>' + tableEnd;
-    $(code).html(table);
-  });
 }
 
 function flashVideoFallback(){
@@ -120,9 +79,7 @@ $.domReady(function() {
   testFeatures();
   wrapFlashVideos();
   flashVideoFallback();
-  addCodeLineNumbers();
   getNav();
-  addSidebarToggler();
 });
 
 // iOS scaling bug fix

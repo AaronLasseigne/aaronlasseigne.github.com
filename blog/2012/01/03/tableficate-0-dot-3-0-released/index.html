@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>tableficate 0.3.0 released - ficate</title>
+  <meta name="author" content="Aaron Lasseigne">
+
+  
+  <meta name="description" content="The 0.3.0 release adds support for table captions and for default text in tables without data. Styling options were greatly increased especially in &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://AaronLasseigne.github.com/blog/2012/01/03/tableficate-0-dot-3-0-released">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="ficate" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">ficate</a> [fi•cate]</h1>
+  
+    <div class="subtitle">verb<p>To make, build, do.</p></div>
+  
+</hgroup>
+
+</header>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h2 class="entry-title">tableficate 0.3.0 released</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-03T16:22:00Z" pubdate data-updated="true">2012.01.03 @ 04:22 pm UTC</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>The <a href="https://github.com/sei-mi/tableficate">0.3.0</a> release adds support for table <a href="http://www.w3.org/TR/html4/struct/tables.html#h-11.2.2">captions</a> and for default text in tables without data. Styling options were greatly increased especially in relation to columns. You can now add attributes to the header, column (via the <a href="http://www.w3.org/TR/html4/struct/tables.html#h-11.2.4.2">col</a> tag) and individual cells. Cell attributes can be either strings or procs. If you pass a proc it will evaluate for each cell.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sx">% t.column(:total,</span>
+</span><span class='line'><span class="sx"> </span> <span class="n">cell_attrs</span><span class="p">:</span> <span class="p">{</span><span class="n">style</span><span class="p">:</span> <span class="o">-&gt;</span><span class="p">(</span><span class="n">row</span><span class="p">){</span>
+</span><span class='line'>    <span class="s2">&quot;color: </span><span class="si">#{</span><span class="n">row</span><span class="o">.</span><span class="n">total</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">?</span> <span class="s1">&#39;black&#39;</span> <span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="si">}</span><span class="s2">;&quot;</span>
+</span><span class='line'>  <span class="p">}}</span>
+</span><span class='line'><span class="p">)</span> <span class="o">%&gt;</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Filters automatically detect the input type based on the database column type and field name. For example, booleans will produce a check box filter and string columns with &#8220;email&#8221; in the name will produce an input field with the type set to &#8220;email&#8221;.</p>
+
+<!--more-->
+
+
+<p>Additionally, date searching works more like you would intuitively expect. If you have a datetime or timestamp database field and you search with a date only it will automatically assume you mean the entire day. So, searching for &#8220;2011-01-03&#8221; will search from &#8220;2011-01-03 00:00:00&#8221; to &#8220;2011-01-03 23:59:59&#8221;. The ranged version does the same thing with the start and end dates inclusively searched.</p>
+
+<p>A full list of changes can be found in the <a href="https://github.com/sei-mi/tableficate/blob/master/changelog.markdown">changelog</a>.</p>
+</div>
+
+
+  <footer>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://AaronLasseigne.github.com/blog/2012/01/03/tableficate-0-dot-3-0-released/" data-via="AaronLasseigne" data-counturl="http://AaronLasseigne.github.com/blog/2012/01/03/tableficate-0-dot-3-0-released/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/12/06/tableficate-0-dot-2-0-released/" title="Previous Post: tableficate 0.2.0 released">&laquo; tableficate 0.2.0 released</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/01/17/explaining-include-and-extend/" title="Next Post: Explaining Include and Extend">Explaining Include and Extend &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+    </div>
+  </div>
+  
+  <aside class="sidebar">
+    
+      <section id="about">
+  <h3>Aaron Lasseigne</h3>
+  <img width="75" height="75" alt="" src="/images/me.jpg">
+  <p>Ruby developer, gin drinker, football watcher, husband and new father.</p>
+  <br / style="clear: both;">
+  
+  gh: <a href="https://github.com/AaronLasseigne">AaronLasseigne</a><br/>
+  
+  so: <a href="http://stackoverflow.com/users/1016794/aaron-lasseigne">Aaron Lasseigne</a><br/>
+  
+  tw: <a href="http://twitter.com/AaronLasseigne">@AaronLasseigne</a><br/>
+  
+</section>
+<section id="projects">
+  <h3>Projects</h3>
+  <dl>
+    <dt>
+      <a href="https://github.com/orgsync/jquery-aria">jquery-aria</a> <em>jquery</em>
+    </dt>
+    <dd>A jQuery plugin that adds support for ARIA attributes.</dd>
+    <dt>
+      <a href="https://github.com/AaronLasseigne/tableficate">tableficate</a> <em>rails</em>
+    </dt>
+    <dd>A DSL for Rails that provides easy table creation with sorting and filtering.</dd>
+    <dt>
+      <a href="https://github.com/AaronLasseigne/with_filters">with_filters</a> <em>rails</em>
+    <dd>Add filtering to tables, lists, etc.</dd>
+    <dt>
+      <a href="https://github.com/AaronLasseigne/with_order">with_order</a> <em>rails</em>
+    </dt>
+    <dd>Provide ordering for tables, lists, etc.</dd>
+  </dl>
+</section>
+
+    
+  </aside>
+  
+  <footer role="contentinfo">Copyright &copy; 2012
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
