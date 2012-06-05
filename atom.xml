@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[ficate]]></title>
-  <link href="http://AaronLasseigne.github.com/atom.xml" rel="self"/>
-  <link href="http://AaronLasseigne.github.com/"/>
-  <updated>2012-06-04T22:50:16-05:00</updated>
-  <id>http://AaronLasseigne.github.com/</id>
+  <link href="http://ficate.com/atom.xml" rel="self"/>
+  <link href="http://ficate.com/"/>
+  <updated>2012-06-04T22:53:46-05:00</updated>
+  <id>http://ficate.com/</id>
   <author>
     <name><![CDATA[Aaron Lasseigne]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Faster ActiveRecord Migrations Using <code>change_table :bulk</code>]]></title>
-    <link href="http://AaronLasseigne.github.com/blog/2012/06/05/faster-activerecord-migrations-using-change-table-bulk/"/>
+    <link href="http://ficate.com/blog/2012/06/05/faster-activerecord-migrations-using-change-table-bulk/"/>
     <updated>2012-06-05T03:48:00Z</updated>
-    <id>http://AaronLasseigne.github.com/blog/2012/06/05/faster-activerecord-migrations-using-change-table-bulk</id>
+    <id>http://ficate.com/blog/2012/06/05/faster-activerecord-migrations-using-change-table-bulk</id>
     <content type="html"><![CDATA[<p>A migration:</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">up</span>
@@ -91,9 +91,9 @@ makes me wonder why it&#8217;s not <code>true</code> by default.</p>
   
   <entry>
     <title type="html"><![CDATA[Have you lost a second of data?]]></title>
-    <link href="http://AaronLasseigne.github.com/blog/2012/02/29/have-you-lost-a-second-of-data/"/>
+    <link href="http://ficate.com/blog/2012/02/29/have-you-lost-a-second-of-data/"/>
     <updated>2012-02-29T15:42:00Z</updated>
-    <id>http://AaronLasseigne.github.com/blog/2012/02/29/have-you-lost-a-second-of-data</id>
+    <id>http://ficate.com/blog/2012/02/29/have-you-lost-a-second-of-data</id>
     <content type="html"><![CDATA[<p><strong>UPDATE:</strong> Based on some good <a href="http://www.reddit.com/r/rails/comments/qberl/have_you_lost_a_second_of_data/">Reddit</a> discussions I&#8217;ve revised the &#8220;Only use ranges.&#8221; section to use a range with an exclusive end.</p>
 
 <p>One of the gems I&#8217;m working on limits a range of data based on a datetime field. I use a SQLite database (version 3.7.7) in my automated testing, but ultimately it&#8217;s going to run on MySQL (version 5.5.19) and possibly others. The ease of SQLite makes this a fairly common setup. ActiveRecord (version 3.2.1) helps alleviate cross database issues but it doesn&#8217;t cover all cases. You see MySQL stores datetimes to a resolution of one second. Databases like SQLite and PostgreSQL store down to the microsecond (.999999). This leads to a problem.</p>
@@ -170,9 +170,9 @@ makes me wonder why it&#8217;s not <code>true</code> by default.</p>
   
   <entry>
     <title type="html"><![CDATA[Explaining Include and Extend]]></title>
-    <link href="http://AaronLasseigne.github.com/blog/2012/01/17/explaining-include-and-extend/"/>
+    <link href="http://ficate.com/blog/2012/01/17/explaining-include-and-extend/"/>
     <updated>2012-01-17T14:48:00Z</updated>
-    <id>http://AaronLasseigne.github.com/blog/2012/01/17/explaining-include-and-extend</id>
+    <id>http://ficate.com/blog/2012/01/17/explaining-include-and-extend</id>
     <content type="html"><![CDATA[<p>All Rubyists should be familiar with the common definitions for <code>include</code> and <code>extend</code>. You <code>include</code> a module to add instance methods to a class and <code>extend</code> to add class methods. Unfortunately, this common definition isn&#8217;t entirely accurate. It fails to explain why we use <code>instance.extend(Module)</code> to add methods to an instance. Shouldn&#8217;t it be <code>instance.include(Module)</code>? To figure this out we&#8217;re going to start by discussing where methods are stored.</p>
 
 <!-- more -->
@@ -201,7 +201,7 @@ makes me wonder why it&#8217;s not <code>true</code> by default.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="http://AaronLasseigne.github.com/images/explaining-include-and-extend/1.png" alt="a class and its singleton" /></p>
+<p><img src="http://ficate.com/images/explaining-include-and-extend/1.png" alt="a class and its singleton" /></p>
 
 <p>This same process happens with instance objects. If we have an instance of <code>A</code> and we add a method to it we can&#8217;t store it on the instance. Remember, objects in Ruby do not store their own methods.</p>
 
@@ -215,7 +215,7 @@ makes me wonder why it&#8217;s not <code>true</code> by default.</p>
 
 <p>Once again we create a singleton class for <code>a</code> to store the <code>not_so_loud</code> method.</p>
 
-<p><img src="http://AaronLasseigne.github.com/images/explaining-include-and-extend/2.png" alt="an instance and its singleton" /></p>
+<p><img src="http://ficate.com/images/explaining-include-and-extend/2.png" alt="an instance and its singleton" /></p>
 
 <p>Now we have a method that only belongs to <code>a</code> and does not affect other instances of <code>A</code>.</p>
 
@@ -233,7 +233,7 @@ makes me wonder why it&#8217;s not <code>true</code> by default.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="http://AaronLasseigne.github.com/images/explaining-include-and-extend/3.png" alt="include M on A" /></p>
+<p><img src="http://ficate.com/images/explaining-include-and-extend/3.png" alt="include M on A" /></p>
 
 <p>We can see that this is the case by checking <code>A</code>&#8217;s ancestors.</p>
 
@@ -252,7 +252,7 @@ makes me wonder why it&#8217;s not <code>true</code> by default.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="http://AaronLasseigne.github.com/images/explaining-include-and-extend/4.png" alt="extend M on A" /></p>
+<p><img src="http://ficate.com/images/explaining-include-and-extend/4.png" alt="extend M on A" /></p>
 
 <p>Once again we can confirm this by checking <code>'A</code>&#8217;s ancestors.</p>
 
@@ -272,7 +272,7 @@ makes me wonder why it&#8217;s not <code>true</code> by default.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="http://AaronLasseigne.github.com/images/explaining-include-and-extend/5.png" alt="instance of a extended by M" /></p>
+<p><img src="http://ficate.com/images/explaining-include-and-extend/5.png" alt="instance of a extended by M" /></p>
 
 <p>If you think of <code>extend</code> as a way to add class methods then what we just did doesn&#8217;t make much sense. Once you reframe it as adding methods to the singleton of an object the picture above becomes more clear.</p>
 
@@ -307,11 +307,11 @@ for includes. As you might suspect, <code>extend</code> has its own version of t
 
 <p>This works by first including <code>M</code> into <code>C</code>&#8217;s inheritance chain.</p>
 
-<p><img src="http://AaronLasseigne.github.com/images/explaining-include-and-extend/6.png" alt="include M on C" /></p>
+<p><img src="http://ficate.com/images/explaining-include-and-extend/6.png" alt="include M on C" /></p>
 
 <p>Then we <code>extend</code> from <code>C</code> which adds the methods to <code>'C</code>&#8217;s inheritance chain.</p>
 
-<p><img src="http://AaronLasseigne.github.com/images/explaining-include-and-extend/7.png" alt="extend M on C" /></p>
+<p><img src="http://ficate.com/images/explaining-include-and-extend/7.png" alt="extend M on C" /></p>
 
 <h3>Conclusion</h3>
 
@@ -327,9 +327,9 @@ for includes. As you might suspect, <code>extend</code> has its own version of t
   
   <entry>
     <title type="html"><![CDATA[tableficate 0.3.0 released]]></title>
-    <link href="http://AaronLasseigne.github.com/blog/2012/01/03/tableficate-0-dot-3-0-released/"/>
+    <link href="http://ficate.com/blog/2012/01/03/tableficate-0-dot-3-0-released/"/>
     <updated>2012-01-03T16:22:00Z</updated>
-    <id>http://AaronLasseigne.github.com/blog/2012/01/03/tableficate-0-dot-3-0-released</id>
+    <id>http://ficate.com/blog/2012/01/03/tableficate-0-dot-3-0-released</id>
     <content type="html"><![CDATA[<p>The <a href="https://github.com/sei-mi/tableficate">0.3.0</a> release adds support for table <a href="http://www.w3.org/TR/html4/struct/tables.html#h-11.2.2">captions</a> and for default text in tables without data. Styling options were greatly increased especially in relation to columns. You can now add attributes to the header, column (via the <a href="http://www.w3.org/TR/html4/struct/tables.html#h-11.2.4.2">col</a> tag) and individual cells. Cell attributes can be either strings or procs. If you pass a proc it will evaluate for each cell.</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sx">% t.column(:total,</span>
@@ -353,9 +353,9 @@ for includes. As you might suspect, <code>extend</code> has its own version of t
   
   <entry>
     <title type="html"><![CDATA[tableficate 0.2.0 released]]></title>
-    <link href="http://AaronLasseigne.github.com/blog/2011/12/06/tableficate-0-dot-2-0-released/"/>
+    <link href="http://ficate.com/blog/2011/12/06/tableficate-0-dot-2-0-released/"/>
     <updated>2011-12-06T23:20:00Z</updated>
-    <id>http://AaronLasseigne.github.com/blog/2011/12/06/tableficate-0-dot-2-0-released</id>
+    <id>http://ficate.com/blog/2011/12/06/tableficate-0-dot-2-0-released</id>
     <content type="html"><![CDATA[<p>The new version includes a complete rewrite of filters. I&#8217;ve made it a lot more like <a href="https://github.com/plataformatec/simple_form">simple_form</a> and I&#8217;m really happy with the result. You can get the latest code on <a href="https://github.com/sei-mi/tableficate">github</a> or take a look at the new <a href="https://github.com/sei-mi/tableficate/wiki">wiki docs</a> for more info.</p>
 ]]></content>
   </entry>
