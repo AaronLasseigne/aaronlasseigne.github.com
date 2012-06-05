@@ -4,7 +4,7 @@
   <title><![CDATA[ficate]]></title>
   <link href="http://AaronLasseigne.github.com/atom.xml" rel="self"/>
   <link href="http://AaronLasseigne.github.com/"/>
-  <updated>2012-06-02T17:01:04-05:00</updated>
+  <updated>2012-06-04T22:50:16-05:00</updated>
   <id>http://AaronLasseigne.github.com/</id>
   <author>
     <name><![CDATA[Aaron Lasseigne]]></name>
@@ -12,6 +12,82 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Faster ActiveRecord Migrations Using <code>change_table :bulk</code>]]></title>
+    <link href="http://AaronLasseigne.github.com/blog/2012/06/05/faster-activerecord-migrations-using-change-table-bulk/"/>
+    <updated>2012-06-05T03:48:00Z</updated>
+    <id>http://AaronLasseigne.github.com/blog/2012/06/05/faster-activerecord-migrations-using-change-table-bulk</id>
+    <content type="html"><![CDATA[<p>A migration:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">up</span>
+</span><span class='line'>  <span class="n">add_column</span> <span class="ss">:table</span><span class="p">,</span> <span class="ss">:useful_foreign_key</span><span class="p">,</span> <span class="ss">:integer</span>
+</span><span class='line'>  <span class="n">add_index</span> <span class="ss">:table</span><span class="p">,</span> <span class="ss">:useful_foreign_key</span>
+</span><span class='line'>  <span class="n">add_column</span> <span class="ss">:table</span><span class="p">,</span> <span class="ss">:summary</span><span class="p">,</span> <span class="ss">:string</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Executed on a large table:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class='code'><pre><code class='ruby'><span class='line'><span class="o">==</span>  <span class="no">Table</span><span class="p">:</span> <span class="n">migrating</span> <span class="o">===============================</span>
+</span><span class='line'><span class="o">--</span> <span class="n">add_column</span><span class="p">(</span><span class="ss">:table</span><span class="p">,</span> <span class="ss">:useful_foreign_key</span><span class="p">,</span> <span class="ss">:integer</span><span class="p">)</span>
+</span><span class='line'>  <span class="o">-&gt;</span> <span class="mi">2731</span><span class="o">.</span><span class="mi">1005</span><span class="n">s</span>
+</span><span class='line'><span class="o">--</span> <span class="n">add_index</span><span class="p">(</span><span class="ss">:table</span><span class="p">,</span> <span class="ss">:useful_foreign_key</span><span class="p">)</span>
+</span><span class='line'>  <span class="o">-&gt;</span> <span class="mi">2704</span><span class="o">.</span><span class="mi">8428</span><span class="n">s</span>
+</span><span class='line'><span class="o">--</span> <span class="n">add_column</span><span class="p">(</span><span class="ss">:table</span><span class="p">,</span> <span class="ss">:summary</span><span class="p">,</span> <span class="ss">:string</span><span class="p">)</span>
+</span><span class='line'>  <span class="o">-&gt;</span> <span class="mi">2819</span><span class="o">.</span><span class="mi">9803</span><span class="n">s</span>
+</span><span class='line'><span class="o">==</span>  <span class="no">Table</span><span class="p">:</span> <span class="n">migrated</span> <span class="p">(</span><span class="mi">8255</span><span class="o">.</span><span class="mi">9236</span><span class="n">s</span><span class="p">)</span> <span class="o">======================</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>According to my made up but based on having done this a bunch of times numbers
+that&#8217;s almost 2.5 hours! Production is going to have to go down for hours to run
+this. Co-workers will unsuspectingly migrate and you&#8217;ll be blamed for a massive
+loss of productivity.</p>
+
+<!-- more -->
+
+
+<p>The wise know that grouping alter statements can significantly speed up a migration
+(at least in MySQL). Time to break out <code>execute</code> and do it by hand, right?</p>
+
+<p>Nope, there&#8217;s a better option.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">up</span>
+</span><span class='line'>  <span class="n">change_table</span> <span class="ss">:table</span><span class="p">,</span> <span class="ss">:bulk</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">t</span><span class="o">.</span><span class="n">integer</span> <span class="ss">:useful_foreign_key</span>
+</span><span class='line'>    <span class="n">t</span><span class="o">.</span><span class="n">index</span>   <span class="ss">:useful_foreign_key</span>
+</span><span class='line'>    <span class="n">t</span><span class="o">.</span><span class="n">string</span>  <span class="ss">:summary</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Instead of individual alter statements we combine them inside <code>change_table</code> and
+pass <code>:bulk =&gt; true</code>.</p>
+
+<p>Now when we execute:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class='code'><pre><code class='ruby'><span class='line'><span class="o">==</span>  <span class="no">Table</span><span class="p">:</span> <span class="n">migrating</span> <span class="o">=================</span>
+</span><span class='line'><span class="o">--</span> <span class="n">change_table</span><span class="p">(</span><span class="ss">:table</span><span class="p">,</span> <span class="p">{</span><span class="ss">:bulk</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">})</span>
+</span><span class='line'>  <span class="o">-&gt;</span> <span class="mi">2774</span><span class="o">.</span><span class="mi">1011</span><span class="n">s</span>
+</span><span class='line'><span class="o">==</span>  <span class="no">Table</span><span class="p">:</span> <span class="n">migrated</span> <span class="p">(</span><span class="mi">2774</span><span class="o">.</span><span class="mi">1011</span><span class="n">s</span><span class="p">)</span> <span class="o">========</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The alter statements have been combined into one statement and the total time
+to migrate is slightly more than running just one of the alters (again this is
+with MySQL).</p>
+
+<p>I&#8217;m not sure what kind of improvement you&#8217;ll get on non-MySQL databases but I
+suspect it&#8217;ll be faster for any database that allows grouped alter statements.
+As a side note, <code>:bulk</code> will be ignored if the database can&#8217;t handle it. Which
+makes me wonder why it&#8217;s not <code>true</code> by default.</p>
+
+<p>Happy migrating!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Have you lost a second of data?]]></title>
@@ -22,14 +98,12 @@
 
 <p>One of the gems I&#8217;m working on limits a range of data based on a datetime field. I use a SQLite database (version 3.7.7) in my automated testing, but ultimately it&#8217;s going to run on MySQL (version 5.5.19) and possibly others. The ease of SQLite makes this a fairly common setup. ActiveRecord (version 3.2.1) helps alleviate cross database issues but it doesn&#8217;t cover all cases. You see MySQL stores datetimes to a resolution of one second. Databases like SQLite and PostgreSQL store down to the microsecond (.999999). This leads to a problem.</p>
 
-<h3>The Problem</h3>
-
-<p>If, like me, the bulk of your time has been spent working with MySQL then microseconds may seem reasonable but foreign. A typical ActiveRecord <code>where</code> call would give you all results from within a second. In SQLite that same call gives results from the exact microsecond specified.</p>
-
 <!-- more -->
 
 
+<h3>The Problem</h3>
 
+<p>If, like me, the bulk of your time has been spent working with MySQL then microseconds may seem reasonable but foreign. A typical ActiveRecord <code>where</code> call would give you all results from within a second. In SQLite that same call gives results from the exact microsecond specified.</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&gt;</span> <span class="no">Test</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">created_at</span><span class="p">:</span> <span class="no">Time</span><span class="o">.</span><span class="n">zone</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;2012-01-01 00:00:01&#39;</span><span class="p">))</span>
 </span><span class='line'>
@@ -101,6 +175,9 @@
     <id>http://AaronLasseigne.github.com/blog/2012/01/17/explaining-include-and-extend</id>
     <content type="html"><![CDATA[<p>All Rubyists should be familiar with the common definitions for <code>include</code> and <code>extend</code>. You <code>include</code> a module to add instance methods to a class and <code>extend</code> to add class methods. Unfortunately, this common definition isn&#8217;t entirely accurate. It fails to explain why we use <code>instance.extend(Module)</code> to add methods to an instance. Shouldn&#8217;t it be <code>instance.include(Module)</code>? To figure this out we&#8217;re going to start by discussing where methods are stored.</p>
 
+<!-- more -->
+
+
 <h3>The methods I&#8217;m storing for you and the guy holding mine.</h3>
 
 <p>Objects in Ruby do not store their own methods. Instead, they create a singleton class to hold onto their methods.</p>
@@ -122,11 +199,6 @@
 <figure class='code'> <div class="highlight"><table><tr><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&gt;</span> <span class="n">A</span><span class="o">.</span><span class="n">singleton_methods</span> <span class="c1"># methods on &#39;A</span>
 </span><span class='line'> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:who_am_i</span><span class="o">]</span>
 </span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<!-- more -->
 
 
 <p><img src="http://AaronLasseigne.github.com/images/explaining-include-and-extend/1.png" alt="a class and its singleton" /></p>

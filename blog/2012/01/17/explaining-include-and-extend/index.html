@@ -86,6 +86,9 @@
 
 <div class="entry-content"><p>All Rubyists should be familiar with the common definitions for <code>include</code> and <code>extend</code>. You <code>include</code> a module to add instance methods to a class and <code>extend</code> to add class methods. Unfortunately, this common definition isn&#8217;t entirely accurate. It fails to explain why we use <code>instance.extend(Module)</code> to add methods to an instance. Shouldn&#8217;t it be <code>instance.include(Module)</code>? To figure this out we&#8217;re going to start by discussing where methods are stored.</p>
 
+<!-- more -->
+
+
 <h3>The methods I&#8217;m storing for you and the guy holding mine.</h3>
 
 <p>Objects in Ruby do not store their own methods. Instead, they create a singleton class to hold onto their methods.</p>
@@ -107,11 +110,6 @@
 <figure class='code'> <div class="highlight"><table><tr><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&gt;</span> <span class="n">A</span><span class="o">.</span><span class="n">singleton_methods</span> <span class="c1"># methods on &#39;A</span>
 </span><span class='line'> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:who_am_i</span><span class="o">]</span>
 </span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<!-- more -->
 
 
 <p><img src="/images/explaining-include-and-extend/1.png" alt="a class and its singleton" /></p>
