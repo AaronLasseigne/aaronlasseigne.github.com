@@ -4,7 +4,7 @@
   <title><![CDATA[ficate]]></title>
   <link href="http://ficate.com/atom.xml" rel="self"/>
   <link href="http://ficate.com/"/>
-  <updated>2012-06-17T01:12:28-05:00</updated>
+  <updated>2012-07-28T22:20:40-05:00</updated>
   <id>http://ficate.com/</id>
   <author>
     <name><![CDATA[Aaron Lasseigne]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tooling Around: The MySQL Client Config File]]></title>
+    <link href="http://ficate.com/blog/2012/07/28/tooling-around-the-mysql-client-config-file/"/>
+    <updated>2012-07-28T14:20:00Z</updated>
+    <id>http://ficate.com/blog/2012/07/28/tooling-around-the-mysql-client-config-file</id>
+    <content type="html"><![CDATA[<p>There are several options for GUI.</p>
+
+<h3>Prompt</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class='code'><pre><code class=''><span class='line'>[mysql]
+</span><span class='line'>prompt="\\R:\\m  \\h:\\d\n) "</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now that you&#8217;ve got your prompt squared away lets look at paging.</p>
+
+<h3>Pager</h3>
+
+<p>My pager of choice is <code>less</code>.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class='code'><pre><code class=''><span class='line'>[mysql]
+</span><span class='line'>pager=less -inSFX</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!-- more -->
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Faster ActiveRecord Migrations Using <code>change_table :bulk</code>]]></title>
