@@ -13,6 +13,8 @@
     <meta name="twitter:title" content="{{ page.title }}">
     {% if page.url != site.baseurl %}
     <meta name="twitter:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}">
+    {% else %}
+    <meta name="twitter:description" content="{{ site.description }}">
     {% endif %}
 
     <link href="atom.xml" rel="alternate" type="application/atom+xml" title="{{ site.name }} (Atom)">
@@ -37,7 +39,7 @@
       </div>
       <div id="about">
         <h2 class="show-for-small-only">About</h2>
-        <p>Codewright (mostly Ruby), gin drinker, football watcher, husband and father.</p>
+        <p>{{ site.description }}</p>
         <a href="//github.com/{{ site.data.author.github }}">
           <i class="fa fa-github"></i> {{ site.data.author.github }}
         </a><br style="margin-bottom: 12px;">

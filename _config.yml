@@ -2,6 +2,7 @@
 ---
 name: AaronLasseigne.com
 url: http://aaronlasseigne.com
+description: Codewright (mostly Ruby), gin drinker, football watcher, husband and father.
 markdown: kramdown
 pygments: true
 timezone: Etc/UTC
