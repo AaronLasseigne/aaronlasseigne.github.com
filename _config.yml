@@ -1,0 +1,14 @@
+%YAML 1.1
+---
+name: AaronLasseigne.com
+url: http://aaronlasseigne.com
+markdown: kramdown
+pygments: true
+timezone: Etc/UTC
+encoding: UTF-8
+excerpt_separator: <!--more-->
+paginate: 5
+permalink: pretty
+
+exclude:
+  - CNAME

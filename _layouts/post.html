@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<article>
+  <header>
+    <h2>{{ page.title }}</h2>
+    {% include time.html date=page.date %}
+  </header>
+
+  {{ content }}
+
+  <footer>
+    <div id="share">
+      <h4>Share to</h4>
+      <a href="https://twitter.com/intent/tweet?original_referer={{ site.url }}{{ page.url }}&text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.data.author.twitter }}" target="_blank" title="Twitter">
+        <i class="fa fa-twitter-square"></i>
+      </a>
+      <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" target="_blank" title="Google Plus">
+        <i class="fa fa-google-plus-square"></i>
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" target="_blank" title="Facebook">
+        <i class="fa fa-facebook-square"></i>
+      </a>
+    </div>
+
+    {% if page.previous.url %}
+    <a href="{{ page.previous.url }}" title="Previous Post: {{ page.previous.title }}">
+      <div id="prev-post">
+        <i class="fa fa-chevron-left"></i>
+        <p>{{ page.previous.title }}</p>
+      </div>
+    </a>
+    {% endif %}
+    {% if page.next.url %}
+    <a href="{{ page.next.url }}" title="Next Post: {{ page.next.title }}">
+      <div id="next-post">
+        <i class="fa fa-chevron-right"></i>
+        <p>{{ page.next.title }}</p>
+      </div>
+    </a>
+    {% endif %}
+  </footer>
+</article>
