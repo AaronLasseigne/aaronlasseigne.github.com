@@ -280,7 +280,7 @@ It's been a great addition to our code base and we hope it helps yours.
 
 Check out the full documentation and more about [ActiveInteraction on GitHub][1].
 
-{% include orgsync_dev_blog.html url=http://devblog.orgsync.com/confidently-manage-business-logic-activeinteraction %}
+{% include orgsync_dev_blog.html url="http://devblog.orgsync.com/confidently-manage-business-logic-activeinteraction" %}
 
 [1]: https://github.com/orgsync/active_interaction
 [2]: http://www.confreaks.com/videos/759-rubymidwest2011-keynote-architecture-the-lost-years

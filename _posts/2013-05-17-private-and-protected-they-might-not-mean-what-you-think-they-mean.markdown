@@ -228,6 +228,6 @@ Play her and you'll quickly find out.
 If you're looking to remove something from you're public interface then you're looking for `private`.
 If you're looking to narrow the interface to other objects of the same type then you want `protected`.
 
-{% include orgsync_dev_blog.html url=http://devblog.orgsync.com/private-and-protected-they-might-not-mean-what-you-think-they-mean %}
+{% include orgsync_dev_blog.html url="http://devblog.orgsync.com/private-and-protected-they-might-not-mean-what-you-think-they-mean" %}
 
 [^1]: Version 1.9.3
