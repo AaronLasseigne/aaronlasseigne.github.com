@@ -296,8 +296,6 @@ Using the same validator across models stops your team from littering your appli
 Validators are worth every bit of effort you put into them.
 Anyone who's written migrations to fix bad data can attest to that.
 
-<div class="panel">
-  Originally published on the <a href="http://devblog.orgsync.com/building-custom-rails-attribute-validators">OrgSync developer blog</a>.
-</div>
+{% include orgsync_dev_blog.html url=http://devblog.orgsync.com/building-custom-rails-attribute-validators %}
 
 [1]: http://nokogiri.org
