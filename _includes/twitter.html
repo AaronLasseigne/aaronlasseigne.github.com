@@ -1,9 +1,10 @@
+{% if page.url == site.baseurl %}
+  {% assign description = site.description %}
+{% else %}
+  {% assign description = page.content | markdownify | strip_html | replace: '"', '&#x22;' | split: ' ' | join: ' ' | truncate: 200 %}
+{% endif %}
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@{{ site.data.author.twitter }}">
 <meta name="twitter:creator" content="@{{ site.data.author.twitter }}">
 <meta name="twitter:title" content="{{ page.title }}">
-{% if page.url != site.baseurl %}
-<meta name="twitter:description" content="{{ page.content | markdownify | strip_html | replace: '"', '&#x22;' | split: ' ' | join: ' ' | truncate: 200 }}">
-{% else %}
-<meta name="twitter:description" content="{{ site.description }}">
-{% endif %}
+<meta name="twitter:description" content="{{ description }}">
