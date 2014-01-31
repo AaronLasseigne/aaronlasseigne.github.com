@@ -1,0 +1,15 @@
+{% if page.url == site.baseurl %}
+  {% assign type = 'website' %}
+  {% assign title = site.name %}
+  {% assign description = site.description %}
+{% else %}
+  {% assign type = 'article' %}
+  {% assign path = page.url %}
+  {% assign title = page.title %}
+  {% assign description = page.content | markdownify | strip_html | replace: '"', '&#x22;' | split: ' ' | join: ' ' | truncate: 200 %}
+{% endif %}
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:type" content="{{ type }}">
+<meta property="og:url" content="{{ site.url }}{{ path }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
