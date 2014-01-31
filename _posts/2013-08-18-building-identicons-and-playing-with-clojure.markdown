@@ -5,8 +5,8 @@ date: 2013-08-18 18:58 UTC
 ---
 
 I've been playing with Clojure on and off for a little while now.
-I've worked through problems on [4 Clojure](http://www.4clojure.com) and [Exercism.io](http://exercism.io) but I've been looking for a small project to take on.
-Last Wednesday when GitHub announced [identicons](https://github.com/blog/1586-identicons) for users without avatars and I found my project.
+I've worked through problems on [4 Clojure][1] and [Exercism.io][2] but I've been looking for a small project to take on.
+Last Wednesday when GitHub announced [identicons][3] for users without avatars and I found my project.
 My goal was to take a string and output an identicon for it.
 For identicons a particular input should always generate the same identicon.
 Also, the identicons should be unique for each input.
@@ -49,10 +49,10 @@ Knowing that I could make images I turned my attention to an identifier.
 I was expecting to receive a string but that could contain anything and be of any length.
 In order to simplify things I needed a consistent format to work with.
 Hashing the input was the easiest solution.
-Even though it has collision issues I decided to use [MD5](http://en.wikipedia.org/wiki/Md5).
+Even though it has collision issues I decided to use [MD5][4].
 It's fast and close enough to unique for the purposes of my project.
 MD5 generates a 32 digit string of hexidecimal numbers regardless of what input you give it.
-Clojure was ready for me this time with a library called [Digest](https://github.com/tebeka/clj-digest).
+Clojure was ready for me this time with a library called [Digest][5].
 
 {% highlight clojure %}
 > (digest/md5 "Aaron")
@@ -161,7 +161,7 @@ Now when we run the same command from earlier we get a colorized version.
 
 ![Color identicon for "Aaron"](/images/building-identicons-and-playing-with-clojure/1c0a11cc4ddc0dbd3fa4d77232a4e22e-120.png)
 
-If you want to see all of the code together you can find it [here](https://gist.github.com/{{ site.data.author.github }}/6255278).
+If you want to see all of the code together you can find it [here][6].
 
 ### Takeaway
 
@@ -178,3 +178,10 @@ It might be that I'm not experienced enough and there are ways around these issu
 I certainly hope so because I plan to continue exploring.
 
 [^1]: Version 1.5.1
+
+[1]: http://www.4clojure.com
+[2]: http://exercism.io
+[3]: https://github.com/blog/1586-identicons
+[4]: http://en.wikipedia.org/wiki/Md5
+[5]: https://github.com/tebeka/clj-digest
+[6]: https://gist.github.com/{{ site.data.author.github }}/6255278

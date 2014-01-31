@@ -13,13 +13,13 @@ They are designed to integrate seamlessly with Rails by behaving like ActiveMode
 Use ActiveInteraction to shrink your controllers, slim your models, and DRY your code.
 <!--more-->
 
-## Case Study
+### Case Study
 
 We built ActiveInteraction to solve a particular kind of problem.
 It's one we think lots of Rails developers grapple with.
 Let's walk through an example to see how ActiveInteraction can help.
 
-### The Fat Controller
+#### The Fat Controller
 
 Back in 2007, OrgSync started on Rails one point something.
 It looked like most Rails projects.
@@ -58,7 +58,7 @@ This approach is littered with problems:
 * It has too many responsibilities.
 * Controller specific setup is required in order to test the logic.
 
-### The Fat Model
+#### The Fat Model
 
 If the business logic doesn't belong in the controller, where does it belong?
 The model is a natural fit since all this logic deals with it.
@@ -113,7 +113,7 @@ In addition, we moved the fat from controllers to models.
 Although that put the logic closer to where it belongs, we managed to pollute our model with email delivery and password generation.
 Models should be concerned with validation, storage, and retrieval.
 
-### Enter Mutations
+#### Enter Mutations
 
 We couldn't help but feel like something was missing, but we didn't know what the next step of our journey would be.
 That's when we stumbled upon [Architecture the Lost Years][2], a presentation by Robert Martin.
@@ -204,7 +204,7 @@ Mutations purposefully separates itself from Rails, which is a perfectly reasona
 It comes at a cost though.
 Custom validators are rendered useless and Rails specific classes, like UploadedFile and TimeWithZone, aren't supported.
 
-### Introducing ActiveInteraction
+#### Introducing ActiveInteraction
 
 We wanted our custom validators and times with zones.
 We wanted interoperability with gems like Formtastic.
@@ -271,7 +271,7 @@ Notice how the invalid outcome is assigned straight to `@user`.
 That's because the outcome of running an interaction quacks like an ActiveModel.
 It can be dropped right into a form without having to jump through any hoops.
 
-## Conclusion
+### Conclusion
 
 We're so thrilled with this direction that we've been using interactions in production since July.
 Our development team has provided valuable feedback and a variety of use cases.
@@ -280,11 +280,11 @@ It's been a great addition to our code base and we hope it helps yours.
 
 Check out the full documentation and more about [ActiveInteraction on GitHub][1].
 
+<div class="panel">
+  Originally published on the <a href="http://devblog.orgsync.com/confidently-manage-business-logic-activeinteraction">OrgSync developer blog</a>.
+</div>
+
 [1]: https://github.com/orgsync/active_interaction
 [2]: http://www.confreaks.com/videos/759-rubymidwest2011-keynote-architecture-the-lost-years
 [3]: https://github.com/cypriss/mutations
 [4]: http://taylor.fausak.me/
-
-<div class="panel">
-  Originally published on the <a href="http://devblog.orgsync.com/confidently-manage-business-logic-activeinteraction">OrgSync developer blog</a>.
-</div>

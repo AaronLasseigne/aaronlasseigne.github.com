@@ -60,7 +60,7 @@ We check to see if the `presence` key is used and then check to see if our HTML 
 If the HTML is blank then we add an error to the record using the standard Rails blank message.
 
 Now we need to define `blank?`.
-We'll use [Nokogiri](http://nokogiri.org) to grab text blocks and see if we find any visible text (it could still be hidden by styling, but let's keep it simple).
+We'll use [Nokogiri][1] to grab text blocks and see if we find any visible text (it could still be hidden by styling, but let's keep it simple).
 Nokogiri is fast, but even so, let's make sure there's something there before we start parsing.
 {% highlight ruby %}
 def blank?(value)
@@ -299,3 +299,5 @@ Anyone who's written migrations to fix bad data can attest to that.
 <div class="panel">
   Originally published on the <a href="http://devblog.orgsync.com/building-custom-rails-attribute-validators">OrgSync developer blog</a>.
 </div>
+
+[1]: http://nokogiri.org

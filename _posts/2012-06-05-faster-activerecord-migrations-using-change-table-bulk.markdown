@@ -28,13 +28,12 @@ Executed on a large table:
 ==  Table: migrated (8255.9236s) ======================
 {% endhighlight %}
 
-According to my made up but based on having done this a bunch of times numbers
-that's almost 2.5 hours! Production is going to have to go down for hours to run
-this. Co-workers will unsuspectingly migrate and you'll be blamed for a massive
-loss of productivity.
+According to my made up but based on having done this a bunch of times numbers that's almost 2.5 hours!
+Production is going to have to go down for hours to run this.
+Co-workers will unsuspectingly migrate and you'll be blamed for a massive loss of productivity.
 
-The wise know that grouping alter statements can significantly speed up a migration
-(at least in MySQL). Time to break out `execute` and do it by hand, right?
+The wise know that grouping alter statements can significantly speed up a migration (at least in MySQL).
+Time to break out `execute` and do it by hand, right?
 
 Nope, there's a better option.
 
@@ -48,8 +47,7 @@ def up
 end
 {% endhighlight %}
 
-Instead of individual alter statements we combine them inside `change_table` and
-pass `:bulk => true`.
+Instead of individual alter statements we combine them inside `change_table` and pass `:bulk => true`.
 
 Now when we execute:
 
@@ -60,13 +58,10 @@ Now when we execute:
 ==  Table: migrated (2774.1011s) ========
 {% endhighlight %}
 
-The alter statements have been combined into one statement and the total time
-to migrate is slightly more than running just one of the alters (again this is
-with MySQL).
+The alter statements have been combined into one statement and the total time to migrate is slightly more than running just one of the alters (again this is with MySQL).
 
-I'm not sure what kind of improvement you'll get on non-MySQL databases but I
-suspect it'll be faster for any database that allows grouped alter statements.
-As a side note, `:bulk` will be ignored if the database can't handle it. Which
-makes me wonder why it's not `true` by default.
+I'm not sure what kind of improvement you'll get on non-MySQL databases but I suspect it'll be faster for any database that allows grouped alter statements.
+As a side note, `:bulk` will be ignored if the database can't handle it.
+Which makes me wonder why it's not `true` by default.
 
 Happy migrating!

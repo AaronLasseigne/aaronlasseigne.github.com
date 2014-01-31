@@ -8,18 +8,18 @@ date: 2012-10-15 03:59 UTC
   The code for this can be found on <a href="https://github.com/{{ site.data.author.github }}/tmux_battery_charge_indicator">GitHub</a>.
 </div>
 
-From time to time I find myself immersed in my terminal. Bouncing around in
-Tmux[^1] between vim, console and whatever else I'm doing. With my terminal
-in fullscreen mode I don't notice the power draining from my battery.
+From time to time I find myself immersed in my terminal.
+Bouncing around in Tmux[^1] between vim, console and whatever else I'm doing.
+With my terminal in fullscreen mode I don't notice the power draining from my battery.
 
 ![OSX Battery Warning](/images/battery-life-in-the-land-of-tmux/osx-battery-warning.jpg)
 
 This is a fixable problem.
 <!--more-->
 
-Tmux provides a constant status bar at the bottom of the screen. Let's add a
-battery indicator to right side of the status bar. While we're adding that we
-might as well tack on the time and date.
+Tmux provides a constant status bar at the bottom of the screen.
+Let's add a battery indicator to right side of the status bar.
+While we're adding that we might as well tack on the time and date.
 
 {% highlight bash %}
 # status prompt
@@ -27,8 +27,7 @@ set -g status-right '#(~/bin/tmux_battery_charge_indicator.sh) #[bg=white,fg=col
 set -g status-utf8 on
 {% endhighlight %}
 
-Of course for this to work we need a script that outputs an indication of how
-much battery we have remaining.
+Of course for this to work we need a script that outputs an indication of how much battery we have remaining.
 
 *Note: The script works in Moutain Lion and on linux.*
 
@@ -60,8 +59,8 @@ if [[ $charged_slots -lt 10 ]]; then
 fi
 {% endhighlight %}
 
-There are many ways to display power remaining. I decided an homage to Zelda
-was the only reasonable way to go.
+There are many ways to display power remaining.
+I decided an homage to Zelda was the only reasonable way to go.
 
 ![Tmux Screen Shot with Heart Based Battery Indicator](/images/battery-life-in-the-land-of-tmux/tmux-status-screenshot.png)
 
