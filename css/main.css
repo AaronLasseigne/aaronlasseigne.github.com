@@ -69,7 +69,7 @@ time {
 #about h2 {
   color: #fff;
 }
-#about .fa {
+#about i {
   color: #fff;
   font-size: 1.5rem;
 }
@@ -84,7 +84,7 @@ time {
   font-size: 1.3rem;
   padding: 0.9375em;
 }
-#footer .fa {
+#footer i {
   color: #fff;
   font-size: 2rem;
 }
@@ -142,18 +142,18 @@ ol.posts li {
   }
 }
 
-#prev-post .fa, #next-post .fa {
+#prev-post i, #next-post i {
   display: block;
   position: relative;
   font-size: 1.5rem;
 }
 
-#prev-post .fa {
+#prev-post i {
   float: left;
   left: 0;
 }
 
-#next-post .fa {
+#next-post i {
   float: right;
   right: 0;
 }
@@ -178,19 +178,19 @@ ol.posts li {
   float: left;
 }
 
-#share .fa-twitter-square {
+#share .icon-twitter-squared {
   color: #55acee;
   font-size: 2.5rem;
   margin-left: 0.46875em;
 }
 
-#share .fa-google-plus-square {
+#share .icon-gplus-squared {
   color: #dd4b39;
   font-size: 2.5rem;
   margin-left: 0.46875em;
 }
 
-#share .fa-facebook-square {
+#share .icon-facebook-squared {
   color: #3B5998;
   font-size: 2.5rem;
   margin-left: 0.46875em;

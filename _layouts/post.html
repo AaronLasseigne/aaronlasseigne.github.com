@@ -13,20 +13,20 @@ layout: default
     <div id="share">
       <h4>Share to</h4>
       <a href="https://twitter.com/intent/tweet?original_referer={{ site.url }}{{ page.url }}&text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.data.author.twitter }}" target="_blank" title="Twitter">
-        <i class="fa fa-twitter-square"></i>
+        <i class="icon-twitter-squared"></i>
       </a>
       <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" target="_blank" title="Google Plus">
-        <i class="fa fa-google-plus-square"></i>
+        <i class="icon-gplus-squared"></i>
       </a>
       <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" target="_blank" title="Facebook">
-        <i class="fa fa-facebook-square"></i>
+        <i class="icon-facebook-squared"></i>
       </a>
     </div>
 
     {% if page.previous.url %}
     <a href="{{ page.previous.url }}" title="Previous Post: {{ page.previous.title }}">
       <div id="prev-post">
-        <i class="fa fa-chevron-left"></i>
+        <i class="icon-left-open"></i>
         <p>{{ page.previous.title }}</p>
       </div>
     </a>
@@ -34,7 +34,7 @@ layout: default
     {% if page.next.url %}
     <a href="{{ page.next.url }}" title="Next Post: {{ page.next.title }}">
       <div id="next-post">
-        <i class="fa fa-chevron-right"></i>
+        <i class="icon-right-open"></i>
         <p>{{ page.next.title }}</p>
       </div>
     </a>

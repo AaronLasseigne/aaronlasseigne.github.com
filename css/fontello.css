@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?6324377');
+  src: url('../font/fontello.eot?6324377#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff?6324377') format('woff'),
+       url('../font/fontello.ttf?6324377') format('truetype'),
+       url('../font/fontello.svg?6324377#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* Needed so that the icons look good. */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-rss:before { content: '\e807'; } /* '' */
+.icon-left-open:before { content: '\e804'; } /* '' */
+.icon-right-open:before { content: '\e805'; } /* '' */
+.icon-facebook-squared:before { content: '\e800'; } /* '' */
+.icon-github-circled:before { content: '\e803'; } /* '' */
+.icon-gplus-squared:before { content: '\e801'; } /* '' */
+.icon-twitter-squared:before { content: '\e802'; } /* '' */
+.icon-twitter:before { content: '\e806'; } /* '' */

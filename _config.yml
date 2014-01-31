@@ -13,3 +13,4 @@ permalink: pretty
 
 exclude:
   - CNAME
+  - fontello-config.json
