@@ -1,0 +1,5 @@
+{
+  "targets": {
+    "css/all.css": "build"
+  }
+}
