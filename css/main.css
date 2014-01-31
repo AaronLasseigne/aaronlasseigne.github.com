@@ -102,6 +102,7 @@ ol.posts {
 }
 ol.posts li {
   list-style-type: none;
+  margin-bottom: 1.875em;
 }
 
 .footnotes li {
