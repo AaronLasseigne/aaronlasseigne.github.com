@@ -1,5 +1,5 @@
 {
   "targets": {
-    "css/all.css": "build"
+    "css/all.css": "assets"
   }
 }
