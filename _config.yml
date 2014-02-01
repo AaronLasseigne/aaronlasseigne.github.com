@@ -17,3 +17,4 @@ exclude:
   - cogs.json
   - package.json
   - Makefile
+  - css
