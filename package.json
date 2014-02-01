@@ -1,0 +1,13 @@
+{
+  "name": "aaronlasseigne.github.com",
+  "private": true,
+  "author": "Aaron Lasseigne",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AaronLasseigne/aaronlasseigne.github.com"
+  },
+  "devDependencies": {
+    "cogs": "x",
+    "csso": "x"
+  }
+}
