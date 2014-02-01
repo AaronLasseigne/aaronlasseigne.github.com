@@ -17,84 +17,8 @@ time {
   }
 }
 
-#header {
-  background-color: #393939;
-  height: 120px;
-  padding: 0.9375em;
-}
-@media only screen and (min-width: 40.063em) {
-  #header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    height: 100%;
-    width: 200px;
-  }
-}
-
-#photo {
-  height: 100%;
-  float: right;
-}
-@media only screen and (min-width: 40.063em) {
-  #photo {
-    width: 100%;
-    height: auto;
-    padding-bottom: 0.9375em;
-  }
-}
-
-#name {
-  color: #fff;
-  font-size: 2em;
-  float: left;
-  margin-top: 0;
-}
-
-#about {
-  background-color: #393939;
-  color: #fff;
-  padding: 0.9375em;
-}
-@media only screen and (min-width: 40.063em) {
-  #about {
-    position: fixed;
-    top: 286px;
-    left: 0;
-    width: 200px;
-  }
-}
-
-#about h2 {
-  color: #fff;
-}
-#about i {
-  color: #fff;
-  font-size: 1.5rem;
-}
-
 #content {
   margin: 0.9375em;
-}
-
-#footer {
-  background-color: #393939;
-  color: #fff;
-  font-size: 1.3rem;
-  padding: 0.9375em;
-}
-#footer i {
-  color: #fff;
-  font-size: 2rem;
-}
-@media only screen and (min-width: 40.063em) {
-  #footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 200px;
-  }
 }
 
 ol.posts {
