@@ -2606,6 +2606,7 @@ table {
 
 /* css/syntax.css */
 code {
+  font-family: Consolas,Courier,monospace;
   color: #222222;
 }
 .highlight  {
