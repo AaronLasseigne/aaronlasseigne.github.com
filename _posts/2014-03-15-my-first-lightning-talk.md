@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My First Lightning Talk"
-date: 2014-03-15 03:37 UTC
+date: 2014-03-15 16:43 UTC
 ---
 
 This year marked the second ever [Big Ruby][1] conference and my first ever lightning talk at a conference.
