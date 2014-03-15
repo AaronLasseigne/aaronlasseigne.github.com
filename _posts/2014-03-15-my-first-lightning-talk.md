@@ -8,7 +8,7 @@ This year marked the second ever [Big Ruby][1] conference and my first ever ligh
 I've [previously written][2] about giving talks at work and at the local Ruby group.
 Presenting to an entire conference (it's single track) is certainly more daunting.
 It was a lot of fun though.
-You can watch my talk below or thumb through the slides.
+You can watch my talk below (starting at 3:22) or thumb through the slides.
 
 <!--more-->
 
