@@ -4,6 +4,10 @@ title: "Know Ruby: String Accessor"
 date: 2014-06-04 04:38 UTC
 ---
 
+<div class="panel callout">
+  <a href="//rubyweekly.com/issues/198">Featured in issue #198 of Ruby Weekly.</a>
+</div>
+
 I've decided to travel deep into the land of Ruby[^1] so that I may better know its secrets.
 I'll be scouring it for the interesting, the useful and the inane.
 Re-examining parts that I thought I knew.
