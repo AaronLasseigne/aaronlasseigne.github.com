@@ -1,0 +1,65 @@
+==================================================================
+https://keybase.io/aaronlasseigne
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://aaronlasseigne.com
+    * I am aaronlasseigne (https://keybase.io/aaronlasseigne) on keybase.
+      * I have a public key with fingerprint 374C EE0A E3EE 594A 2F7F  4C61 0BE7 C118 46F3 4279
+
+      To claim this, I am signing this object:
+
+{
+    "body": {
+            "key": {
+                        "fingerprint": "374cee0ae3ee594a2f7f4c610be7c11846f34279",
+                        "host": "keybase.io",
+                        "key_id": "0be7c11846f34279",
+                        "uid": "d4d42e1b5bbb891759241b202b7e9300",
+                        "username": "aaronlasseigne"
+                    },
+            "service": {
+                        "hostname": "aaronlasseigne.com",
+                        "protocol": "http:"
+                    },
+            "type": "web_service_binding",
+            "version": 1
+        },
+    "ctime": 1403319953,
+    "expire_in": 157680000,
+    "prev": "876d47fb49151fb382c7e839a936191dee7b454cb5acfe3a9640c18d933c0c0e",
+    "seqno": 7,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v0.1.22
+Comment: https://keybase.io/crypto
+
+yMH0AnicbZFdTBRXFMdnUUGWYEgkxAehOmlrLQuZ2ZnZ+QhJcUlAX4oG6kNjss6d
+ubM7C8ysM7PLbhZpQhpM00hDui9WE9mIhaTZpLoPgJC4BVt0lRgbjSm+gEaIXx9Q
+WNGIcIfoG/fl5p7/7/zPOfdcK96COR1F83/tqv/fG3PczKyGsab+XG8cB7ocw4U4
+3gI3LkXV/NAIGapm4QJOsbQEISFCCkKGp0W3wiq05CEJAFmJJDnao1C0m+VxFx7Q
+TTsD2QDRhNWqjmLo4VNlFN2ED28IMi3TbkgCBgDA8STL8G6aBG7CDVjIUwRhgyY0
+NLENIloUDV1rFU0Tqn4N4iddONIiqoS0+EYDm3LVkt6GfEKGbumS3or0gGWFBDvd
+ioVsvh0C30cnH1A1Gf0BSohAw1R1DRdIREqWaluTNEFRJM8zlAuH0ZBqQJ9qEwzr
+4Qh07DIwgiw51iPTrAJonmRIBVCcW2IhR/EiT3lInpQhZAHN0BJgREmBlMh7aEIi
+OZmnKImQCIjqm/CEpuMCi9oU/cjSRMOIVthAg49njm3FHE4sf1uevUXMWVjyabez
+uYI1kLjacOa7//KXf/wpkax3DhRX+eoCnPBwIvONNH4k1Dj7aG+N8OpB8vRY78iB
+SbZnZzq0/5fRkqXcu3MX/uCq/E8vTR367R+87++uf8uuu1oaHd3hQmW0lC2d/vXL
+781g1PE25fVmv60g9hxu75yOLzcvXcxLJrApa8fnP7QbZxdXVp69OPqh48+ZYLSg
+Zsy8PXiqc1K+cWV4ZGwgsS8ZdCz0peTfsff9wsv7qa8YmVtrjpRnnk84vrjcWXan
+3NswbGSyVFFlMNWTXYieD6S/DvZhi3PFremBojd1ZtPP892Vudhnc2VPtt/afe9g
++njX69qKoezjjpm7RO3qUGBwHWe9HkU=
+=zSS9
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/aaronlasseigne
+
+==================================================================
