@@ -238,7 +238,10 @@ Remember, cloning is good. Just ask [Dolly][3].
 
 <img alt="Dolly the sheep" title="Baahhh!" src="/images/know-ruby-clone-and-dup/dolly.jpg">
 
+If you enjoyed this post check out others in the [Know Ruby][5] series.
+
 [1]: https://bugs.ruby-lang.org/issues/1844
 [2]: https://bugs.ruby-lang.org/issues/9487
 [3]: https://en.wikipedia.org/wiki/Dolly_%28sheep%29
 [4]: https://github.com/ruby/ruby/blob/trunk/lib/set.rb#L104
+[5]: /series/know-ruby

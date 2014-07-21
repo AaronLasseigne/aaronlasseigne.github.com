@@ -336,6 +336,8 @@ I thought `Range` was treated like a series of indexes.
 Imagine trying to hunt down a bug and overlooking a line because you expect `'Aaron'[5..5]` to be falsely (i.e. return `nil` rather than `""`).
 That's the danger of mental models that don't match reality.
 
-Come back for more as we continue to get to **Know Ruby**.
+Come back for more as we continue to get to [Know Ruby][1].
 
 [^1]: Version 2.1.1
+
+[1]: /series/know-ruby

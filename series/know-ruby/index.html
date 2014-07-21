@@ -1,0 +1,18 @@
+---
+layout: default
+title: Know Ruby
+---
+<h2>Series: {{ page.title }}</h2>
+
+<ol class="posts" style="margin-left: 20px;">
+  {% for post in site.posts %}
+    {% assign series = post.title | split: ':' | first %}
+    {% if series == page.title %}
+      {% assign title = post.title | split: ':' | last %}
+      <li>
+        <a href="{{ post.url }}"><h3>{{ title }}</h3></a>
+        {% include time.html date=post.date %}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ol>
