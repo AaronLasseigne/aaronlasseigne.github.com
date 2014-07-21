@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Know Ruby: clone and dup"
-date: 2014-07-16 04:38 UTC
+date: 2014-07-16 03:09 UTC
 ---
 
 Are you familiar with `clone` and `dup`?
