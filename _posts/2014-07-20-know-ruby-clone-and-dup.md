@@ -40,6 +40,29 @@ As a result, I tend to find myself using `dup` far more often than `clone`.
 
 Going forward we'll focus on `dup`.
 
+**Update:** Stephan Kämper [pointed out][6] that there is one more difference not originally mentioned.
+When using `dup` you'll lose singleton methods added to the original object.
+On the other hand, `clone` retains these methods.
+
+{% highlight ruby %}
+> obj = Object.new
+# #<Object:0x007fd214a36018>
+
+> def obj.say_hi
+>   puts 'Hi'
+> end
+# :say_hi
+
+> obj.say_hi
+# Hi
+
+> obj.dup.say_hi
+# NoMethodError: undefined method `say_hi' for #<Object:0x007fd2142297a8>
+
+> obj.clone.say_hi
+# Hi
+{% endhighlight %}
+
 ### Shallow Waters
 
 I mentioned earlier that `dup` is shallow.
@@ -245,3 +268,4 @@ If you enjoyed this post check out others in the [Know Ruby][5] series.
 [3]: https://en.wikipedia.org/wiki/Dolly_%28sheep%29
 [4]: https://github.com/ruby/ruby/blob/trunk/lib/set.rb#L104
 [5]: /series/know-ruby
+[6]: http://phvalues.wordpress.com/2014/07/24/ruby-details-clone-and-dup-2/
