@@ -4,6 +4,10 @@ title: "Know Ruby: clone and dup"
 date: 2014-07-16 03:09 UTC
 ---
 
+<div class="panel callout">
+  <a href="//rubyweekly.com/issues/205">Included in issue #205 of Ruby Weekly.</a>
+</div>
+
 Are you familiar with `clone` and `dup`?
 Quick, what's the difference?
 For the uninitiated, they both create shallow copies of objects.
