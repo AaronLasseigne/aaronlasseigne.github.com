@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Know Ruby: clone and dup"
-date: 2014-07-16 03:09 UTC
+date: 2014-07-20 03:09 UTC
 ---
 
 <div class="panel callout">
