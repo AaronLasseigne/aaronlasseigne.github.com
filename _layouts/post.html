@@ -24,18 +24,18 @@ layout: default
     </div>
 
     {% if page.previous.url %}
-    <a href="{{ page.previous.url }}" title="Previous Post: {{ page.previous.title }}">
+    <a href="{{ page.previous.url }}" title="Previous Post: {{ page.previous.title }}" rel="prev" role="button">
       <div id="prev-post">
         <i class="icon-left-open"></i>
-        <p>{{ page.previous.title }}</p>
+        <p aria-label="Previous Post: {{ page.previous.title }}">{{ page.previous.title }}</p>
       </div>
     </a>
     {% endif %}
     {% if page.next.url %}
-    <a href="{{ page.next.url }}" title="Next Post: {{ page.next.title }}">
+    <a href="{{ page.next.url }}" title="Next Post: {{ page.next.title }}" rel="next" role="button">
       <div id="next-post">
         <i class="icon-right-open"></i>
-        <p>{{ page.next.title }}</p>
+        <p aria-label="Next Post: {{ page.next.title }}">{{ page.next.title }}</p>
       </div>
     </a>
     {% endif %}
