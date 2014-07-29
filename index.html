@@ -19,25 +19,25 @@ title: AaronLasseigne.com
 
 {% if paginator.total_pages > 1 %}
 <div class="pagination-centered">
-  <ul class="pagination">
+  <ul role="navigation" aria-label="Pagination" class="pagination">
     {% if paginator.previous_page %}
-      <li class="arrow"><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="icon-left-open"></i></a></li>
+      <li class="arrow"><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" rel="prev" aria-label="Previous Page"><i class="icon-left-open"></i></a></li>
     {% else %}
       <li class="arrow unavailable"><a href=""><i class="icon-left-open"></i></a></li>
     {% endif %}
 
     {% for page in (1..paginator.total_pages) %}
       {% if page == paginator.page %}
-        <li class="current"><a href="">{{ page }}</a></li>
+        <li class="current"><a href="" aria-label="Current Page, Page {{ page }}">{{ page }}</a></li>
       {% elsif page == 1 %}
-        <li><a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+        <li><a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Page {{ page }}">{{ page }}</a></li>
       {% else %}
-        <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+        <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}" aria-label="Page {{ page }}">{{ page }}</a></li>
       {% endif %}
     {% endfor %}
 
     {% if paginator.next_page %}
-      <li class="arrow"><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="icon-right-open"></i></a></li>
+      <li class="arrow"><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" rel="next" aria-label="Next Page"><i class="icon-right-open"></i></a></li>
     {% else %}
       <li class="arrow unavailable"><a href=""><i class="icon-right-open"></i></a></li>
     {% endif %}
