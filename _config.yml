@@ -3,7 +3,7 @@
 name: AaronLasseigne.com
 url: http://aaronlasseigne.com
 description: Codewright (mostly Ruby), gin drinker, football watcher, husband and father.
-pygments: true
+highlighter: pygments
 timezone: Etc/UTC
 encoding: UTF-8
 excerpt_separator: <!--more-->
@@ -25,3 +25,9 @@ defaults:
       type: "post"
     values:
       layout: "post"
+  -
+    scope:
+      path: ""
+      type: "page"
+    values:
+      layout: "default"
