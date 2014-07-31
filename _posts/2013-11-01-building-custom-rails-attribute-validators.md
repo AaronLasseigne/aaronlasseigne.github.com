@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Building Custom Rails Attribute Validators"
 date: 2013-11-01 01:21 UTC
 ---

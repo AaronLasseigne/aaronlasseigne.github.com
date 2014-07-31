@@ -17,3 +17,11 @@ exclude:
   - package.json
   - Makefile
   - css
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "post"
+    values:
+      layout: "post"

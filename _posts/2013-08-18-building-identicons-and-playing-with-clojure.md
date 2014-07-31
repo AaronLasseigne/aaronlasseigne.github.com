@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Building Identicons and Playing with Clojure"
 date: 2013-08-18 18:58 UTC
 ---

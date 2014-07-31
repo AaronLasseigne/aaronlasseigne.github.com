@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Faster ActiveRecord Migrations Using <code>change_table :bulk</code>"
 date: 2012-06-05 03:48 UTC
 excerpt: Instead of individual alter statements we combine them inside <code>change_table</code> with <code>:bulk => true</code>.

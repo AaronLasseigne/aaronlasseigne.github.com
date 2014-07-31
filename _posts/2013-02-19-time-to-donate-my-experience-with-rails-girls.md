@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Time to Donate: My Experience With Rails Girls"
 date: 2013-02-19 15:42 UTC
 ---

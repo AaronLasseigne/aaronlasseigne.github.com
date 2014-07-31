@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Explaining Include and Extend"
 date: 2012-01-17 14:48 UTC
 ---

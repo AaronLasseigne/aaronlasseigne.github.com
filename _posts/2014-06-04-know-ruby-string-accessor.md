@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Know Ruby: String Accessor"
 date: 2014-06-04 04:38 UTC
 ---

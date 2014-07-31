@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Talking About Gems"
 date: 2014-06-05 02:57 UTC
 ---

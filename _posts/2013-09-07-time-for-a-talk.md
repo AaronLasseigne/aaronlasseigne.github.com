@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Time for a Talk"
 date: 2013-09-07 22:56 UTC
 ---

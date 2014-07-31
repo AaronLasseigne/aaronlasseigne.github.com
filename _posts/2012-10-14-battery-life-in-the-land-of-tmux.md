@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Battery Life in the Land of Tmux"
 date: 2012-10-15 03:59 UTC
 ---

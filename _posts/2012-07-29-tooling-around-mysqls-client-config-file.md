@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Tooling Around: MySQL's Client Config File"
 date: 2012-07-29 20:50 UTC
 ---

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Fun with Elixir"
 date: 2013-08-05 03:22 UTC
 ---

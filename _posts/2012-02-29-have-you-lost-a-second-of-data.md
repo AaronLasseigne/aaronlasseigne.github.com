@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Have you lost a second of data?"
 date: 2012-02-29 15:42 UTC
 ---

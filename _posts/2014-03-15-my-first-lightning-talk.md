@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "My First Lightning Talk"
 date: 2014-03-15 16:43 UTC
 ---

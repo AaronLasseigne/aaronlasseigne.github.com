@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Private and Protected: They Might Not Mean What You Think They Mean"
 date: 2013-05-25 18:49 UTC
 ---

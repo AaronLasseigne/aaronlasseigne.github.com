@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Confidently Manage Business Logic with ActiveInteraction"
 date: 2014-01-23 17:52 UTC
 ---
