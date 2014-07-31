@@ -5,7 +5,7 @@ date: 2014-07-16 03:09 UTC
 ---
 
 <div class="panel callout">
-  <a href="//rubyweekly.com/issues/205">Included in issue #205 of Ruby Weekly.</a>
+  <a href="//rubyweekly.com/issues/205">Included in issue #205 of Ruby Weekly</a> and <a href="//ruby5.envylabs.com/episodes/520-episode-483-july-25nd-2014">episode #483 of Ruby5.</a>
 </div>
 
 Are you familiar with `clone` and `dup`?
