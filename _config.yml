@@ -10,6 +10,9 @@ excerpt_separator: <!--more-->
 paginate: 5
 permalink: pretty
 
+gems:
+  - jekyll-redirect-from
+
 exclude:
   - CNAME
   - fontello-config.json
