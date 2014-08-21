@@ -72,6 +72,6 @@ In spite of my hopes, I suspect it will remain a black box with no transparency 
 [6]: http://www.spamhaus.org/query/domain/aaronlasseigne.com
 [7]: http://peterc.org/
 [8]: https://productforums.google.com/forum/#!mydiscussions/gmail/ARJ1iWN2l_U
-[9]: {% post_url 2014-07-16-know-ruby-clone-and-dup %}
+[9]: {% post_url 2014-07-20-know-ruby-clone-and-dup %}
 [10]: http://rubyweekly.com/issues/205
 [11]: http://reddit.com/r/ruby

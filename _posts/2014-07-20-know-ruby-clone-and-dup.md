@@ -1,6 +1,8 @@
 ---
 title: "Know Ruby: clone and dup"
-date: 2014-07-16 03:09 UTC
+date: 2014-07-20 03:09 UTC
+redirect_from:
+  - /2014/07/16/know-ruby-clone-and-dup/
 ---
 
 <div class="panel callout">
