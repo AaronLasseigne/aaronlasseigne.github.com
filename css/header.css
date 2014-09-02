@@ -3,30 +3,25 @@
   height: 100px;
   padding: 0.9375em 0;
 }
-@media only screen and (min-width: 40.063em) {
-  #header {
-  }
-}
 
 #photo {
-  float:  left;
-  height: 70px;
-}
-@media only screen and (min-width: 40.063em) {
-  #photo {
-  }
+  float: left;
+  height: 100px;
+  margin-left: -0.9375em;
+  margin-top: -0.9375em;
 }
 
 #name {
   color: #fff;
-  font-size: 1.5em;
+  font-size: 2em;
   float: left;
   margin-top: 0;
   padding-left: 0.46875em;
+  margin-top: -0.46875em;
 }
 
 #menu-icon {
-  height: 64px;
+  height: 70px;
   position: relative;
 }
 
@@ -48,7 +43,7 @@
 @media only screen and (min-width: 40.063em) {
   #nav-menu {
     display: initial !important;
-    height: 64px;
+    height: 70px;
     position: relative;
   }
   #nav-menu ul {
@@ -58,7 +53,7 @@
   }
   #nav-menu li {
     float: left;
-    font-size: 1.2em;
+    font-size: 1.4em;
     padding-right: 0.9375em;
   }
 }
