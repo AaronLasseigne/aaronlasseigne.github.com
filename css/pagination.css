@@ -17,7 +17,7 @@ ul.pagination li.unavailable {
 @media only screen and (min-width: 40.063em) {
   #prev-post {
     border-left: 1px solid #20ade5;
-    margin-left: 0;
+    margin-right: 3.75em;
   }
 }
 
@@ -28,7 +28,7 @@ ul.pagination li.unavailable {
 @media only screen and (min-width: 40.063em) {
   #next-post {
     border-right: 1px solid #20ade5;
-    margin-right: 0;
+    margin-left: 3.75em;
   }
 }
 
