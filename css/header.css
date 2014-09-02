@@ -1,34 +1,72 @@
 #header {
   background-color: #393939;
-  height: 120px;
-  padding: 0.9375em;
+  height: 100px;
+  padding: 0.9375em 0;
 }
 @media only screen and (min-width: 40.063em) {
   #header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    height: 100%;
-    width: 200px;
   }
 }
 
 #photo {
-  height: 100%;
-  float: right;
+  float:  left;
+  height: 70px;
 }
 @media only screen and (min-width: 40.063em) {
   #photo {
-    width: 100%;
-    height: auto;
-    padding-bottom: 0.9375em;
   }
 }
 
 #name {
   color: #fff;
-  font-size: 2em;
+  font-size: 1.5em;
   float: left;
   margin-top: 0;
+  padding-left: 0.46875em;
+}
+
+#menu-icon {
+  height: 64px;
+  position: relative;
+}
+
+#nav-menu {
+  background-color: #393939;
+  display: none;
+}
+#nav-menu ul {
+  list-style: none;
+  margin: 0;
+}
+#nav-menu li {
+  font-size: 2em;
+}
+
+.show-menu {
+  display: initial !important;
+}
+@media only screen and (min-width: 40.063em) {
+  #nav-menu {
+    display: initial !important;
+    height: 64px;
+    position: relative;
+  }
+  #nav-menu ul {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  #nav-menu li {
+    float: left;
+    font-size: 1.2em;
+    padding-right: 0.9375em;
+  }
+}
+
+.icon-menu {
+  color: #20ade5;
+  font-size: 3em;
+  position: absolute;
+  right: 0.46875em;
+  bottom: 0;
 }

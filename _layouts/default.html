@@ -17,31 +17,41 @@
   </head>
   <body>
     <div id="container">
-      <div id="header">
-        <a href="/">
-          <h1 id="name">{{ site.data.author.name | replace: ' ', '<br>' }}</h1>
-          <img id="photo" alt="Photo of {{ site.data.author.name }}" src="{{ site.data.author.image }}?s=170">
+      <div id="header" class="row">
+        <div class="small-9 medium-6 columns">
+          <a href="/">
+            <img id="photo" alt="Photo of {{ site.data.author.name }}" src="{{ site.data.author.image }}?s=170">
+            <h1 id="name">{{ site.data.author.name | replace: ' ', '<br>' }}</h1>
+          </a>
+        </div>
+        <div id="menu-icon" class="show-for-small-only small-3 columns bottom-text-container" aria-hidden="true">
+          <i class="icon-menu" onClick="javascript:document.getElementById('nav-menu').classList.toggle('show-menu')"></i>
+        </div>
+        <div role="navigation menu" id="nav-menu" class="medium-6 columns bottom-text-container">
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/talks">Talks</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="content" class="row">
+        <div class="small-12 columns">
+          {{ content }}
+        </div>
+      </div>
+      <div id="footer" class="row">
+        <a href="/atom.atom" rel="subscribe-rss" role="button" class="small-3 columns">
+          <i class="icon-rss" aria-label="RSS"></i>
         </a>
-      </div>
-      <div id="content">
-        {{ content }}
-      </div>
-      <div id="about">
-        <h2 class="show-for-small-only">About</h2>
-        <p>{{ site.description }}</p>
-        <a href="//github.com/{{ site.data.author.github }}" role="button">
+        <a href="//github.com/{{ site.data.author.github }}" role="button" class="small-3 columns">
           <i class="icon-github-circled" aria-label="Github"></i>
         </a>
-        <a href="//twitter.com/{{ site.data.author.twitter }}" role="button">
+        <a href="//twitter.com/{{ site.data.author.twitter }}" role="button" class="small-3 columns">
           <i class="icon-twitter" aria-label="Twitter"></i>
         </a>
-        <a href="//keybase.io/{{ site.data.author.keybase }}" role="button">
+        <a href="//keybase.io/{{ site.data.author.keybase }}" role="button" class="small-3 columns" style="padding:0">
           <i>KB</i>
-        </a>
-      </div>
-      <div id="footer">
-        <a href="/atom.atom" rel="subscribe-rss">
-          <i class="icon-rss" aria-label="RSS"></i> Subscribe
         </a>
       </div>
     </div>

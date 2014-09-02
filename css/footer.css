@@ -3,16 +3,12 @@
   color: #fff;
   font-size: 1.3rem;
   padding: 0.9375em;
+  margin-top: 0.9375em;
+}
+#footer a {
+  text-align: center;
 }
 #footer i {
   color: #fff;
   font-size: 2rem;
-}
-@media only screen and (min-width: 40.063em) {
-  #footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 200px;
-  }
 }
