@@ -2,7 +2,9 @@
   background-color: #393939;
   color: #fff;
   font-size: 1.3rem;
-  padding: 0.9375em;
+}
+#footer .row {
+  padding: 0.9375em 0.46875em;
   margin-top: 0.9375em;
 }
 #footer a {
@@ -10,5 +12,5 @@
 }
 #footer i {
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.6em;
 }
