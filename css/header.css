@@ -7,8 +7,13 @@
 #photo {
   float: left;
   height: 100px;
-  margin-left: -0.9375em;
   margin-top: -0.9375em;
+  margin-left: -0.9375em;
+}
+@media only screen and (min-width: 40.063em) {
+  #photo {
+    margin-left: 0;
+  }
 }
 
 #name {

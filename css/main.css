@@ -10,14 +10,10 @@ time {
   margin-bottom: 1.875em;
 }
 
-#container {
+.container {
   max-width: 700px;
   min-width: 320px;
   margin: auto;
-}
-@media only screen and (min-width: 40.063em) {
-  #container {
-  }
 }
 
 #content {
