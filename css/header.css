@@ -16,12 +16,19 @@
 }
 
 #name {
+  bottom: 0;
   color: #fff;
-  font-size: 2em;
-  float: left;
-  margin-top: 0;
+  font-size: 1.4em;
+  left: 100px;
+  margin: 0.9375em 0;
   padding-left: 0.46875em;
-  margin-top: -0.46875em;
+  position: absolute;
+}
+@media only screen and (min-width: 40.063em) {
+  #name {
+    font-size: 1.8em;
+    margin: 0.46875em;
+  }
 }
 
 #menu-icon {
