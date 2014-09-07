@@ -10,7 +10,9 @@ As a regular attendee of the [Dallas Ruby Brigade][1] (DRB) I figured it was tim
 I decided to extend a previous presentation I had given called "It's About Time".
 <!--more-->
 
-<script async class="speakerdeck-embed" data-id="65ff6b10f7a60130b70c5ebc3e751cce" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+<div class="embed-container">
+  <script async class="speakerdeck-embed" data-id="65ff6b10f7a60130b70c5ebc3e751cce" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+</div>
 
 DRB usually gets somewhere between 30-40 people at the primary meeting which means I had a good size audience for my talk.
 Someday I'd like to present at a conference.

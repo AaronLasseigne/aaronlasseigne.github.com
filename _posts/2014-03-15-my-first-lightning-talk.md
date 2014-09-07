@@ -17,7 +17,9 @@ You can watch my talk below (starting at 3:22) or thumb through the slides.
 </div>
 
 ### Slides
-<script async class="speakerdeck-embed" data-id="a3efa2d07d680131ee4b025a303c0b4c" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+<div class="embed-container">
+  <script async class="speakerdeck-embed" data-id="a3efa2d07d680131ee4b025a303c0b4c" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+</div>
 
 [1]: http://www.bigrubyconf.com
 [2]: {% post_url 2013-09-07-time-for-a-talk %}
