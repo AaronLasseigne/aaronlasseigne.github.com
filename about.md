@@ -2,6 +2,8 @@
 title: About
 ---
 
+<p style="margin-top:0.9375em"></p>
+
 By day I'm a Ruby developer working at [OrgSync][1].
 By night I'm... a developer working at home.
 I'm fortunate in that I get to do what I love for a living.
