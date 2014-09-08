@@ -1,12 +1,10 @@
 #header {
   background-color: #393939;
   height: 100px;
-  padding: 0.9375em 0;
 }
 
 #photo {
   float: left;
-  margin-top: -0.9375em;
   margin-left: -0.9375em;
 }
 @media only screen and (min-width: 40.063em) {
@@ -43,6 +41,7 @@
 #nav-menu ul {
   list-style: none;
   margin: 0;
+  margin-right: 0.46875em;
 }
 #nav-menu li {
   font-size: 2em;
@@ -54,7 +53,7 @@
 @media only screen and (min-width: 40.063em) {
   #nav-menu {
     display: initial !important;
-    height: 70px;
+    height: 100px;
     position: relative;
   }
   #nav-menu ul {
@@ -65,7 +64,7 @@
   #nav-menu li {
     float: left;
     font-size: 1.4em;
-    padding-right: 0.9375em;
+    padding: 0.46875em;
   }
 }
 
