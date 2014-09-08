@@ -29,9 +29,9 @@
         </div>
         <div role="navigation menu" id="nav-menu" class="medium-6 columns bottom-text-container">
           <ul>
-            <li><a href="/about">About</a></li>
-            <li><a href="/code">Code</a></li>
-            <li><a href="/talks">Talks</a></li>
+            <li{% if page.url == '/about/' %} class="current"{% endif %}><a href="/about">About</a></li>
+            <li{% if page.url == '/code/' %} class="current"{% endif %}><a href="/code/">Code</a></li>
+            <li{% if page.url == '/talks/' %} class="current"{% endif %}><a href="/talks/">Talks</a></li>
             <li><a href="/atom.atom">RSS</a></li>
           </ul>
         </div>

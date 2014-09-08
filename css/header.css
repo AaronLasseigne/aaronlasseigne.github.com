@@ -46,6 +46,11 @@
 #nav-menu li {
   font-size: 2em;
 }
+@media only screen and (min-width: 40.063em) {
+  #nav-menu li.current {
+    background-color: #fff;
+  }
+}
 
 .show-menu {
   display: initial !important;
