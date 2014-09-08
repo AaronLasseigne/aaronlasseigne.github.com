@@ -49,6 +49,8 @@
 @media only screen and (min-width: 40.063em) {
   #nav-menu li.current {
     background-color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
 }
 
