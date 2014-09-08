@@ -2,8 +2,6 @@
 title: Talks
 ---
 
-## Talks
-
 ### Polish Your Gem
 {% include date.html date="2014-06-03" %}
 
