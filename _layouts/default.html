@@ -24,8 +24,8 @@
             <h1 id="name">{{ site.data.author.name | replace: ' ', '<br>' }}</h1>
           </a>
         </div>
-        <div id="menu-icon" class="show-for-small-only small-3 columns bottom-text-container" aria-hidden="true">
-          <i class="icon-menu" onClick="javascript:document.getElementById('nav-menu').classList.toggle('show-menu')"></i>
+        <div id="menu-icon-container" class="show-for-small-only small-3 columns bottom-text-container" aria-hidden="true">
+          <i id="menu-icon" class="icon-menu" onClick="javascript:toggleMenu()"></i>
         </div>
         <div role="navigation menu" id="nav-menu" class="medium-6 columns bottom-text-container">
           <ul>
@@ -63,5 +63,12 @@
         &copy; 2014
       </div>
     </div>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById('menu-icon').classList.toggle('current');
+        document.getElementById('nav-menu').classList.toggle('show-menu');
+      }
+    </script>
   </body>
 </html>
