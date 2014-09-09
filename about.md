@@ -12,14 +12,14 @@ Lately I find myself drawn increasingly toward Clojure and Elixir.
 
 Outside of coding I look for ways to share what I know.
 I've coached for [Rails Girls][2] and [presented][3] for my [local Ruby group][4].
-I run a Lunch and Learn program at OrgSync where we take turns presenting to each other or watch and discuss talks suggested by the group.
-I actively write for the [OrgSync Dev Blog][5] and on my own blog.
+I run a Lunch and Learn program at OrgSync where we take turns either presenting or watching and discussing interesting talks.
+I actively write for the [OrgSync Dev Blog][5] and here on my blog.
 
 Tweaking my programming environment is also a favorite past time.
 Anything to help me avoid repeating common tasks.
 If you're interested in what I've done my [dotfiles][6] are available for perusing.
 
-When not typing vigorously I watch movies, TV series, and football (mostly college).
+When not typing vigorously I read books, watch movies, TV series, and football (mostly college).
 I enjoy a good gimlet made with Bombay Saphire or Hendricks gin.
 I'm also one of two people responsible for the life of a small person.
 It's a crazy world.
