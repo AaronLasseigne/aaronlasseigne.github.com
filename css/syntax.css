@@ -1,6 +1,16 @@
 code {
   font-family: Consolas,Courier,monospace;
   color: #222222;
+  background-color: #f8f8f8;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e0e0e0;
+  padding: 0.125rem 0.3125rem 0.0625rem;
+}
+pre code {
+  background-color: #fff;
+  border: 0;
+  padding: 0;
 }
 .highlight  {
   background: #ffffff;
