@@ -55,6 +55,8 @@
 }
 #nav-menu a {
   color: #fff;
+  display: block;
+  width: 100%;
 }
 #nav-menu ul {
   list-style: none;
