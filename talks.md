@@ -1,5 +1,6 @@
 ---
 title: Talks
+class: talks
 ---
 
 ### Polish Your Gem

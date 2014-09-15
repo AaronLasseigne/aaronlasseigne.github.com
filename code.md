@@ -1,5 +1,6 @@
 ---
 title: Code
+class: code
 ---
 
 ### ActiveInteraction <small>Ruby</small>

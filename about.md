@@ -1,5 +1,6 @@
 ---
 title: About
+class: about
 ---
 
 <p style="margin-top:0.9375em"></p>
