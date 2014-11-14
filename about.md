@@ -5,7 +5,7 @@ class: about
 
 <p style="margin-top:0.9375em"></p>
 
-By day I'm a Ruby developer working at [OrgSync][1].
+By day I'm a Ruby developer working at [OrgSync][1] and an author for [SitePoint][7].
 By night I'm... likely still coding.
 I'm fortunate in that I get to do what I love for a living.
 Most of my career has been in Ruby but I've also worked in Perl and PHP.
@@ -29,3 +29,4 @@ I'm also one of two people responsible for the life of a small person.
 [4]: http://www.dallasrb.org/
 [5]: http://devblog.orgsync.com/
 [6]: https://github.com/AaronLasseigne/dotfiles
+[7]: http://www.sitepoint.com/author/alasseigne/
