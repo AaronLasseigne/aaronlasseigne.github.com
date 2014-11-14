@@ -25,12 +25,12 @@ defaults:
   -
     scope:
       path: ""
-      type: "post"
+      type: "posts"
     values:
       layout: "post"
   -
     scope:
       path: ""
-      type: "page"
+      type: "pages"
     values:
       layout: "default"
