@@ -224,7 +224,7 @@ Play her and you'll quickly find out.
 
 ### Rule of Thumb
 
-If you're looking to remove something from you're public interface then you're looking for `private`.
+If you're looking to remove something from your public interface then you're looking for `private`.
 If you're looking to narrow the interface to other objects of the same type then you want `protected`.
 
 {% include orgsync_dev_blog.html url="http://devblog.orgsync.com/private-and-protected-they-might-not-mean-what-you-think-they-mean" %}
