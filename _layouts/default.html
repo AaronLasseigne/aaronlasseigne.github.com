@@ -23,16 +23,17 @@
             <img id="photo" alt="Photo of {{ site.data.author.name }}" src="{{ site.data.author.image }}?s=100">
             <h1 id="name">{{ site.data.author.name | replace: ' ', '<br>' }}</h1>
           </a>
+          <div class="arrow-up"></div>
         </div>
         <div id="menu-icon-container" class="show-for-small-only small-3 columns bottom-text-container" aria-hidden="true">
           <i id="menu-icon" class="icon-menu" onClick="javascript:toggleMenu()"></i>
         </div>
         <div role="navigation menu" id="nav-menu" class="medium-6 columns bottom-text-container">
           <ul>
+            <li{% if page.url != '/about/' and page.url != '/code/' and page.url != '/talks/' %} class="current"{% endif %}><a href="/">Posts</a></li>
             <li{% if page.url == '/about/' %} class="current"{% endif %}><a href="/about">About</a></li>
             <li{% if page.url == '/code/' %} class="current"{% endif %}><a href="/code/">Code</a></li>
             <li{% if page.url == '/talks/' %} class="current"{% endif %}><a href="/talks/">Talks</a></li>
-            <li><a href="/atom.atom">RSS</a></li>
           </ul>
         </div>
       </div>

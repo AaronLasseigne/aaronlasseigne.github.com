@@ -1,20 +1,31 @@
 #header {
   background-color: #393939;
-  height: 100px;
+}
+#header.columns {
+  height: 135px;
+}
+@media only screen and (min-width: 40.063em) {
+  #header.columns {
+    height: 155px;
+  }
 }
 
 #photo {
   float: left;
-  margin-left: -0.9375em;
+  border-radius: 0.9375em;
+  margin: 0.9375em 0;
+  height: 80px;
+  width: 80px;
 }
 @media only screen and (min-width: 40.063em) {
   #photo {
-    margin-left: 0;
+    height: 100px;
+    width: 100px;
   }
 }
 
 #name {
-  bottom: 0;
+  bottom: 40px;
   color: #fff;
   font-size: 1.4em;
   left: 100px;
@@ -52,6 +63,7 @@
 #nav-menu {
   background-color: #20ade5;
   display: none;
+  margin-top: -35px;
 }
 #nav-menu a {
   color: #fff;
@@ -71,12 +83,13 @@
     background-color: #393939;
   }
   #nav-menu a {
-    color: #20ade5;
+    color: #9e9e9e;
   }
   #nav-menu li.current {
-    background-color: #fff;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    font-weight: bold;
+  }
+  #nav-menu li.current a {
+    color: #fff;
   }
 }
 
@@ -86,7 +99,7 @@
 @media only screen and (min-width: 40.063em) {
   #nav-menu {
     display: initial !important;
-    height: 100px;
+    height: 190px;
     position: relative;
   }
   #nav-menu ul {
@@ -98,5 +111,21 @@
     float: left;
     font-size: 1.4em;
     padding: 0.46875em;
+  }
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #fff;
+  margin-top: 115px;
+  margin-left: 15px;
+}
+@media only screen and (min-width: 40.063em) {
+  .arrow-up {
+    margin-top: 135px;
+    margin-left: 30px;
   }
 }
