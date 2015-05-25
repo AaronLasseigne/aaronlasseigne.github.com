@@ -23,6 +23,8 @@ When not typing vigorously I read books, watch movies, TV series, and football (
 I enjoy a good gimlet made with Bombay Sapphire or Hendricks gin.
 I'm also one of two people responsible for the life of a small person.
 
+Finally, I run [libgrader][8], a site for finding quality Ruby gems.
+
 [1]: http://www.orgsync.com/
 [2]: http://railsgirls.com/
 [3]: /talks/
@@ -30,3 +32,4 @@ I'm also one of two people responsible for the life of a small person.
 [5]: http://devblog.orgsync.com/
 [6]: https://github.com/AaronLasseigne/dotfiles
 [7]: http://www.sitepoint.com/author/alasseigne/
+[8]: http://www.libgrader.com
