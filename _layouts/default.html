@@ -11,7 +11,7 @@
     {% include opengraph.html %}
 
     <link href="/atom.atom" rel="alternate" type="application/atom+xml" title="{{ site.name }} (Atom)">
-    <link href="{{ site.url }}{% if page.url != site.baseurl %}{{ page.url }}{% endif %}" rel="canonical">
+    <link href="{{ site.url }}{% if page.url != "/" %}{{ page.url }}{% endif %}" rel="canonical">
 
     <link rel="stylesheet" href="/assets/all.css">
   </head>
