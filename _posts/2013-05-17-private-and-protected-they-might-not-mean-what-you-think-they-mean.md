@@ -3,7 +3,7 @@ title: "Private and Protected: They Might Not Mean What You Think They Mean"
 date: 2013-05-25 18:49 UTC
 canonical: {
   site: "the OrgSync developer blog",
-  url: "http://devblog.orgsync.com/private-and-protected-they-might-not-mean-what-you-think-they-mean"
+  url: "http://devblog.orgsync.com/2013/05/20/private-and-protected-they-might-not-mean-what-you-think-they-mean/"
 }
 ---
 

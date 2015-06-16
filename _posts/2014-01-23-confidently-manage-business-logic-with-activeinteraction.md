@@ -3,7 +3,7 @@ title: "Confidently Manage Business Logic with ActiveInteraction"
 date: 2014-01-23 17:52 UTC
 canonical: {
   site: "the OrgSync developer blog",
-  url: "http://devblog.orgsync.com/confidently-manage-business-logic-activeinteraction"
+  url: "http://devblog.orgsync.com/2014/01/23/confidently-manage-business-logic-activeinteraction/"
 }
 ---
 

@@ -3,7 +3,7 @@ title: "Building Custom Rails Attribute Validators"
 date: 2013-11-01 01:21 UTC
 canonical: {
   site: "the OrgSync developer blog",
-  url: "http://devblog.orgsync.com/building-custom-rails-attribute-validators"
+  url: "http://devblog.orgsync.com/2013/10/29/building-custom-rails-attribute-validators/"
 }
 ---
 
