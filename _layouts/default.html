@@ -15,7 +15,11 @@
     {% include opengraph.html %}
 
     <link href="/atom.atom" rel="alternate" type="application/atom+xml" title="{{ site.name }} (Atom)">
-    <link href="{{ site.url }}{% if page.url != '/' %}{{ page.url }}{% endif %}" rel="canonical">
+    {% if page.canonical %}
+      <link href="{{ page.canonical.url }}" rel="canonical">
+    {% else %}
+      <link href="{{ site.url }}{% if page.url != '/' %}{{ page.url }}{% endif %}" rel="canonical">
+    {% endif %}
     {% if paginator.previous_page %}
       {% if paginator.page == 2 %}
         <link rel="prev" href="/">

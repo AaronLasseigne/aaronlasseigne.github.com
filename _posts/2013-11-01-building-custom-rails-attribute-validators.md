@@ -1,6 +1,10 @@
 ---
 title: "Building Custom Rails Attribute Validators"
 date: 2013-11-01 01:21 UTC
+canonical: {
+  site: "the OrgSync developer blog",
+  url: "http://devblog.orgsync.com/building-custom-rails-attribute-validators"
+}
 ---
 
 The validation that ships with Rails is useful, albeit generic.
@@ -294,7 +298,5 @@ They provide a way to ensure the accuracy and consistency of your data.
 Using the same validator across models stops your team from littering your application with different ideas about what constitutes a valid phone number.
 Validators are worth every bit of effort you put into them.
 Anyone who's written migrations to fix bad data can attest to that.
-
-{% include orgsync_dev_blog.html url="http://devblog.orgsync.com/building-custom-rails-attribute-validators" %}
 
 [1]: http://nokogiri.org

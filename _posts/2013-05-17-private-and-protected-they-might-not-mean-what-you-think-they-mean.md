@@ -1,6 +1,10 @@
 ---
 title: "Private and Protected: They Might Not Mean What You Think They Mean"
 date: 2013-05-25 18:49 UTC
+canonical: {
+  site: "the OrgSync developer blog",
+  url: "http://devblog.orgsync.com/private-and-protected-they-might-not-mean-what-you-think-they-mean"
+}
 ---
 
 Ruby[^1], like many other languages, provides a built-in way to change method visibility.
@@ -226,7 +230,5 @@ Play her and you'll quickly find out.
 
 If you're looking to remove something from your public interface then you're looking for `private`.
 If you're looking to narrow the interface to other objects of the same type then you want `protected`.
-
-{% include orgsync_dev_blog.html url="http://devblog.orgsync.com/private-and-protected-they-might-not-mean-what-you-think-they-mean" %}
 
 [^1]: Version 1.9.3

@@ -9,6 +9,10 @@ layout: default
 
   {{ content }}
 
+  {% if page.canonical %}
+    {% include originally_posted_on.html original=page.canonical %}
+  {% endif %}
+
   <footer>
     <div id="share">
       <h4>Share to</h4>
