@@ -78,7 +78,7 @@ We can also find elements that match a specific class.
 # => [1, 2]
 
 > [1, 1.2, 'a', 2].grep(Numeric)
-# => [1, 1.2, 2] 
+# => [1, 1.2, 2]
 {% endhighlight %}
 
 We can even find elements that include a particular module.
@@ -99,7 +99,7 @@ Want to find all of the B's in a list of test scores?
 
 It's worth noting that under hood `===` uses `include?` rather than `cover?`.
 That's usually not a concern but it's certainly something to be aware of.
-If you're not familiar with the differences I would recommend checking out this [Stack Overflow question][] about it. 
+If you're not familiar with the differences I would recommend checking out this [Stack Overflow question][] about it.
 
 ### Custom
 
@@ -142,7 +142,7 @@ It's only there for situations like this:
 > (1..10).grep(EVEN)
 # => [2, 4, 6, 8, 10]
 {% endhighlight %}
-    
+
 At this point are we better off switching to `select`?
 Probably.
 If we use select we can call `even?` without the `proc`.
@@ -166,9 +166,9 @@ It's like doing a `select` and a `map` all at once.
 > (1..10).select(&:even?).map { |n| n * 2 }
 # => [4, 8, 12, 16, 20]
 {% endhighlight %}
-    
+
 Becomes:
-    
+
 {% highlight ruby %}
 > (1..10).grep(EVEN) { |n| n * 2 }
 # => [4, 8, 12, 16, 20]
