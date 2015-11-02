@@ -3,7 +3,7 @@
 name: AaronLasseigne.com
 url: http://aaronlasseigne.com
 description: Professional coder (mostly Ruby). Avid scholar. Amateur educator.
-highlighter: pygments
+highlighter: rouge
 timezone: Etc/UTC
 encoding: UTF-8
 excerpt_separator: <!--more-->
@@ -12,6 +12,7 @@ permalink: pretty
 
 gems:
   - jekyll-redirect-from
+  - jekyll-paginate
 
 exclude:
   - CNAME

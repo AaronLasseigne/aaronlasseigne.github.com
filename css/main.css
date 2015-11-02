@@ -38,6 +38,10 @@ ol.posts li {
   margin-bottom: 3.75em;
 }
 
+figure {
+  margin-left: 0 !important;
+}
+
 .footnotes li {
   list-style-type: decimal !important;
 }
