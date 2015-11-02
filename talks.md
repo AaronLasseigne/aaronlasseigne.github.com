@@ -3,6 +3,25 @@ title: Talks
 class: talks
 ---
 
+### Micro-optimizing Ruby
+{% include date.html date="2015-09-01" %}
+
+Small changes that can add up to big differences.
+Learn best practices for writing fast Ruby and memory efficient Ruby.
+Finally, how to measure those changes to make sure you get what you want.
+
+This presentation was originally given to the [Dallas Ruby Brigade][1] and then re-presented for an OrgSync Lunch and Learn.
+
+#### Talk
+<div class="embed-container small" style="margin-bottom:30px">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/3HpjZPbBS-s" frameborder="0" allowfullscreen></iframe>
+</div>
+
+#### Slides
+<div class="embed-container small">
+  <script async class="speakerdeck-embed" data-id="49d151c625d944f4b7721249b3010aba" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+</div>
+
 ### Polish Your Gem
 {% include date.html date="2014-06-03" %}
 
@@ -26,7 +45,7 @@ Presented as part of a group of lightning talks at [Big Ruby Conference][3].
 
 #### Talk <small>Starting at 3:22</small>
 <div class="embed-container small" style="margin-bottom:30px">
-  <iframe width="560" height="315" src="//www.youtube.com/embed/Gn75H9D3nOg?rel=0#t=3m22s" frameborder="0" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Gn75H9D3nOg?rel=0#t=3m22s" frameborder="0" allowfullscreen></iframe>
 </div>
 
 #### Slides
