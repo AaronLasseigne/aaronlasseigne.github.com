@@ -17,7 +17,7 @@ layout: default
     <div id="share">
       <h4>Share to</h4>
       <span>
-        <a href="https://twitter.com/intent/tweet?original_referer={{ site.url }}{{ page.url }}&text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.data.author.twitter }}" target="_blank" title="Twitter" role="button">
+        <a href="https://twitter.com/intent/tweet?original_referer={{ site.url }}{{ page.url }}&text={{ page.title | cgi_escape }}&url={{ site.url }}{{ page.url }}&via={{ site.data.author.twitter }}" target="_blank" title="Twitter" role="button">
           <i class="icon-twitter-squared"></i>
         </a>
         <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" target="_blank" title="Google Plus" role="button">
