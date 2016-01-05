@@ -2117,7 +2117,7 @@ th.hide-for-touch {
 }
 @media only screen and (min-width: 40.063em) {
   #name {
-    font-size: 1.8em;
+    font-size: 2em;
     margin: 0.46875em;
   }
 }
