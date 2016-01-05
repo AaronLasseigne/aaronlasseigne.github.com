@@ -15,18 +15,15 @@ layout: default
 
   <footer>
     <div id="share">
-      <h4>Share to</h4>
-      <span>
-        <a href="https://twitter.com/intent/tweet?original_referer={{ site.url }}{{ page.url }}&text={{ page.title | cgi_escape }}&url={{ site.url }}{{ page.url }}&via={{ site.data.author.twitter }}" target="_blank" title="Twitter" role="button">
-          <i class="icon-twitter-squared"></i>
-        </a>
-        <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" target="_blank" title="Google Plus" role="button">
-          <i class="icon-gplus-squared"></i>
-        </a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" target="_blank" title="Facebook" role="button">
-          <i class="icon-facebook-squared"></i>
-        </a>
-      </span>
+      <a href="https://twitter.com/intent/tweet?original_referer={{ site.url }}{{ page.url }}&text={{ page.title | cgi_escape }}&url={{ site.url }}{{ page.url }}&via={{ site.data.author.twitter }}" target="_blank" class="twitter" title="Twitter" role="button">
+        <i class="icon-twitter"></i> tweet
+      </a>
+      <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" target="_blank" class="google-plus" title="Google Plus" role="button">
+        <i class="icon-google-plus"></i> share
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" target="_blank" class="facebook" title="Facebook" role="button">
+        <i class="icon-facebook"></i> share
+      </a>
     </div>
   </footer>
 </article>

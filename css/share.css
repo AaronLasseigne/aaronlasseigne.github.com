@@ -1,27 +1,25 @@
 #share {
   margin-top: 2.8125em;
+  text-align: center;
 }
 
-#share h4 {
-  display: inline;
-  font-size: 1.5em;
+#share a {
+  color: #fff;
+  margin-right: 10px;
+  padding: 10px;
+}
+#share a:hover {
+  opacity: 0.75;
 }
 
-#share span {
-  margin-left: 0.46875em;
-}
-#share i {
-  font-size: 2.5em;
+#share .twitter {
+  background-color: #55acee;
 }
 
-#share .icon-twitter-squared {
-  color: #55acee;
+#share .google-plus {
+  background-color: #db4437;
 }
 
-#share .icon-gplus-squared {
-  color: #dd4b39;
-}
-
-#share .icon-facebook-squared {
-  color: #3B5998;
+#share .facebook {
+  background-color: #3B5998;
 }

@@ -20,9 +20,9 @@ title: AaronLasseigne.com
 <div class="pagination-centered">
   <ul role="navigation" aria-label="Pagination" class="pagination">
     {% if paginator.previous_page %}
-      <li class="arrow"><a href="{{ paginator.previous_page_path }}{% if paginator.previous_page_path != '/' %}/{% endif %}" rel="prev" aria-label="Previous Page"><i class="icon-left-open"></i></a></li>
+      <li class="arrow"><a href="{{ paginator.previous_page_path }}{% if paginator.previous_page_path != '/' %}/{% endif %}" rel="prev" aria-label="Previous Page"><i class="icon-left"></i></a></li>
     {% else %}
-      <li class="arrow unavailable"><a href=""><i class="icon-left-open"></i></a></li>
+      <li class="arrow unavailable"><a href=""><i class="icon-left"></i></a></li>
     {% endif %}
 
     {% for page in (1..paginator.total_pages) %}
@@ -36,9 +36,9 @@ title: AaronLasseigne.com
     {% endfor %}
 
     {% if paginator.next_page %}
-      <li class="arrow"><a href="{{ paginator.next_page_path | append: '/' }}" rel="next" aria-label="Next Page"><i class="icon-right-open"></i></a></li>
+      <li class="arrow"><a href="{{ paginator.next_page_path | append: '/' }}" rel="next" aria-label="Next Page"><i class="icon-right"></i></a></li>
     {% else %}
-      <li class="arrow unavailable"><a href=""><i class="icon-right-open"></i></a></li>
+      <li class="arrow unavailable"><a href=""><i class="icon-right"></i></a></li>
     {% endif %}
   </ul>
 </div>
