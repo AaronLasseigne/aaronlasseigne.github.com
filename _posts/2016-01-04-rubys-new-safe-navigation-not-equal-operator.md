@@ -16,7 +16,7 @@ For example, operators like `!=`.
 
 ### A Brief Overview of Safe Navigation
 
-Let's say we have an Array of Integers.
+Let's say we have an array of integers.
 We want to know if the first one is positive.
 To check we might do something like:
 
