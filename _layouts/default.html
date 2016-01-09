@@ -30,8 +30,6 @@
     {% if paginator.next_page %}
       <link rel="next" href="{{ site.url | append: paginator.next_page_path | append: '/' }}">
     {% endif %}
-
-    <link rel="stylesheet" href="/assets/all.css">
   </head>
   <body>
     <div id="header">
@@ -89,5 +87,6 @@
         document.getElementById('nav-menu').classList.toggle('show-menu');
       }
     </script>
+    <link rel="stylesheet" href="/assets/all.css">
   </body>
 </html>
