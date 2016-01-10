@@ -1,10 +1,8 @@
 .container.about,
-.container.code,
-.container.talks {
+.container.code {
   padding-top: 0.9375em;
 }
 
-.container.code h3:not(:first-child),
-.container.talks h3:not(:first-child) {
+.container.code h3:not(:first-child) {
   margin-top: 2em;
 }
