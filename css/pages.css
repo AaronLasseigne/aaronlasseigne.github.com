@@ -1,8 +1,3 @@
-.container.about,
-.container.code {
+.container.about {
   padding-top: 0.9375em;
-}
-
-.container.code h3:not(:first-child) {
-  margin-top: 2em;
 }
