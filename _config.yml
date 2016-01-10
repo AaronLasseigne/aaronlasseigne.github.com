@@ -7,7 +7,7 @@ highlighter: rouge
 timezone: Etc/UTC
 encoding: UTF-8
 excerpt_separator: <!--more-->
-paginate: 5
+paginate: 10
 permalink: pretty
 
 gems:
