@@ -3,6 +3,10 @@ title: "Ruby's New &.!= Operator"
 date: 2016-01-04 05:28 UTC
 ---
 
+<div class="panel callout">
+  <a href="https://ruby5.codeschool.com/episodes/655-episode-611-january-12th-2016/stories/5157-ruby-s-new-operator">Included in episode #611 of Ruby5.</a>
+</div>
+
 Well, it's actually two operators.
 Sue me.
 The 2.3.0 release of Ruby included the safe navigation operator, `&.`.
