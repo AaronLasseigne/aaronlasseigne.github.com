@@ -11,12 +11,7 @@ From time to time I find myself immersed in my terminal.
 Bouncing around in Tmux[^1] between vim, console and whatever else I'm doing.
 With my terminal in fullscreen mode I don't notice the power draining from my battery.
 
-{% include image.html
-  src="/images/battery-life-in-the-land-of-tmux/osx-battery-warning.jpg"
-  alt="OSX Battery Warning"
-  height=156
-  width=440
-%}
+{% include image.html src="/images/battery-life-in-the-land-of-tmux/osx-battery-warning.jpg" alt="OSX Battery Warning" height=156 width=440 %}
 
 This is a fixable problem.
 <!--more-->
@@ -66,12 +61,7 @@ fi
 There are many ways to display power remaining.
 I decided an homage to Zelda was the only reasonable way to go.
 
-{% include image.html
-  src="/images/battery-life-in-the-land-of-tmux/tmux-status-screenshot.png"
-  alt="Tmux Screen Shot with Heart Based Battery Indicator"
-  height=128
-  width=440
-%}
+{% include image.html src="/images/battery-life-in-the-land-of-tmux/tmux-status-screenshot.png" alt="Tmux Screen Shot with Heart Based Battery Indicator" height=128 width=440 %}
 
 I've only got 40% of my battery left.
 
