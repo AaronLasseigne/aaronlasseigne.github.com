@@ -264,7 +264,11 @@ Eventually you'll get a feel for when it's need and when it's not.
 
 Remember, cloning is good. Just ask [Dolly][3].
 
-<img alt="Dolly the sheep" title="Baahhh!" src="/images/know-ruby-clone-and-dup/dolly.jpg">
+{% include image.html
+  src="/images/know-ruby-clone-and-dup/dolly.jpg"
+  alt="Dolly the sheep"
+  align="left"
+%}
 
 If you enjoyed this post check out others in the [Know Ruby][5] series.
 
