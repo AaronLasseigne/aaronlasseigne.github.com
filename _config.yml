@@ -21,6 +21,11 @@ exclude:
   - package.json
   - Makefile
   - css
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - package.json
+  - node_modules
 
 defaults:
   -
