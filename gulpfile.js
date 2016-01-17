@@ -20,7 +20,8 @@ gulp.task('css', function() {
   return gulp.src('css/**/*.css')
     .pipe(concat('all.css'))
     .pipe(csso())
-    .pipe(gulp.dest('assets'));
+    .pipe(gulp.dest('assets'))
+    .pipe(gulp.dest(siteDir + '/assets'));
 });
 
 gulp.task('site', function() {
