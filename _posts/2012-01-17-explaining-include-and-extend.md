@@ -41,7 +41,7 @@ The class methods (i.e. `who_am_i`) are stored on `'A`.
 # => [:who_am_i]
 {% endhighlight %}
 
-![a class and its singleton](/images/explaining-include-and-extend/1.png)
+{% include image.html src="/images/explaining-include-and-extend/1.png" alt="a class and its singleton" align="left" %}
 
 This same process happens with instance objects.
 If we have an instance of `A` and we add a method to it we can't store it on the instance.
@@ -57,7 +57,7 @@ end
 
 Once again we create a singleton class for `a` to store the `not_so_loud` method.
 
-![an instance and its singleton](/images/explaining-include-and-extend/2.png)
+{% include image.html src="/images/explaining-include-and-extend/2.png" alt="an instance and its singleton" align="left" %}
 
 Now we have a method that only belongs to `a` and does not affect other instances of `A`.
 
@@ -80,7 +80,7 @@ class A
 end
 {% endhighlight %}
 
-![include M on A](/images/explaining-include-and-extend/3.png)
+{% include image.html src="/images/explaining-include-and-extend/3.png" alt="include M on A" align="left" %}
 
 We can see that this is the case by checking `A`'s ancestors.
 
@@ -99,7 +99,7 @@ class A
 end
 {% endhighlight %}
 
-![extend M on A](/images/explaining-include-and-extend/4.png)
+{% include image.html src="/images/explaining-include-and-extend/4.png" alt="extend M on A" align="left" %}
 
 Once again we can confirm this by checking `'A`'s ancestors.
 
@@ -119,7 +119,7 @@ a.extend(M)
 # => [M, A, Object, Kernel, BasicObject]
 {% endhighlight %}
 
-![instance of a extended by M](/images/explaining-include-and-extend/5.png)
+{% include image.html src="/images/explaining-include-and-extend/5.png" alt="instance of a extended by M" align="left" %}
 
 If you think of `extend` as a way to add class methods then what we just did doesn't make much sense.
 Once you reframe it as adding methods to the singleton of an object the picture above becomes more clear.
@@ -158,11 +158,11 @@ c = C.new
 
 This works by first including `M` into `C`'s inheritance chain.
 
-![include M on C](/images/explaining-include-and-extend/6.png)
+{% include image.html src="/images/explaining-include-and-extend/6.png" alt="include M on C" align="left" %}
 
 Then we `extend` from `C` which adds the methods to `'C`'s inheritance chain.
 
-![extend M on C](/images/explaining-include-and-extend/7.png)
+{% include image.html src="/images/explaining-include-and-extend/7.png" alt="extend M on C" align="left" %}
 
 ### Conclusion
 

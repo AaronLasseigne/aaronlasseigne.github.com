@@ -1,0 +1,6 @@
+<div class="image {% if include.align %}{{ include.align }}{% else %}center{% endif %}">
+  <img src="{{ include.src }}" alt="{{ include.alt | escape }}" {% if include.height %}height="{{ include.height }}"{% endif %} {% if include.width %}width="{{ include.width }}"{% endif %}>
+  {% if include.caption %}
+  <em>{{ include.caption }}</em>
+  {% endif %}
+</div>

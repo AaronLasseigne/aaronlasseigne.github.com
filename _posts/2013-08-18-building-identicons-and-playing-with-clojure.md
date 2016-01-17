@@ -118,7 +118,7 @@ The size needs to be a multiple of 6 so that it fits the grid properly.
 (identicon.core/generate "Aaron" 120)
 {% endhighlight %}
 
-![Black and white identicon for "Aaron"](/images/building-identicons-and-playing-with-clojure/1c0a11cc4ddc0dbd3fa4d77232a4e22e-120-bw.png)
+{% include image.html src="/images/building-identicons-and-playing-with-clojure/1c0a11cc4ddc0dbd3fa4d77232a4e22e-120-bw.png" alt='Black and white identicon for "Aaron"' align="left" %}
 
 ### How do I add color?
 
@@ -158,7 +158,7 @@ There's probably a better way to destructure the sequence that `get-color` retur
 
 Now when we run the same command from earlier we get a colorized version.
 
-![Color identicon for "Aaron"](/images/building-identicons-and-playing-with-clojure/1c0a11cc4ddc0dbd3fa4d77232a4e22e-120.png)
+{% include image.html src="/images/building-identicons-and-playing-with-clojure/1c0a11cc4ddc0dbd3fa4d77232a4e22e-120.png" alt='Color identicon for "Aaron"' align="left" %}
 
 If you want to see all of the code together you can find it [here][6].
 

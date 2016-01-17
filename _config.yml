@@ -3,11 +3,11 @@
 name: AaronLasseigne.com
 url: http://aaronlasseigne.com
 description: Professional coder (mostly Ruby). Avid scholar. Amateur educator.
-highlighter: rouge
+highlighter: pygments
 timezone: Etc/UTC
 encoding: UTF-8
 excerpt_separator: <!--more-->
-paginate: 5
+paginate: 10
 permalink: pretty
 
 gems:
@@ -21,6 +21,11 @@ exclude:
   - package.json
   - Makefile
   - css
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - package.json
+  - node_modules
 
 defaults:
   -

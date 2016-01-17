@@ -3,7 +3,7 @@ title: "Time to Donate: My Experience With Rails Girls"
 date: 2013-02-19 15:42 UTC
 ---
 
-![Dumplings](/images/time-to-donate-my-experience-with-rails-girls/dumplings.jpg)
+{% include image.html src="/images/time-to-donate-my-experience-with-rails-girls/dumplings.jpg" alt="dumplings" %}
 
 During a lunch discussion over some dumplings, [Shufen][1] mentioned that she was going to start a [Rails Girls in Dallas][2].
 Several of us immediately volunteered.
@@ -23,7 +23,7 @@ Saturday gives a taste of programming via Ruby and provides a peek into the powe
 Events are organized independently by local people with [guides][3] that help every step of the way.
 Oh, and because it's a Rails event, there's always a [FridayHug][4].
 
-![Friday Hug](/images/time-to-donate-my-experience-with-rails-girls/FridayHug2.jpg)
+{% include image.html src="/images/time-to-donate-my-experience-with-rails-girls/FridayHug2.jpg" alt="Friday Hug" %}
 
 ### Good Things Come to Those Who Give
 It turns out that I did meet curious teens, mothers going back to work, and aspiring entrepreneurs.
@@ -32,7 +32,7 @@ The teen's stepfather was a programmer and this gave them the opportunity to lea
 I got the chance to practice teaching and share my passion for programming.
 I knew some of the coaches before hand but I met others that shared my enthusiasm and who I've talked with since (one even came out to a hack night that my employer hosts).
 
-![Rails Girls Coaches](/images/time-to-donate-my-experience-with-rails-girls/coaches.jpg)
+{% include image.html src="/images/time-to-donate-my-experience-with-rails-girls/coaches.jpg" alt="Rails Girls Coaches" %}
 
 Rails Girls doesn't pay coaches or speakers but our event covered breakfast, lunch and a free t-shirt.
 One sponser paid for our coaches dinner on Friday night.
