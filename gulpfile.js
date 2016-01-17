@@ -9,14 +9,10 @@ var siteDir = '_site';
 var siteFiles = siteDir + '/**';
 
 gulp.task('jekyll', function() {
-  var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', '--drafts']);
+  var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', '--watch', '--drafts']);
 
   jekyll.stdout.on('data', function (data) {
       console.log('jekyll:\t' + data); // works fine
-  });
-
-  jekyll.on('exit', function (code) {
-    console.log('-- Finished Jekyll Build --')
   });
 });
 
@@ -34,16 +30,6 @@ gulp.task('site', function() {
 
 gulp.task('watch', function() {
   gulp.watch('css/**/*.css', ['css']);
-
-  gulp.watch([
-    '*.html', '*/*.html',
-    '*/*.md',
-    'assets/all.css',
-    'images/*',
-    'font/*',
-    '*.atom', '*.xml',
-    '!' + siteFiles
-  ], ['jekyll']);
 
   gulp.watch(siteFiles, ['site']);
 });
