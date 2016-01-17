@@ -1,14 +1,59 @@
+var spawn = require('child_process').spawn;
 var gulp = require('gulp');
 var concat = require('gulp-concat');
+var connect = require('gulp-connect');
 var csso = require('gulp-csso');
+var livereload = require('gulp-livereload');
 
-gulp.task('compile', function() {
+var siteDir = '_site';
+var siteFiles = siteDir + '/**';
+
+gulp.task('jekyll', function() {
+  var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', '--drafts']);
+
+  jekyll.stdout.on('data', function (data) {
+      console.log('jekyll:\t' + data); // works fine
+  });
+
+  jekyll.on('exit', function (code) {
+    console.log('-- Finished Jekyll Build --')
+  });
+});
+
+gulp.task('css', function() {
   return gulp.src('css/**/*.css')
     .pipe(concat('all.css'))
     .pipe(csso())
     .pipe(gulp.dest('assets'));
 });
 
-gulp.task('watch', function() {
-  gulp.watch('css/**/*.css', ['compile']);
+gulp.task('site', function() {
+  gulp.src(siteFiles)
+    .pipe(connect.reload());
 });
+
+gulp.task('watch', function() {
+  gulp.watch('css/**/*.css', ['css']);
+
+  gulp.watch([
+    '*.html', '*/*.html',
+    '*/*.md',
+    'assets/all.css',
+    'images/*',
+    'font/*',
+    '*.atom', '*.xml',
+    '!' + siteFiles
+  ], ['jekyll']);
+
+  gulp.watch(siteFiles, ['site']);
+});
+
+gulp.task('serve', function() {
+  connect.server({
+    port: 4000,
+    root: siteDir,
+    livereload: true
+  });
+});
+
+gulp.task('default', ['css', 'jekyll', 'serve', 'watch']);
