@@ -87,7 +87,7 @@ Let's run through that first list again.
 # => NoMethodError: undefined method `[]' for nil:NilClass
 {% endhighlight %}
 
-By using `[]` instead of `=~` we've kept he integrity of the method while adding specificity.
+By using `[]` instead of `=~` we've kept the integrity of the method while adding specificity.
 We've specified the type of duck more accurately.
 
 ### Getting Our Ducks in a Row
