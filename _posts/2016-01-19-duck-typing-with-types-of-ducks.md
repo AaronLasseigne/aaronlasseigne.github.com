@@ -100,4 +100,4 @@ The key is intentionality.
 We must understand that the methods we call shape the objects we allow.
 
 [bacon cannon]: https://twitter.com/j3/status/481513178266734592
-[remember back]: http://localhost:4000/2014/06/04/know-ruby-string-accessor/#regexp-capture
+[remember back]: {% post_url 2014-06-04-know-ruby-string-accessor %}#regexp-capture
