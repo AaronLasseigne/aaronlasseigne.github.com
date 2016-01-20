@@ -16,10 +16,6 @@ gems:
 
 exclude:
   - CNAME
-  - fontello-config.json
-  - cogs.json
-  - package.json
-  - Makefile
   - css
   - Gemfile
   - Gemfile.lock
