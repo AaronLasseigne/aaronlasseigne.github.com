@@ -35,23 +35,18 @@
   </head>
   <body>
     <div id="header">
-      <div class="row container">
-        <div class="small-9 medium-6 columns">
+      <div class="container">
+        <div class="logo">
           <a href="/">
-            <img id="photo" alt="Photo of {{ site.data.author.name }}" src="{{ site.data.author.image }}?s=200">
-            <h1 id="name">{{ site.data.author.name | replace: ' ', '<br>' }}</h1>
+            <img alt="Photo of {{ site.data.author.name }}" src="{{ site.data.author.image }}?s=200">
+            <h1>{{ site.data.author.name | replace: ' ', '<br>' }}</h1>
           </a>
           <div class="arrow-up"></div>
         </div>
-        <div id="menu-icon-container" class="show-for-small-only small-3 columns bottom-text-container" aria-hidden="true">
-          <i id="menu-icon" class="icon-menu" onClick="javascript:toggleMenu()"></i>
-        </div>
-        <div role="navigation menu" id="nav-menu" class="medium-6 columns bottom-text-container">
-          <ul>
-            <li{% if page.url != '/about/' %} class="current"{% endif %}><a href="/">Posts</a></li>
-            <li{% if page.url == '/about/' %} class="current"{% endif %}><a href="/about">About</a></li>
-          </ul>
-        </div>
+        <ul role="navigation menu" class="menu">
+          <li{% if page.url != '/about/' %} class="current"{% endif %}><a href="/">Posts</a></li>
+          <li{% if page.url == '/about/' %} class="current"{% endif %}><a href="/about">About</a></li>
+        </ul>
       </div>
     </div>
 
@@ -78,12 +73,5 @@
         &copy; 2012 - 2016
       </div>
     </div>
-
-    <script>
-      function toggleMenu() {
-        document.getElementById('menu-icon').classList.toggle('current');
-        document.getElementById('nav-menu').classList.toggle('show-menu');
-      }
-    </script>
   </body>
 </html>
