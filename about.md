@@ -1,6 +1,5 @@
 ---
 title: "About"
-class: about
 ---
 
 I'm a freelance software developer and author.
