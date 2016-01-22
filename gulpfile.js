@@ -1,6 +1,7 @@
 var spawn = require('child_process').spawn;
 
 var gulp = require('gulp');
+var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 var csso = require('gulp-csso');
@@ -22,6 +23,10 @@ gulp.task('css', function() {
   gulp.src(['css/**/*.css', 'css/**/*.scss'])
     .pipe(scss().on('error', scss.logError))
     .pipe(concat('all.css'))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(csso())
     .pipe(gulp.dest('assets'))
     .pipe(gulp.dest(siteDir + '/assets'));
