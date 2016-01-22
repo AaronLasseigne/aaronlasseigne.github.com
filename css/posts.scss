@@ -9,3 +9,13 @@
     background: #f2fafd;
   }
 }
+
+.footnotes {
+  li {
+    list-style-type: decimal !important;
+  }
+
+  p {
+    margin: 0;
+  }
+}
