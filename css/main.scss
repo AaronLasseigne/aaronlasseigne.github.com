@@ -1,0 +1,78 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  color: #222;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+
+  @media only screen and (min-width: 40.063em) {
+    font-size: 3rem;
+  }
+}
+
+h3 {
+  font-size: 1.6875rem;
+}
+
+a {
+  color: #20ade5;
+  text-decoration: none;
+
+  &:hover {
+    color: #1797C9;
+  }
+}
+
+time {
+  color: #9e9e9e;
+  display: block;
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-bottom: 1.875em;
+}
+
+.container {
+  max-width: 700px;
+  min-width: 320px;
+  margin: auto;
+}
+
+ol.posts {
+  padding-left: 0;
+  list-style-type: none;
+
+  li {
+    margin-bottom: 3.75em;
+
+    > a {
+      color: #222;
+    }
+  }
+}
+
+figure {
+  margin-left: 0 !important;
+}
+
+.footnotes {
+  li {
+    list-style-type: decimal !important;
+  }
+
+  p {
+    margin: 0;
+  }
+}

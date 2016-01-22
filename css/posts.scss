@@ -1,0 +1,11 @@
+.panel {
+  border: 1px solid #d8d8d8;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  background: #f2f2f2;
+
+  &.callout {
+    border-color: #c1e8f8;
+    background: #f2fafd;
+  }
+}

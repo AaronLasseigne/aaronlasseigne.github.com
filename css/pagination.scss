@@ -1,0 +1,23 @@
+ul.pagination {
+  display: flex;
+  justify-content: center;
+
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    margin-left: 0.3125rem;
+
+    a {
+      color: #999;
+      border-radius: 3px;
+      padding: 0.0625rem 0.625rem 0.0625rem;
+    }
+
+    &.current a {
+      background-color: #20ade5;
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
