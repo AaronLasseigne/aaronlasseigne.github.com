@@ -8,8 +8,13 @@
     justify-content: space-between;
     flex-wrap: wrap;
 
-    height: 150px;
-    padding: $spacing;
+    height: 170px;
+    padding-top: $spacing;
+
+    @media only screen and (min-width: $screen-small) {
+      height: 150px;
+      padding: $spacing;
+    }
   }
 
   .logo {
@@ -61,29 +66,79 @@
   }
 
   ul {
-    flex-basis: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 
+    flex: 1;
     @media only screen and (min-width: $screen-small) {
-      flex-basis: 210px;
+      flex: 0 1 190px;
     }
 
     display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
+    @media only screen and (min-width: $screen-small) {
+      align-items: flex-end;
+      justify-content: space-around;
+    }
 
-    list-style-type: none;
-    margin: 0;
+    font-size: 1.4em;
 
     li {
+      flex: 1;
+
+      display: flex;
+      align-items: center;
+
+      text-align: center;
+
       a {
+        flex: 1;
+
         color: $subtle;
-        font-size: 1.4em;
       }
 
-      &.current a {
-        color: $white;
+      &.current {
+        background-color: $white;
         font-weight: bold;
+        @media only screen and (min-width: $screen-small) {
+          background-color: transparent;
+        }
+
+        a {
+          color: $body-text;
+          @media only screen and (min-width: $screen-small) {
+            color: $white;
+          }
+        }
       }
     }
   }
+
+  /* ul { */
+  /*   flex-basis: 100%; */
+  /*  */
+  /*   @media only screen and (min-width: $screen-small) { */
+  /*     flex-basis: 210px; */
+  /*   } */
+  /*  */
+  /*   display: flex; */
+  /*   align-items: flex-end; */
+  /*   justify-content: space-around; */
+  /*  */
+  /*   list-style-type: none; */
+  /*   margin: 0; */
+  /*   padding: 0; */
+  /*  */
+  /*   li { */
+  /*     a { */
+  /*       color: $subtle; */
+  /*       font-size: 1.4em; */
+  /*     } */
+  /*  */
+  /*     &.current a { */
+  /*       color: $white; */
+  /*       font-weight: bold; */
+  /*     } */
+  /*   } */
+  /* } */
 }
