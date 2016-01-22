@@ -20,7 +20,7 @@ gulp.task('jekyll', function() {
 });
 
 gulp.task('css', function() {
-  gulp.src(['css/**/*.css', 'css/**/*.scss'])
+  gulp.src(['css/**/*.css', 'css/**/*.scss', '!css/variables.scss'])
     .pipe(scss().on('error', scss.logError))
     .pipe(concat('all.css'))
     .pipe(autoprefixer({

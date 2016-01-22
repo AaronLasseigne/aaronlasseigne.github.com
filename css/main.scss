@@ -1,9 +1,11 @@
+@import 'variables';
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
 body {
-  color: #222;
+  color: $body-text;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 150%;
@@ -18,7 +20,7 @@ h1, h2, h3, h4 {
 h2 {
   font-size: 2.5rem;
 
-  @media only screen and (min-width: 40.063em) {
+  @media only screen and (min-width: $screen-small) {
     font-size: 3rem;
   }
 }
@@ -28,20 +30,20 @@ h3 {
 }
 
 a {
-  color: #20ade5;
+  color: $primary;
   text-decoration: none;
 
   &:hover {
-    color: #1797C9;
+    color: $primary-dark;
   }
 }
 
 time {
-  color: #9e9e9e;
+  color: $subtle;
   display: block;
   font-size: 0.8rem;
   font-style: italic;
-  margin-bottom: 1.875em;
+  margin-bottom: $spacing;
 }
 
 .container {
@@ -55,10 +57,10 @@ ol.posts {
   list-style-type: none;
 
   li {
-    margin-bottom: 3.75em;
+    margin-bottom: $spacing * 4;
 
     > a {
-      color: #222;
+      color: $body-text;
     }
   }
 }

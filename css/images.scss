@@ -1,0 +1,20 @@
+@import 'variables';
+
+.image {
+  margin-bottom: 1.25rem;
+  width: 100%;
+
+  &.center {
+    text-align: center;
+  }
+
+  &.left {
+    text-align: left;
+  }
+
+  > em {
+    color: $subtle;
+    display: block;
+    font-size: 0.8rem;
+  }
+}

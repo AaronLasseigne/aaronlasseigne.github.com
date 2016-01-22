@@ -1,3 +1,5 @@
+@import 'variables';
+
 #header {
   background-color: #393939;
 
@@ -7,13 +9,13 @@
     flex-wrap: wrap;
 
     height: 150px;
-    padding: 0.9375em;
+    padding: $spacing;
   }
 
   .logo {
     flex-basis: 100%;
 
-    @media only screen and (min-width: 40.063em) {
+    @media only screen and (min-width: $screen-small) {
       flex-basis: 300px;
     }
 
@@ -22,37 +24,37 @@
       justify-content: center;
       align-items: center;
 
-      @media only screen and (min-width: 40.063em) {
+      @media only screen and (min-width: $screen-small) {
         justify-content: flex-start;
       }
     }
 
     img {
-      border-radius: 0.9375em;
+      border-radius: $spacing;
       height: 80px;
       width: 80px;
 
-      @media only screen and (min-width: 40.063em) {
+      @media only screen and (min-width: $screen-small) {
         height: 100px;
         width: 100px;
       }
     }
 
     h1 {
-      color: #fff;
+      color: $white;
       font-size: 2em;
-      margin: 0 0 0 0.46875em;
+      margin: 0 0 0 ($spacing / 2);
     }
 
     .arrow-up {
-      @media only screen and (min-width: 40.063em) {
+      @media only screen and (min-width: $screen-small) {
         border-left: 20px solid transparent;
         border-right: 20px solid transparent;
-        border-bottom: 20px solid #fff;
+        border-bottom: 20px solid $white;
         height: 0;
         width: 0;
 
-        margin-top: 0.9375em;
+        margin-top: $spacing;
         margin-left: 30px;
       }
     }
@@ -61,7 +63,7 @@
   ul {
     flex-basis: 100%;
 
-    @media only screen and (min-width: 40.063em) {
+    @media only screen and (min-width: $screen-small) {
       flex-basis: 210px;
     }
 
@@ -74,12 +76,12 @@
 
     li {
       a {
-        color: #9e9e9e;
+        color: $subtle;
         font-size: 1.4em;
       }
 
       &.current a {
-        color: #fff;
+        color: $white;
         font-weight: bold;
       }
     }

@@ -1,3 +1,5 @@
+@import 'variables';
+
 ul.pagination {
   display: flex;
   justify-content: center;
@@ -9,15 +11,19 @@ ul.pagination {
     margin-left: 0.3125rem;
 
     a {
-      color: #999;
+      color: $subtle;
       border-radius: 3px;
       padding: 0.0625rem 0.625rem 0.0625rem;
     }
 
     &.current a {
-      background-color: #20ade5;
-      color: white;
+      background-color: $primary;
+      color: $white;
       font-weight: bold;
+      
+      &:hover {
+        background-color: $primary-dark;
+      }
     }
   }
 }
