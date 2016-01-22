@@ -12,7 +12,11 @@
     text-align: left;
   }
 
-  > em {
+  img {
+    max-width: 100%;
+  }
+
+  em {
     color: $subtle;
     display: block;
     font-size: 0.8rem;
