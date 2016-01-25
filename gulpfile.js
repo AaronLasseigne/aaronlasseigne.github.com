@@ -24,7 +24,7 @@ gulp.task('jekyll', function() {
 });
 
 gulp.task('css', function() {
-  gulp.src([cssFiles, '!css/variables.scss'])
+  gulp.src(cssFiles)
     .pipe(scss().on('error', scss.logError))
     .pipe(concat('all.css'))
     .pipe(autoprefixer({
@@ -42,7 +42,7 @@ gulp.task('site', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch([cssFiles], ['css']);
+  gulp.watch(cssFiles, ['css']);
 
   gulp.watch(siteFiles, ['site']);
 });
