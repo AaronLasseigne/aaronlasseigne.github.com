@@ -16,7 +16,6 @@ gems:
 
 exclude:
   - CNAME
-  - css
   - Gemfile
   - Gemfile.lock
   - gulpfile.js

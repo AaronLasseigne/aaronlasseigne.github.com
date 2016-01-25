@@ -11,7 +11,7 @@ var scss = require('gulp-sass');
 
 var siteDir = '_site';
 var siteFiles = siteDir + '/**';
-var cssFiles = 'css/**/*.?(s)css';
+var cssFiles = '_css/**/*.?(s)css';
 
 gulp.task('jekyll', function() {
   var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', '--watch', '--drafts']);
