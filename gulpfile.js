@@ -5,6 +5,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 var csso = require('gulp-csso');
+var gutil = require('gulp-util');
 var livereload = require('gulp-livereload');
 var scss = require('gulp-sass');
 
@@ -14,8 +15,10 @@ var siteFiles = siteDir + '/**';
 gulp.task('jekyll', function() {
   var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', '--watch', '--drafts']);
 
-  jekyll.stdout.on('data', function (data) {
-    console.log('jekyll: ' + data);
+  jekyll.stdout.on('data', function (buffer) {
+    buffer.toString().trim().split(/\s*\n\s*/).forEach(function(message){
+      gutil.log('Jekyll: ' + message);
+    });
   });
 });
 
