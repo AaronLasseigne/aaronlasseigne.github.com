@@ -11,6 +11,7 @@ var scss = require('gulp-sass');
 
 var siteDir = '_site';
 var siteFiles = siteDir + '/**';
+var cssFiles = 'css/**/*.?(s)css';
 
 gulp.task('jekyll', function() {
   var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', '--watch', '--drafts']);
@@ -23,7 +24,7 @@ gulp.task('jekyll', function() {
 });
 
 gulp.task('css', function() {
-  gulp.src(['css/**/*.css', 'css/**/*.scss', '!css/variables.scss'])
+  gulp.src([cssFiles, '!css/variables.scss'])
     .pipe(scss().on('error', scss.logError))
     .pipe(concat('all.css'))
     .pipe(autoprefixer({
@@ -41,7 +42,7 @@ gulp.task('site', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['css/**/*.css', 'css/**/*.scss'], ['css']);
+  gulp.watch([cssFiles], ['css']);
 
   gulp.watch(siteFiles, ['site']);
 });
