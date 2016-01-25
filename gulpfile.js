@@ -15,7 +15,7 @@ gulp.task('jekyll', function() {
   var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', '--watch', '--drafts']);
 
   jekyll.stdout.on('data', function (data) {
-      console.log('jekyll:\t' + data);
+    console.log('jekyll: ' + data);
   });
 });
 
