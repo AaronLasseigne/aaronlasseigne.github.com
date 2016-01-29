@@ -6,7 +6,6 @@ var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 var csso = require('gulp-csso');
 var gutil = require('gulp-util');
-var livereload = require('gulp-livereload');
 var scss = require('gulp-sass');
 
 var siteDir = '_site';
