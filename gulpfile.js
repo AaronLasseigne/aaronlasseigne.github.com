@@ -20,8 +20,7 @@ gulp.task('css', function () {
       cascade: false
     }))
     .pipe(csso())
-    .pipe(gulp.dest('assets'))
-    .pipe(gulp.dest(siteRoot + '/assets'));
+    .pipe(gulp.dest('assets'));
 });
 
 gulp.task('jekyll', function () {
