@@ -1,4 +1,4 @@
-var spawn = require('child_process').spawn;
+var child = require('child_process');
 
 var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
@@ -14,7 +14,7 @@ var siteFiles = siteDir + '/**';
 var cssFiles = '_css/**/*.?(s)css';
 
 gulp.task('jekyll', function () {
-  var jekyll = spawn('bundle', ['exec', 'jekyll', 'build', '--watch', '--drafts']);
+  var jekyll = child.spawn('bundle', ['exec', 'jekyll', 'build', '--watch', '--drafts']);
 
   jekyll.stdout.on('data', function (buffer) {
     buffer.toString().trim().split(/\s*\n\s*/).forEach(function (message) {
