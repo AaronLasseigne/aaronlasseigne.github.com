@@ -5,7 +5,7 @@ url: http://aaronlasseigne.com
 description: Professional coder (mostly Ruby). Avid scholar. Amateur educator.
 highlighter: pygments
 timezone: Etc/UTC
-encoding: UTF-8
+encoding: utf-8
 excerpt_separator: <!--more-->
 paginate: 10
 permalink: pretty
