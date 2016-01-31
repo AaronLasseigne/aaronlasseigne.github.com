@@ -43,7 +43,7 @@ gulp.task('serve', () => {
     server: {
       baseDir: siteRoot
     }
-  })
+  });
 
   gulp.watch(cssFiles, ['css']);
 });
