@@ -1,9 +1,9 @@
 const child = require('child_process');
+const browserSync = require('browser-sync').create();
 
 const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
 const concat = require('gulp-concat');
-const connect = require('gulp-connect');
 const csso = require('gulp-csso');
 const gutil = require('gulp-util');
 const scss = require('gulp-sass');
@@ -23,7 +23,7 @@ gulp.task('css', () => {
     .pipe(gulp.dest('assets'));
 });
 
-gulp.task('jekyll', () => {
+gulp.task('build', () => {
   const jekyll = child.spawn('bundle', ['exec', 'jekyll', 'build', '--watch', '--drafts']);
 
   jekyll.stdout.on('data', (buffer) => {
@@ -35,20 +35,17 @@ gulp.task('jekyll', () => {
 });
 
 gulp.task('serve', () => {
-  connect.server({
+  browserSync.init({
+    files: [siteRoot + '/**'],
+    notify: false,
+    open: false,
     port: 4000,
-    root: siteRoot,
-    livereload: true
-  });
-});
+    server: {
+      baseDir: siteRoot
+    }
+  })
 
-gulp.task('watch', () => {
   gulp.watch(cssFiles, ['css']);
-
-  gulp.watch(siteRoot + '/**', (event) => {
-    gulp.src(event.path)
-      .pipe(connect.reload());
-  });
 });
 
-gulp.task('default', ['css', 'jekyll', 'serve', 'watch']);
+gulp.task('default', ['css', 'build', 'serve']);
