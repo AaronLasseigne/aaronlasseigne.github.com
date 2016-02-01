@@ -4,7 +4,7 @@ const browserSync = require('browser-sync').create();
 const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
 const concat = require('gulp-concat');
-const csso = require('gulp-csso');
+const css_minify = require('gulp-cssnano');
 const gutil = require('gulp-util');
 const scss = require('gulp-sass');
 
@@ -19,7 +19,7 @@ gulp.task('css', () => {
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(csso())
+    .pipe(css_minify())
     .pipe(gulp.dest('assets'));
 });
 
