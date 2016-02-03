@@ -24,7 +24,7 @@ gulp.task('css', () => {
 });
 
 gulp.task('build', () => {
-  const jekyll = child.spawn('bundle', ['exec', 'jekyll', 'build', '--watch', '--drafts']);
+  const jekyll = child.spawn('bundle', ['exec', 'jekyll', 'build', '--watch', '--incremental', '--drafts']);
 
   const jekyllLogger = (buffer) => {
     buffer.toString()
