@@ -26,12 +26,14 @@ gulp.task('css', () => {
 gulp.task('build', () => {
   const jekyll = child.spawn('bundle', ['exec', 'jekyll', 'build', '--watch', '--drafts']);
 
-  jekyll.stdout.on('data', (buffer) => {
+  const jekyllLogger = (buffer) => {
     buffer.toString()
-      .trim()
-      .split(/\s*\n\s*/)
+      .split(/\n/)
       .forEach((message) => gutil.log('Jekyll: ' + message));
-  });
+  };
+
+  jekyll.stdout.on('data', jekyllLogger);
+  jekyll.stderr.on('data', jekyllLogger);
 });
 
 gulp.task('serve', () => {
