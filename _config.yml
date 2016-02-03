@@ -3,7 +3,7 @@
 name: AaronLasseigne.com
 url: http://aaronlasseigne.com
 description: Freelance coder. Avid scholar. Amateur educator.
-highlighter: pygments
+highlighter: rouge
 timezone: Etc/UTC
 encoding: utf-8
 excerpt_separator: <!--more-->
