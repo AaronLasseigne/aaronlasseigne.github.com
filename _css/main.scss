@@ -69,3 +69,10 @@ ol.posts {
 figure {
   margin-left: 0 !important;
 }
+
+blockquote {
+  color: $subtle;
+  border-left: 1px solid $subtle;
+  margin: $spacing;
+  padding-left: $spacing;
+}
