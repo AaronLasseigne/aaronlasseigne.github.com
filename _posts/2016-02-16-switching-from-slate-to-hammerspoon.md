@@ -25,7 +25,7 @@ While looking for a replacement I stumbled across something new.
 
 <!--more-->
 
-## Hammerspoon
+### Hammerspoon
 
 It isn't a window manager.
 [Hammerspoon] bills itself as, "a tool for powerful automation of OS X."
@@ -39,7 +39,7 @@ Slate's configuration is done through a series of directives.
 It limits what you can do.
 Hammerspoon hands you Lua and figures if you want to burn the house down it was yours to begin with.
 
-## Let's Talk About Lua
+### Let's Talk About Lua
 
 I'd never worked with Lua before Hammerspoon.
 It raised a red flag for me.
@@ -53,7 +53,7 @@ Only enough to glue some interfaces together.
 At no point in my Hammerspoon progression was Lua the bottleneck.
 My concern was unfounded.
 
-## Moving Windows
+### Moving Windows
 
 I don't have a particularly complex setup.
 But what I do have are a very particular set of keys, keys that I have become acquainted with over my career.
@@ -175,7 +175,7 @@ Hammerspoon comes with a grid system out of the box.
 I started with it but decided to pivot and roll my own.
 It wasn't significantly harder and it let me reuse the positioning in my layouts.
 
-## Layouts
+### Layouts
 
 Hammerspoon has built in support for layouts.
 
@@ -206,7 +206,7 @@ It's basically an [Alfred] window.
 
 Eventually I hope to switch to using Alfred directly.
 
-## Future Work
+### Future Work
 
 You can see everything I've done so far in my [current config].
 I'm sure there's room for improvement but it's a good start.
