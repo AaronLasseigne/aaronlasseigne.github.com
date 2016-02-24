@@ -20,17 +20,17 @@ Tmux provides a constant status bar at the bottom of the screen.
 Let's add a battery indicator to right side of the status bar.
 While we're adding that we might as well tack on the time and date.
 
-{% highlight bash %}
+```sh
 # status prompt
 set -g status-right '#(~/bin/tmux_battery_charge_indicator.sh) #[bg=white,fg=colour240] %H:%M #[bg=colour240,fg=white] %Y-%m-%d '
 set -g status-utf8 on
-{% endhighlight %}
+```
 
 Of course for this to work we need a script that outputs an indication of how much battery we have remaining.
 
 *Note: The script works in Moutain Lion and on linux.*
 
-{% highlight bash %}
+```sh
 #!/bin/bash
 
 HEART='♥'
@@ -56,7 +56,7 @@ if [[ $charged_slots -lt 10 ]]; then
   echo -n '#[fg=white]'
   for i in `seq 1 $(echo "10-$charged_slots" | bc)`; do echo -n "$HEART"; done
 fi
-{% endhighlight %}
+```
 
 There are many ways to display power remaining.
 I decided an homage to Zelda was the only reasonable way to go.

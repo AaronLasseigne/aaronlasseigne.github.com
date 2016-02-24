@@ -6,17 +6,17 @@ excerpt: Instead of individual alter statements we combine them inside <code>cha
 
 A migration:
 
-{% highlight ruby %}
+```ruby
 def up
   add_column :table, :useful_foreign_key, :integer
   add_index :table, :useful_foreign_key
   add_column :table, :summary, :string
 end
-{% endhighlight %}
+```
 
 Executed on a large table:
 
-{% highlight ruby %}
+```sh
 ==  Table: migrating ===============================
 -- add_column(:table, :useful_foreign_key, :integer)
   -> 2731.1005s
@@ -25,7 +25,7 @@ Executed on a large table:
 -- add_column(:table, :summary, :string)
   -> 2819.9803s
 ==  Table: migrated (8255.9236s) ======================
-{% endhighlight %}
+```
 
 According to my made up but based on having done this a bunch of times numbers that's almost 2.5 hours!
 Production is going to have to go down for hours to run this.
@@ -36,26 +36,26 @@ Time to break out `execute` and do it by hand, right?
 
 Nope, there's a better option.
 
-{% highlight ruby %}
+```ruby
 def up
-  change_table :table, :bulk => true do |t| 
+  change_table :table, :bulk => true do |t|
     t.integer :useful_foreign_key
     t.index   :useful_foreign_key
     t.string  :summary
   end
 end
-{% endhighlight %}
+```
 
 Instead of individual alter statements we combine them inside `change_table` and pass `:bulk => true`.
 
 Now when we execute:
 
-{% highlight ruby %}
+```sh
 ==  Table: migrating =================
 -- change_table(:table, {:bulk=>true})
   -> 2774.1011s
 ==  Table: migrated (2774.1011s) ========
-{% endhighlight %}
+```
 
 The alter statements have been combined into one statement and the total time to migrate is slightly more than running just one of the alters (again this is with MySQL).
 

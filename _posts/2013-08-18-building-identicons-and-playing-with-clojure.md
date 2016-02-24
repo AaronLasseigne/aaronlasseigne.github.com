@@ -18,29 +18,29 @@ After a brief search it looked like my best bet was to outsource this task to Ja
 
 Start by creating a `BufferedImage`:
 
-{% highlight clojure %}
+```clojure
 icon (BufferedImage. 120 120 BufferedImage/TYPE_INT_RGB)
-{% endhighlight %}
+```
 
 Then get a `Graphics2D` so you can draw on the image:
 
-{% highlight clojure %}
+```clojure
 draw (.createGraphics icon)
-{% endhighlight %}
+```
 
 From there you can draw lines, fill in rectangles, and color like a blissful two-year-old.
 
-{% highlight clojure %}
+```clojure
 ;; draw a white 8x8 square drawn in the upper left corner
 (.setColor draw (Color/WHITE))
 (.fillRect draw 0 0 8 8)))
-{% endhighlight %}
+```
 
 When you're done, saving is easy:
 
-{% highlight clojure %}
+```clojure
 (ImageIO/write icon "png" (File. "some-file-name.png"))
-{% endhighlight %}
+```
 
 ### How do I generate a more consistent identifier?
 
@@ -53,10 +53,10 @@ It's fast and close enough to unique for the purposes of my project.
 MD5 generates a 32 digit string of hexidecimal numbers regardless of what input you give it.
 Clojure was ready for me this time with a library called [Digest][5].
 
-{% highlight clojure %}
+```clojure
 > (digest/md5 "Aaron")
 ;; "1c0a11cc4ddc0dbd3fa4d77232a4e22e"
-{% endhighlight %}
+```
 
 ### How do I translate an MD5 string into an image?
 
@@ -70,10 +70,10 @@ Then I could leverage that to turn on certain blocks.
 Since each characters represents a hexidecimal digit converting them to booleans was easy.
 All I had to do was check to see if the digit was between 0-7 or 8-15.
 
-{% highlight clojure %}
+```clojure
 ;; to-numbers converts the provided MD5 into a sequence of integers
 (map #(> % 7) (to-numbers md5))
-{% endhighlight %}
+```
 
 #### Mapping to the Grid
 
@@ -83,14 +83,14 @@ This meant that I was only generating half of the grid and then mirroring it.
 It also means that on a 6x6 grid I'm only using 18 of my 32 hexidecimal digits.
 Now I've really increased the chance of a collision but this isn't production so I'm fine with it.
 
-{% highlight clojure %}
+```clojure
 (def tiles-per-side 6)
 
 (defn- in-row
   "Return the row for a particular position in the seq."
   [pos]
   (quot pos (/ tiles-per-side 2)))
- 
+
 (defn- in-col
   "Return the column for a particular position in the seq."
   [pos]
@@ -103,7 +103,7 @@ Now I've really increased the chance of a collision but this isn't production so
     (* (in-col pos) tile-size)
     (* (in-row pos) tile-size)
     tile-size tile-size))
-{% endhighlight %}
+```
 
 The code above only draws half of the grid.
 There's another function called `draw-mirror-tile` that takes the same inputs and draws the mirrored version of the tile.
@@ -114,9 +114,9 @@ I imagine there is a way to draw one half and mirror it using the underlying Jav
 I made a function called `generate` that accepts an identifier and a size.
 The size needs to be a multiple of 6 so that it fits the grid properly.
 
-{% highlight clojure %}
+```clojure
 (identicon.core/generate "Aaron" 120)
-{% endhighlight %}
+```
 
 {% include image.html src="/images/building-identicons-and-playing-with-clojure/1c0a11cc4ddc0dbd3fa4d77232a4e22e-120-bw.png" alt='Black and white identicon for "Aaron"' align="left" %}
 
@@ -126,15 +126,15 @@ The identicon would look better with colors.
 Back in the Java docs I found that I could add color with `setColor`.
 I couldn't figure out the proper way to set a background color so I started by drawing a white rectangle over the entire image.
 
-{% highlight clojure %}
+```clojure
 ;; size passed as the second argument to generate
 (.setColor draw (Color/WHITE))
 (.fillRect draw 0 0 size size)))
-{% endhighlight %}
+```
 
 Then I found a 16 color pastel palette and used the first digit of the hexidecimal sequence to pick one.
 
-{% highlight clojure %}
+```clojure
 (defn- get-color
   [pos]
   (nth '(
@@ -152,7 +152,7 @@ Then I found a 16 color pastel palette and used the first digit of the hexidecim
   (do
     (.setColor draw color)
     ;; other stuff))
-{% endhighlight %}
+```
 
 There's probably a better way to destructure the sequence that `get-color` returns and pass it directly to the `Color` constructor but I got sick of trying to figure it out.
 

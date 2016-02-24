@@ -20,7 +20,7 @@ Let's spend a minute investigating their use in Ruby.
 Below we define a `Person` class that takes a first name, last name, and an age.
 People don't usually mind telling you their name but some are squeamish about revealing their age.
 
-{% highlight ruby %}
+```ruby
 class Person
   attr_reader :first_name, :last_name
 
@@ -38,29 +38,29 @@ class Person
 
   attr_reader :age
 end
-{% endhighlight %}
+```
 
 Let's create a new `Person` and ask them their name.
 
-{% highlight ruby %}
+```ruby
 > john = Person.new('John', 'Doe', 31)
 # => <Person:0x110800cf8 @age=31, @last_name="Doe", @first_name="John">
 > john.name
 # => "John Doe"
-{% endhighlight %}
+```
 
 What happens if we ask about their age?
 
-{% highlight ruby %}
+```ruby
 > john.age
 # => NoMethodError: private method `age' called for #<Person:0x110800cf8>
-{% endhighlight %}
+```
 
 We get an error because `age` is called with the explicit receiver `john`.
 We can still access `age` we just have to do it inside of `Person` and without an explicit receiver.
 Let's explore this by equiping `Person` with a `birthday!` method.
 
-{% highlight ruby %}
+```ruby
 def birthday!
   age += 1
 
@@ -70,14 +70,14 @@ end
 private
 
 attr_accessor :age
-{% endhighlight %}
+```
 
 Now we can call `birthday!` to update their age.
 
-{% highlight ruby %}
+```ruby
 > john.birthday!
 # => NoMethodError: undefined method `+' for nil:NilClass
-{% endhighlight %}
+```
 
 Ruby thinks `age` is a local variable and it's defaulting to `nil`.
 When using a setter in Ruby we're supposed to use an explicit receiver like `self`.
@@ -85,45 +85,45 @@ Here we have a private method that doesn't allow an explicit receiver.
 We appear to have reached an impasse.
 **In this case it turns out Ruby breaks its own rule.**
 
-{% highlight ruby %}
+```ruby
 def birthday!
   self.age += 1
 
   self
 end
-{% endhighlight %}
+```
 
 Now we've got it.
 
-{% highlight ruby %}
+```ruby
 > john.birthday!
 # => NoMethodError: private method `age' called for #<Person:0x110800cf8>
-{% endhighlight %}
+```
 
 Ugh.
 
 We've used `+=` which means that `self.age` is being called as a getter and a setter.
 The setter needs an explicit receiver but the getter can't have one.
 
-{% highlight ruby %}
+```ruby
 def birthday!
   self.age = age + 1
 
   self
 end
-{% endhighlight %}
+```
 
 One more time.
 
-{% highlight ruby %}
+```ruby
 > john.birthday!
 # => #<Person:0x110800cf8 @age=32, @last_name="Doe", @first_name="John">
-{% endhighlight %}
+```
 
 Hurrah!
 Let's see the final class.
 
-{% highlight ruby %}
+```ruby
 class Person
   attr_reader :first_name, :last_name
 
@@ -147,7 +147,7 @@ class Person
 
   attr_accessor :age
 end
-{% endhighlight %}
+```
 
 What if we want to inherit from `Person`?
 **Those `private` methods will be available in the child class just like they are in the parent.**
@@ -160,7 +160,7 @@ Like `private`, `protected` also concerns itself with the receiver.
 
 Who's up for ping pong?
 
-{% highlight ruby %}
+```ruby
 class AbstractPingPongPlayer
   attr_reader :name
 
@@ -201,30 +201,30 @@ class ProPingPongPlayer < AbstractPingPongPlayer
     @skill_level = rand(50) + 50
   end
 end
-{% endhighlight %}
+```
 
 First we'll need two players.
 
-{% highlight ruby %}
+```ruby
 > jane = ProPingPongPlayer.new('Jane')
 # => #<ProPingPongPlayer:0x007fe7cb8dadf0 @name="Jane", @skill_level=95>
 > susan = AmateurPingPongPlayer.new('Susan')
 # => #<AmateurPingPongPlayer:0x007fe7cb8ac748 @name="Susan", @skill_level=30>
-{% endhighlight %}
+```
 
 If you ask Jane how skilled she is you're not going to get an answer.
 
-{% highlight ruby %}
+```ruby
 > jane.skill_level
 # => NoMethodError: protected method `skill_level' called for #<ProPingPongPlayer:0x007fe7cb8dadf0>`
-{% endhighlight %}
+```
 
 Play her and you'll quickly find out.
 
-{% highlight ruby %}
+```ruby
 > susan.play(jane)
 # => "Jane wins!"
-{% endhighlight %}
+```
 
 ### Rule of Thumb
 

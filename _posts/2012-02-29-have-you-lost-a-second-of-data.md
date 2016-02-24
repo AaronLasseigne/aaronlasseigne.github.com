@@ -22,7 +22,7 @@ If, like me, the bulk of your time has been spent working with MySQL then micros
 A typical ActiveRecord `where` call would give you all results from within a second.
 In SQLite that same call gives results from the exact microsecond specified.
 
-{% highlight ruby %}
+```ruby
 > Test.where(created_at: Time.zone.parse('2012-01-01 00:00:01'))
 
 # MySQL
@@ -32,14 +32,14 @@ SELECT "tests".* FROM "tests" WHERE "tests"."created_at" = '2012-01-01 06:00:01'
 # SQLite
 SELECT "tests".* FROM "tests" WHERE "tests"."created_at" = '2012-01-01 06:00:01.000000'
 1 Result
-{% endhighlight %}
+```
 
 Searching for a single second isn't too common.
 How about all records from a particular day?
 
-{% highlight ruby %}
+```ruby
 > Test.where(created_at: Time.zone.parse('2012-01-01 00:00:00')..Time.zone.parse('2012-01-01 23:59:59'))
-{% endhighlight %}
+```
 
 In databases that measure microseconds you're going to be missing any information that occurred between "23:59:59.000000" and "23:59:59.999999".
 You've missed almost a full second of data.
@@ -83,7 +83,7 @@ Make sure to create global scopes, helpers, etc to <abbr title="Don't Repeat You
 One last solution is to stick with ranges.
 Notice in the example below that the range excludes the end value (3 dots rather than 2).
 
-{% highlight ruby %}
+```ruby
 > datetime = Time.zone.parse('2012-01-01')
 > Test.where(created_at: datetime...(datetime.advance(days: 1))
 
@@ -92,7 +92,7 @@ SELECT "tests".* FROM "tests" WHERE ("tests"."created_at" >= '2012-01-01 00:00:0
 
 # SQLite
 SELECT "tests".* FROM "tests" WHERE ("tests"."created_at" >= '2012-01-01 00:00:00.000000' AND "testers"."created_at" < '2012-01-02 00:00:00.000000')
-{% endhighlight %}
+```
 
 That retrieves the entire days data in both MySQL and SQLite.
 The `advance` function includes a variety of increments ranging from seconds to years.

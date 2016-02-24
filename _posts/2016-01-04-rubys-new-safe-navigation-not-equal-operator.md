@@ -24,32 +24,32 @@ Let's say we have an array of integers.
 We want to know if the first one is positive.
 To check we might do something like:
 
-{% highlight ruby %}
+```ruby
 > some_array.first.positive?
 # => true
-{% endhighlight %}
+```
 
 *Note: `positive?` is another new 2.3.0 method.*
 
 What happens if `some_array` is empty?
 
-{% highlight ruby %}
+```ruby
 > [].first.positive?
 # => NoMethodError: undefined method `positive?' for nil:NilClass
-{% endhighlight %}
+```
 
 The call to `first` returns `nil` and `nil` doesn't have a `positive?` method.
 Before 2.3.0 we might have done something like:
 
-{% highlight ruby %}
+```ruby
 (value = some_array.first) && value.positive?
-{% endhighlight %}
+```
 
 Now we can use `&.` to solve our problem.
 
-{% highlight ruby %}
+```ruby
 some_array.first&.positive?
-{% endhighlight %}
+```
 
 If `first` returns `nil` then the entire expression returns `nil`.
 If not then we'll continue down the method chain and call `positive?`.
@@ -62,19 +62,19 @@ On occasion they turn out to be the same link.
 In that case, to reduce noise, I only show the homepage.
 In the template I show the source URL if it exists and is different than the homepage.
 
-{% highlight ruby %}
+```ruby
 if lib.source_url && lib.source_url != lib.homepage_url
   # display source url
 end
-{% endhighlight %}
+```
 
 I can use the safe navigation operator to perform the same check.
 
-{% highlight ruby %}
+```ruby
 if lib.source_url &.!= lib.homepage_url
   # display source url
 end
-{% endhighlight %}
+```
 
 I like that I've DRYed my code.
 Less code means less chance for me or future me to muck it up.

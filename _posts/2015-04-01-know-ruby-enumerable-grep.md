@@ -33,17 +33,17 @@ Legally speaking, I don't think you can call a method `grep` if it doesn't suppo
 
 Given a list of first names let's get all the names that start with a "j".
 
-{% highlight ruby %}
+```ruby
 > %w[bob amber john jane aaron michael nikki].grep(/\Aj/)
 # => ["john", "jane"]
-{% endhighlight %}
+```
 
 The equivalent `select` statement would be:
 
-{% highlight ruby %}
+```ruby
 > %w[bob amber john jane aaron michael nikki].select { |n| n[/\Aj/] }
 # => ["john", "jane"]
-{% endhighlight %}
+```
 
 I like the brevity provided by `grep` in this case.
 
@@ -54,10 +54,10 @@ What other things can it do?
 
 Finding exact matches couldn't be simpler.
 
-{% highlight ruby %}
+```ruby
 > [1, 1, 0, 0, 1].grep(1)
 # => [1, 1, 1]
-{% endhighlight %}
+```
 
 Of course, it's also not too useful.
 Grouping items by values?
@@ -73,29 +73,29 @@ Either way, there it is.
 
 We can also find elements that match a specific class.
 
-{% highlight ruby %}
+```ruby
 > [1, 1.2, 'a', 2].grep(Integer)
 # => [1, 2]
 
 > [1, 1.2, 'a', 2].grep(Numeric)
 # => [1, 1.2, 2]
-{% endhighlight %}
+```
 
 We can even find elements that include a particular module.
 
-{% highlight ruby %}
+```ruby
 > [1, [], {}, 'a'].grep(Enumerable)
 # => [[], {}]
-{% endhighlight %}
+```
 
 ### Range
 
 Want to find all of the B's in a list of test scores?
 
-{% highlight ruby %}
+```ruby
 > Array.new(50) { rand(100) }.grep(80..89)
 #  => [83, 87, 81, 84, 82, 81]
-{% endhighlight %}
+```
 
 It's worth noting that under hood `===` uses `include?` rather than `cover?`.
 That's usually not a concern but it's certainly something to be aware of.
@@ -106,7 +106,7 @@ If you're not familiar with the differences I would recommend checking out this 
 Of course, defining our own meaning for `===` is an option.
 Let's say we have value objects that represent various grades.
 
-{% highlight ruby %}
+```ruby
 class B < Grade
   def self.===(other_or_grade)
     self == other_or_grade || (80..89).include?(other_or_grade)
@@ -115,7 +115,7 @@ end
 
 > Array.new(50) { rand(100) }.grep(B)
 # => [87, 86, 88, 83, 88]
-{% endhighlight %}
+```
 
 ### Proc/Lambda
 
@@ -125,7 +125,7 @@ At that point `proc` (or `lambda`) steps in to save the day.
 Using `===` on a `proc` actually calls it.
 The value on the other side of the `===` is passed in as an argument.
 
-{% highlight ruby %}
+```ruby
 > EVEN = ->(n) { n.even? }
 # => #<Proc:0x007f98031f31d0@(pry):21 (lambda)>
 
@@ -133,24 +133,24 @@ The value on the other side of the `===` is passed in as an argument.
 # => false
 > EVEN === 2
 # => true
-{% endhighlight %}
+```
 
 That's just crazy.
 It should go without saying that under normal circumstances you should never do this.
 It's only there for situations like this:
-{% highlight ruby %}
+```ruby
 > (1..10).grep(EVEN)
 # => [2, 4, 6, 8, 10]
-{% endhighlight %}
+```
 
 At this point are we better off switching to `select`?
 Probably.
 If we use select we can call `even?` without the `proc`.
 
-{% highlight ruby %}
+```ruby
 > (1..10).select(&:even?)
 # => [2, 4, 6, 8, 10]
-{% endhighlight %}
+```
 
 Using the shorthand `&:even?` syntax is one thing `grep` can't do.
 There's a reason for that.
@@ -162,17 +162,17 @@ It takes a pattern _and_ a block.
 Every element that makes it past the pattern filter gets sent to the block.
 It's like doing a `select` and a `map` all at once.
 
-{% highlight ruby %}
+```ruby
 > (1..10).select(&:even?).map { |n| n * 2 }
 # => [4, 8, 12, 16, 20]
-{% endhighlight %}
+```
 
 Becomes:
 
-{% highlight ruby %}
+```ruby
 > (1..10).grep(EVEN) { |n| n * 2 }
 # => [4, 8, 12, 16, 20]
-{% endhighlight %}
+```
 
 Instinctually, I thought the `grep` version would be faster.
 It's only looping over the elements once.

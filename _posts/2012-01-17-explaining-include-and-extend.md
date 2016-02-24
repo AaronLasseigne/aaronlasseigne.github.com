@@ -20,7 +20,7 @@ To figure this out we're going to start by discussing where methods are stored.
 Objects in Ruby do not store their own methods.
 Instead, they create a singleton class to hold onto their methods.
 
-{% highlight ruby %}
+```ruby
 class A
   def self.who_am_i
     puts self
@@ -30,16 +30,16 @@ class A
     puts input.upcase
   end
 end
-{% endhighlight %}
+```
 
 The interpreter will create an `A` class and a singleton class to attach to it (we'll refer to the singleton class of an object by prepending `'` to the object name).
 Any instance methods (i.e. `speak_up`) are added to the methods stored on `A`.
 The class methods (i.e. `who_am_i`) are stored on `'A`.
 
-{% highlight ruby %}
+```ruby
 > A.singleton_methods # methods on 'A
 # => [:who_am_i]
-{% endhighlight %}
+```
 
 {% include image.html src="/images/explaining-include-and-extend/1.png" alt="a class and its singleton" align="left" %}
 
@@ -47,13 +47,13 @@ This same process happens with instance objects.
 If we have an instance of `A` and we add a method to it we can't store it on the instance.
 Remember, objects in Ruby do not store their own methods.
 
-{% highlight ruby %}
+```ruby
 a = A.new
 
 def a.not_so_loud(input)
   puts input.downcase
 end
-{% endhighlight %}
+```
 
 Once again we create a singleton class for `a` to store the `not_so_loud` method.
 
@@ -74,50 +74,50 @@ That's where `include` and `extend` come in.
 
 When you `include` a module in an object, you're adding the methods into the inheritance chain that the object is tracking.
 
-{% highlight ruby %}
+```ruby
 class A
   include M
 end
-{% endhighlight %}
+```
 
 {% include image.html src="/images/explaining-include-and-extend/3.png" alt="include M on A" align="left" %}
 
 We can see that this is the case by checking `A`'s ancestors.
 
-{% highlight ruby %}
+```ruby
 > A.ancestors
 # => [A, M, Object, Kernel, BasicObject]
-{% endhighlight %}
+```
 
 ### extend
 
 Using `extend` is the same as doing an `include` on the object's singleton class.
 
-{% highlight ruby %}
+```ruby
 class A
   extend M
 end
-{% endhighlight %}
+```
 
 {% include image.html src="/images/explaining-include-and-extend/4.png" alt="extend M on A" align="left" %}
 
 Once again we can confirm this by checking `'A`'s ancestors.
 
-{% highlight ruby %}
+```ruby
 > A.singleton_class.ancestors
 # => [M, Class, Module, Object, Kernel, BasicObject]
-{% endhighlight %}
+```
 
 We can also call `extend` on an instance.
 
-{% highlight ruby %}
+```ruby
 a = A.new
 
 a.extend(M)
 
 > a.singleton_class.ancestors
 # => [M, A, Object, Kernel, BasicObject]
-{% endhighlight %}
+```
 
 {% include image.html src="/images/explaining-include-and-extend/5.png" alt="instance of a extended by M" align="left" %}
 
@@ -132,7 +132,7 @@ It's like an `initialize` for includes.
 As you might suspect, `extend` has its own version of this called `extended`.
 When you want to add both instance and class methods you can do so using the included hook.
 
-{% highlight ruby %}
+```ruby
 module M
   def self.included(base)
     base.extend(ClassMethods)
@@ -154,7 +154,7 @@ class C
 end
 
 c = C.new
-{% endhighlight %}
+```
 
 This works by first including `M` into `C`'s inheritance chain.
 

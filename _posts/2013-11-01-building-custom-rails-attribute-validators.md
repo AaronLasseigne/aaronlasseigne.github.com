@@ -23,26 +23,29 @@ For example, if a user inputs `<p></p>` we're going to fail it.
 
 Basically we want the ability to check for `presence` like we would with regular text.
 If we have an email model with a message body, the validation would look like this:
-{% highlight ruby %}
+
+```ruby
 validates :body, html: {presence: true}
-{% endhighlight %}
+```
 
 ### Construction
 
 Let's start with the basic structure of a validator.
 It inherits from `ActiveModel::EachValidator` and defines a `validate_each` instance method.
 The method is provided with a record (an instance of the model), the name of the attribute, and the value being set.
-{% highlight ruby %}
+
+```ruby
 # app/validators/html_validator.rb
 class HtmlValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
   end
 end
-{% endhighlight %}
+```
 
 The class also contains an `options` attribute which represents everything that was passed to `:html` in the `validates` call.
 Let's fill in `validate_each` so it checks for the presence of HTML.
-{% highlight ruby %}
+
+```ruby
 class HtmlValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     if options.key?(:presence) && blank?(value)
@@ -56,7 +59,7 @@ class HtmlValidator < ActiveModel::EachValidator
     # Is the HTML blank?
   end
 end
-{% endhighlight %}
+```
 
 The guts of `validate_each` are straight forward.
 We check to see if the `presence` key is used and then check to see if our HTML is blank.
@@ -65,7 +68,8 @@ If the HTML is blank then we add an error to the record using the standard Rails
 Now we need to define `blank?`.
 We'll use [Nokogiri][1] to grab text blocks and see if we find any visible text (it could still be hidden by styling, but let's keep it simple).
 Nokogiri is fast, but even so, let's make sure there's something there before we start parsing.
-{% highlight ruby %}
+
+```ruby
 def blank?(value)
   value.blank? || Nokogiri::HTML(value).
     search('//text()').
@@ -73,21 +77,23 @@ def blank?(value)
     join.
     blank?
 end
-{% endhighlight %}
+```
 
 We've implemented our check and things are going well.
 What if we don't like the default message?
 Sometimes it's helpful to pass in a message tailored to the situation.
-{% highlight ruby %}
+
+```ruby
 validates :body, html: {
   presence: true,
   message: 'must display text before we can send it'
 }
-{% endhighlight %}
+```
 
 Since the error message code is about to get a little more complicated, let's pull it out of `validate_each`.
 Now we check the `options` hash for a `message` key and return the custom message or the default error message.
-{% highlight ruby %}
+
+```ruby
 def validate_each(record, attribute, value)
   if options.key?(:presence) && blank?(value)
     record.errors.add(attribute, error_message)
@@ -99,10 +105,11 @@ private
 def error_message
   options.fetch(:messages, :blank)
 end
-{% endhighlight %}
+```
 
 Putting all of that together we get:
-{% highlight ruby %}
+
+```ruby
 # app/validators/html_validator.rb
 class HtmlValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
@@ -125,7 +132,7 @@ class HtmlValidator < ActiveModel::EachValidator
     options.fetch(:messages, :blank)
   end
 end
-{% endhighlight %}
+```
 
 ### Testing
 
@@ -133,7 +140,8 @@ Like all code in our application we want to test our validator.
 Let's go over a few example tests.
 We'll check that `<p> </p>` fails and `<p>A</p>` passes.
 We'll also check that the default message is right and make sure custom messages work.
-{% highlight ruby %}
+
+```ruby
 describe HtmlValidator do
   describe '#validates_each(record, attribute, value)' do
     let(:test_model) do
@@ -175,7 +183,7 @@ describe HtmlValidator do
     end
   end
 end
-{% endhighlight %}
+```
 
 You might have noticed that I left `test_model` empty.
 We need to build a class that we can use to test our validator.
@@ -188,7 +196,8 @@ To do this we'll add a method to our spec file that takes an `options` hash and 
 The class will quack like a non-persisted `ActiveRecord::Base`.
 Anonymous classes don't have names and Rails is going to expect the class to respond to `name`.
 Fixing this is as easy as adding a class method `name`.
-{% highlight ruby %}
+
+```ruby
 def html_validator_class(options)
   Class.new do
     extend ActiveModel::Naming
@@ -212,11 +221,12 @@ def html_validator_class(options)
     validates :html, html: options
   end
 end
-{% endhighlight %}
+```
 
 Odds are good that you're going to build more than one validator so, you'll want to extract the generic parts of your class.
 It'll also help to expose the parts of the custom class that are important to the tests.
-{% highlight ruby %}
+
+```ruby
 # This class would exist in a helper file.
 class ValidationTester
   extend ActiveModel::Naming
@@ -244,10 +254,11 @@ def html_validator_class(options)
     validates :html, html: options
   end
 end
-{% endhighlight %}
+```
 
 Now we go back and fill in `test_model` using our new `html_validator_class` method.
-{% highlight ruby %}
+
+```ruby
 describe HtmlValidator do
   describe '#validates_each(record, attribute, value)' do
     let(:options)    { {presence: true} }
@@ -289,7 +300,7 @@ describe HtmlValidator do
     end
   end
 end
-{% endhighlight %}
+```
 
 ### Validate All the Things
 

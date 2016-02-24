@@ -34,7 +34,7 @@ It's not a duck, it's a Muscovy duck.
 Let's take a moment to consider the [bacon cannon][].
 You'll find that `=~` works with pretty much anything you give it.
 
-{% highlight ruby %}
+```ruby
 > 'abc' =~ /a/
 # => 0
 
@@ -46,17 +46,17 @@ You'll find that `=~` works with pretty much anything you give it.
 
 > nil =~ /a/
 # => nil
-{% endhighlight %}
+```
 
 The bacon cannon is unstoppable!
 Which is bad news for us.
 Image a method designed to see if a string starts with a vowel.
 
-{% highlight ruby %}
+```ruby
 def starts_with_vowel?(text)
   text =~ /\A[aeiou#{'y' if rand > 0.5}]/i
 end
-{% endhighlight %}
+```
 *That's how "and sometimes y" works, right?*
 
 Our method will happily take any object given and roll with it.
@@ -65,15 +65,15 @@ We weren't looking to take `nil` or a `Range`.
 If we [remember back], you can use the accessor method to match against a `String`.
 It's worth noting that `[]` isn't so kind to strangers.
 
-{% highlight ruby %}
+```ruby
 def starts_with_vowel?(text)
   text[/\A[aeiou#{'y' if rand > 0.5}]/i]
 end
-{% endhighlight %}
+```
 
 Let's run through that first list again.
 
-{% highlight ruby %}
+```ruby
 > 'abc'[/a/]
 # => "a"
 
@@ -85,7 +85,7 @@ Let's run through that first list again.
 
 > nil[/a/]
 # => NoMethodError: undefined method `[]' for nil:NilClass
-{% endhighlight %}
+```
 
 By using `[]` instead of `=~` we've kept the integrity of the method while adding specificity.
 We've specified the type of duck more accurately.

@@ -47,7 +47,7 @@ After working through the Roman numerals I didn't have that feeling.
 It felt clean and tidy.
 It was easy to read and reason about.
 
-{% highlight elixir %}
+```elixir
 defmodule RomanNumeral do
   def convert(n) when n >= 10, do: remove_and_continue(n, "X", 10)
   def convert(9),              do: "IX"
@@ -59,7 +59,7 @@ defmodule RomanNumeral do
     String.duplicate(roman, div(total, number)) <> convert(rem(total, number))
   end
 end
-{% endhighlight %}
+```
 *The full code with tests can be found [here][12].*
 
 ### Project Time

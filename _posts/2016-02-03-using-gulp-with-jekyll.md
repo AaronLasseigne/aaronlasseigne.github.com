@@ -34,9 +34,9 @@ To install Gulp, the first thing you'll need is [Node].
 
 Once you have Node installed run this:
 
-{% highlight bash %}
+```sh
 $ npm init
-{% endhighlight %}
+```
 
 You'll be prompted with a few questions.
 The answers are used to write out a file called `package.json`.
@@ -46,10 +46,10 @@ You can always change the file later.
 The `package.json` file is a description of your project and its dependencies.
 Go ahead and add Gulp as your first dependency.
 
-{% highlight bash %}
+```sh
 $ npm install --global gulp
 $ npm install --save-dev gulp
-{% endhighlight %}
+```
 
 The first install makes `gulp` available as a system wide command.
 The second saves it to the local `node_modules` directory and adds it to your `package.json`.
@@ -57,7 +57,7 @@ The second saves it to the local `node_modules` directory and adds it to your `p
 Gulp expects to find a `gulpfile.js` when run.
 That file contains all of the tasks you want to be able to run.
 
-{% highlight javascript %}
+```javascript
 // gulpfile.js
 
 const gulp = require('gulp');
@@ -76,7 +76,7 @@ gulp.task('watch', () => {
 });
 
 gulp.task('default', ['watch']);
-{% endhighlight %}
+```
 
 Let's break down the "upper" task.
 It starts by getting all text files from the current direcotry via `gulp.src`.
@@ -103,12 +103,12 @@ By the time you're done your project will include `package.json`, `gulpfile.js`,
 You don't want these served up with your actual site.
 Take a moment and add them to your `_config.yml` as build exclusions.
 
-{% highlight yaml %}
+```yaml
 exclude:
   - package.json
   - node_modules
   - gulpfile.js
-{% endhighlight %}
+```
 
 On to the Gulping!
 
@@ -122,13 +122,13 @@ This guide uses my setup.
 You'll start by joining all of the files in "_css" and adding the new file to "assets".
 For the concatentation you'll use a library called `gulp-concat`.
 
-{% highlight bash %}
+```sh
 $ npm install --save-dev gulp-concat
-{% endhighlight %}
+```
 
 Start off your `gulpfile.js` with the code below.
 
-{% highlight javascript %}
+```javascript
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 
@@ -145,7 +145,7 @@ gulp.task('watch', () => {
 });
 
 gulp.task('default', ['css', 'watch']);
-{% endhighlight %}
+```
 
 Running `gulp css` will generate a file with all of your CSS called "assets/all.css".
 You can also run `gulp watch` and it will continuously regenerate the file as you make changes.
@@ -159,14 +159,14 @@ Adding Sass to the existing code requires little effort.
 
 Go ahead and install `gulp-sass`.
 
-{% highlight bash %}
+```sh
 $ npm install --save-dev gulp-sass
-{% endhighlight %}
+```
 
 First, update the files being watched to include "scss".
 Then pipe the files through the Sass transform.
 
-{% highlight javascript %}
+```diff
  const gulp = require('gulp');
  const concat = require('gulp-concat');
 +const sass = require('gulp-sass');
@@ -186,7 +186,7 @@ Then pipe the files through the Sass transform.
  });
 
  gulp.task('default', ['css', 'watch']);
-{% endhighlight %}
+```
 
 Congratulations, your blog supports Sass files.
 You can follow this basic process to add other transforms like automatic vender prefixing and minification.
@@ -201,14 +201,14 @@ We're going to run Jekyll in a child process.
 To accomplish this you'll use the `child_process` library that comes with Node.
 You'll also want `gulp-util`.
 
-{% highlight bash %}
+```sh
 $ npm install --save-dev gulp-util
-{% endhighlight %}
+```
 
 When Jekyll prints output we want to show it.
 Using `gulp-util` makes it look like all the other entries in the log.
 
-{% highlight bash %}
+```sh
 [23:23:25] Jekyll: Configuration file: /Users/aaron/blog/_config.yml
 [23:23:25] Jekyll:
 [23:23:25] Jekyll:             Source: /Users/aaron/blog
@@ -218,12 +218,12 @@ Using `gulp-util` makes it look like all the other entries in the log.
 [23:23:25] Jekyll:       Generating...
 [23:23:25] Jekyll:
 [23:23:27] Jekyll:                     done in 2.734 seconds.
-{% endhighlight %}
+```
 
 You'll need to launch `jekyll serve --watch --incremental --drafts` as a child process.
 Then capture the output buffer, clean it up, and log it.
 
-{% highlight javascript %}
+```javascript
 const child = require('child_process');
 const gutil = require('gulp-util');
 
@@ -243,14 +243,14 @@ gulp.task('jekyll', () => {
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
 });
-{% endhighlight %}
+```
 
 Add this new task to your "default" task.
 
-{% highlight javascript %}
+```diff
 - gulp.task('default', ['css', 'watch']);
 + gulp.task('default', ['css', 'jekyll', 'watch']);
-{% endhighlight %}
+```
 
 Hit the command line, type `gulp`, lean back, and enjoy.
 Initially this might look like a mere convenience.
@@ -265,9 +265,9 @@ Every change will cause your browser to automatically reload the page.
 There are several packages that you can install to achieve a live reload.
 We'll do it with one called `browser-sync`.
 
-{% highlight bash %}
+```sh
 $ npm install --save-dev browser-sync
-{% endhighlight %}
+```
 
 [Browsersync] does more than just reload your pages.
 It also syncs up all browsers viewing the page.
@@ -278,14 +278,14 @@ It'll copy clicks, submit forms, and generally do its best to keep everything in
 In order to use all of Browsersync you need to let it run the show.
 This means Jekyll will build content instead of serving it.
 
-{% highlight javascript %}
+```diff
 - const jekyll = child.spawn('jekyll', ['serve',
 + const jekyll = child.spawn('jekyll', ['build',
-{% endhighlight %}
+```
 
 Leave it to Browsersync to serve up the files.
 
-{% highlight javascript %}
+```javascript
 const browserSync = require('browser-sync').create();
 
 const siteRoot = '_site';
@@ -299,7 +299,7 @@ gulp.task('serve', () => {
     }
   });
 });
-{% endhighlight %}
+```
 
 I've set the port to `4000` for parity with Jekyll but you don't have to.
 The `files` line is crutial because it spells out which files to watch for changes.
@@ -307,7 +307,7 @@ The `files` line is crutial because it spells out which files to watch for chang
 At this point the "watch" task doesn't serve much purpose by itself.
 You might as well join it into "serve".
 
-{% highlight javascript %}
+```diff
  gulp.task('serve', () => {
    browserSync.init({
      files: [siteRoot + '/**'],
@@ -323,14 +323,14 @@ You might as well join it into "serve".
 -gulp.task('watch', () => {
 -  gulp.watch(cssFiles, ['css']);
 -});
-{% endhighlight %}
+```
 
 Replace "watch" with "serve" and you're all set.
 
-{% highlight javascript %}
+```diff
 - gulp.task('default', ['css', 'jekyll', 'watch']);
 + gulp.task('default', ['css', 'jekyll', 'serve']);
-{% endhighlight %}
+```
 
 At this point you there should be fireworks, a choir of angels singing, and you should have a sense of complete tranquility.
 
@@ -346,7 +346,7 @@ Well, something like that.
 
 Final `gulpfile.js`:
 
-{% highlight javascript %}
+```javascript
 const child = require('child_process');
 const browserSync = require('browser-sync').create();
 
@@ -395,7 +395,7 @@ gulp.task('serve', () => {
 });
 
 gulp.task('default', ['css', 'jekyll', 'serve']);
-{% endhighlight %}
+```
 
 [Jekyll]: https://jekyllrb.com/
 [GitHub Pages]: https://pages.github.com/

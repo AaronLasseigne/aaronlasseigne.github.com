@@ -25,7 +25,7 @@ While nearly identical, `clone` does one more thing than `dup`.
 In `clone`, the frozen state of the object is also copied.
 In `dup`, it'll always be thawed.
 
-{% highlight ruby %}
+```ruby
 > f = 'Frozen'.freeze
 # "Frozen"
 > f.frozen?
@@ -36,7 +36,7 @@ In `dup`, it'll always be thawed.
 
 > f.dup.frozen?
 # false
-{% endhighlight %}
+```
 
 The most common reason to create a copy of an object is to modify it without affecting the original.
 After all, it might not be yours to mess with.
@@ -49,7 +49,7 @@ Going forward we'll focus on `dup`.
 When using `dup` you'll lose singleton methods added to the original object.
 On the other hand, `clone` retains these methods.
 
-{% highlight ruby %}
+```ruby
 > obj = Object.new
 # #<Object:0x007fd214a36018>
 
@@ -66,7 +66,7 @@ On the other hand, `clone` retains these methods.
 
 > obj.clone.say_hi
 # Hi
-{% endhighlight %}
+```
 
 ### Shallow Waters
 
@@ -78,42 +78,46 @@ Sandwich they made?
 You both made?
 
 Anyway, here's a list of books I like:
-{% highlight ruby %}
+
+```ruby
 > my_book_list = [
 >   "Stranger in a Strange Land",
 >   "Watchmen",
 >   "Harry Potter and the Sorcerer's Stone"
 > ]
-{% endhighlight %}
+```
 
 Let's pretend that you like these same books.
-{% highlight ruby %}
+
+```ruby
 > your_book_list = my_book_list.dup
 # [
 #     [0] "Stranger in a Strange Land",
 #     [1] "Watchmen",
 #     [2] "Harry Potter and the Sorcerer's Stone"
 # ]
-{% endhighlight %}
+```
 
 Thing is, you're a Harry Potter purist.
 The first book was originally released as *Harry Potter and the Philosopher's Stone* and renaming it was an egregious mistake.
-{% highlight ruby %}
+
+```ruby
 > your_book_list[2].sub!('Sorcerer', 'Philosopher')
 # "Harry Potter and the Philosopher's Stone"
-{% endhighlight %}
+```
 
 Problem solved, right?
 Well, *your* problem is solved.
 If I'm searching for "Sorcerer" then I'm the one with the problem.
-{% highlight ruby %}
+
+```ruby
 > my_book_list
 # [
 #     [0] "Stranger in a Strange Land",
 #     [1] "Watchmen",
 #     [2] "Harry Potter and the Philosopher's Stone"
 # ]
-{% endhighlight %}
+```
 
 The good news is we can add new titles to either list without affecting the other.
 We just can't modify any of the original titles without changing both lists.
@@ -125,19 +129,21 @@ People are trusting us with their stuff.
 We'd like to trust them with our stuff.
 Imagine yourself iterating over an array of things and calling a method on each thing.
 This method takes a hash of `options`.
-{% highlight ruby %}
+
+```ruby
 things.each do |thing|
   library_method(thing, options)
 end
-{% endhighlight %}
+```
 
 The method splits the options among some other methods it calls.
-{% highlight ruby %}
+
+```ruby
 def library_method(thing, options)
   a = options.delete(:a) { 0 }
   thing.do(a) + some_other_method(options)
 end
-{% endhighlight %}
+```
 
 After the first iteration `options` no longer has `:a` in it.
 It was deleted.
@@ -158,10 +164,10 @@ Everything responds to `dup` but not everything is `dup`able.
 Take the behavior of singletons.
 They'll respond to `dup` but not in the way we want.
 
-{% highlight ruby %}
+```ruby
 > 1.dup
 # TypeError: can't dup Fixnum
-{% endhighlight %}
+```
 
 If you find that a bit odd you're not alone.
 It's been brought [up][1] to the Ruby core team and after some lengthy discussion rejected because of a lack of progress.
@@ -169,22 +175,24 @@ It was even [re-visited][2] a few months ago only to be shot down again.
 
 What this means for us is that we can't call `dup` with reckless abandon.
 If we're not sure what we're `dup`ing then we'll need a failure strategy.
-{% highlight ruby %}
+
+```ruby
 y = begin
       x.dup
     rescue TypeError
       x
     end
-{% endhighlight %}
+```
 
 If you're using Rails and error catching isn't your thing they've monkey patched `duplicable?` onto all objects.
-{% highlight ruby %}
+
+```ruby
 y = if x.duplicable?
       x.dup
     else
       x
     end
-{% endhighlight %}
+```
 
 ### Customizing `dup` and `clone`
 
@@ -196,7 +204,8 @@ In 1.9.2 `initialize_dup` and `initialize_clone` were added for even greater con
 Each of them calls `initialize_copy` when they're done.
 
 Let's make a class so we can see all of this in action.
-{% highlight ruby %}
+
+```ruby
 class CloneWatcher
   # IRB calls `inspect` but for our example
   # we're interested in knowing `object_id`.
@@ -219,33 +228,35 @@ class CloneWatcher
     super
   end
 end
-{% endhighlight %}
+```
 
 We'll make a new instance of `CloneWatcher`.
 
 *Note: The object ids start with the same digits.
 In the examples below I've manually aligned and separated the output for improved readability.*
 
-{% highlight ruby %}
+```ruby
 > cw = CloneWatcher.new
 # 70196928 058020
-{% endhighlight %}
+```
 
 What happens when we `dup`?
-{% highlight ruby %}
+
+```ruby
 > cw.dup
 # Dup:  70196928 058020
 # Copy: 70196928 058020
 #       70196928 287740
-{% endhighlight %}
+```
 
 When we `clone`?
-{% highlight ruby %}
+
+```ruby
 > cw.clone
 # Clone: 70196928 058020
 # Copy:  70196928 058020
 #        70196928 174860
-{% endhighlight %}
+```
 
 Like I said earlier, the original object is passed in giving you complete control over what you extract from it.
 You can also see that `initialize_copy` was called in each time.

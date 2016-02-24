@@ -28,7 +28,7 @@ Back in 2007, OrgSync started on Rails one point something.
 It looked like most Rails projects.
 Had it started on Rails 4, it would probably look like this:
 
-{% highlight ruby %}
+```ruby
 class UserController < ActionController::Base
   def create
     unless params[:user].key?(:password)
@@ -52,7 +52,7 @@ class UserController < ActionController::Base
     params.require(:user).permit(:email, :password)
   end
 end
-{% endhighlight %}
+```
 
 This approach is littered with problems:
 
@@ -66,7 +66,7 @@ This approach is littered with problems:
 If the business logic doesn't belong in the controller, where does it belong?
 The model is a natural fit since all this logic deals with it.
 
-{% highlight ruby %}
+```ruby
 class User < ActiveRecord::Base
   before_save :ensure_password
   after_create :send_welcome_email
@@ -83,11 +83,11 @@ class User < ActiveRecord::Base
     Notifications.welcome(self).deliver
   end
 end
-{% endhighlight %}
+```
 
 The controller slims down and stays focused on request logic.
 
-{% highlight ruby %}
+```ruby
 class UserController < ActionController::Base
   def create
     @user = User.new(user_params)
@@ -105,7 +105,7 @@ class UserController < ActionController::Base
     params.require(:user).permit(:email, :password)
   end
 end
-{% endhighlight %}
+```
 
 Something still isn't right.
 The controller has to know which parameters the model cares about.
@@ -125,7 +125,7 @@ It introduced us to the Interactor pattern, which we loved.
 We searched for a Ruby interactor library and found [Mutations][3].
 It seemed to fit our needs, so we began moving our business logic into interactions.
 
-{% highlight ruby %}
+```ruby
 class CreateUser < Mutations::Command
   required do
     string :email, matches: /^.+@.+$/
@@ -156,7 +156,7 @@ class CreateUser < Mutations::Command
     end
   end
 end
-{% endhighlight %}
+```
 
 It resulted in more lines of code, but they were *better* lines of code.
 We quickly saw the benefits of this approach.
@@ -167,15 +167,15 @@ Models no longer contained conceptually distinct but practically tangled busines
 Instead, each piece of logic got its own easily understandable file.
 Models slimmed way down.
 
-{% highlight ruby %}
+```ruby
 class User < ActiveRecord::Base
   # Down to a size 0!
 end
-{% endhighlight %}
+```
 
 The controller grew by a few lines but it still only dealt with what it had to.
 
-{% highlight ruby %}
+```ruby
 class UserController < ActionController::Base
   def create
     outcome = CreateUser.run(params)
@@ -197,7 +197,7 @@ class UserController < ActionController::Base
     end
   end
 end
-{% endhighlight %}
+```
 
 This direction looked promising, but had a few problems.
 Notice how the controller creates a model solely for attaching errors.
@@ -215,7 +215,7 @@ We wanted a library built with Rails in mind.
 
 We took what we loved from Mutations and built the gem we wanted.
 
-{% highlight ruby %}
+```ruby
 class CreateUser < ActiveInteraction::Base
   string :email
   string :password, default: nil
@@ -244,18 +244,18 @@ class CreateUser < ActiveInteraction::Base
     end
   end
 end
-{% endhighlight %}
+```
 
 Similar interfaces made the transition from Mutations to ActiveInteraction quick and painless.
 And just like before, the model ends up empty.
 
-{% highlight ruby %}
+```ruby
 class User < ActiveRecord::Base; end
-{% endhighlight %}
+```
 
 Unlike before, the controller changes very little.
 
-{% highlight ruby %}
+```ruby
 class UserController < ActionController::Base
   def create
     outcome = CreateUser.run(params[:user])
@@ -268,7 +268,7 @@ class UserController < ActionController::Base
     end
   end
 end
-{% endhighlight %}
+```
 
 Notice how the invalid outcome is assigned straight to `@user`.
 That's because the outcome of running an interaction quacks like an ActiveModel.

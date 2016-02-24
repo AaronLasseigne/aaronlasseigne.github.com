@@ -15,9 +15,9 @@ There are two in particular that are extremely useful.
 
 As you can see, the default prompt lacks any useful information.
 
-{% highlight bash %}
+```sh
 mysql>
-{% endhighlight %}
+```
 
 The prompt can show time, user and server info.
 You can see the full list of options on [MySQL's commands page][2].
@@ -26,12 +26,12 @@ Adding a newline provides a nice divide between queries and ensures that they al
 
 *Note: The pipe below indicates the cursor.*
 
-{% highlight bash %}
+```sh
 mysql> prompt \R:\m\_\h:\d\n)\_ 
 PROMPT set to '\R:\m\_\h:\d\n)\_'
 10:32 localhost:companyco_test
 ) |
-{% endhighlight %}
+```
 
 Knowing that you're running <abbr title="Structured Query Language">SQL</abbr> commands on the correct server and database can help prevent painful mistakes.
 
@@ -60,10 +60,10 @@ I recommend `less` with the `inSFX` options passed in.
    By default `less` will clear the screen and restore it back to the way it was before the pager was called.
    In `mysql` you probably want the output to stay on the screen so it can be easily referenced.
 
-{% highlight bash %}
+```sh
 mysql> pager less -inSFX
 PAGER set to 'less -inSFX'
-{% endhighlight %}
+```
 
 ### Config File
 
@@ -71,11 +71,11 @@ Working in the `mysql` terminal is a great way to find settings that work for yo
 Once that's done the settings can be added to a `~/.my.cnf` file.
 Put them under `[mysql]` and any time `mysql` runs it will use your preferred options.
 
-{% highlight bash %}
+```sh
 [mysql]
 pager=less -inSFX
 prompt=\R:\m\_\h:\d\n)\_
-{% endhighlight %}
+```
 
 Enjoy!
 

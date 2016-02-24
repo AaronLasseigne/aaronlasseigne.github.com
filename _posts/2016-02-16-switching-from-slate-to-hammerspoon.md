@@ -77,7 +77,7 @@ A second press maximizes the window and repeated presses once again cycle the op
 
 To do this I created a list of possible positions.
 
-{% highlight lua %}
+```lua
 positions = {
   maximized = hs.layout.maximized,
   centered = {x=0.15, y=0.15, w=0.7, h=0.7},
@@ -98,7 +98,7 @@ positions = {
   lower50Left50 = {x=0, y=0.5, w=0.5, h=0.5},
   lower50Right50 = {x=0.5, y=0.5, w=0.5, h=0.5}
 }
-{% endhighlight %}
+```
 
 You'll notice that Hammerspoon, `hs`, provides some predefined positions like `left50`.
 The others use a simple percentage ranging from `0` to `1`.
@@ -106,16 +106,16 @@ The others use a simple percentage ranging from `0` to `1`.
 Next I needed to be able to bind keys.
 I made a short helper function to avoid having to retype my modifier combo.
 
-{% highlight lua %}
+```lua
 function bindKey(key, fn)
   hs.hotkey.bind({"cmd", "ctrl"}, key, fn)
 end
-{% endhighlight %}
+```
 
 See, it's nice to have a language rather than a config.
 Next, I layout my grid.
 
-{% highlight lua %}
+```lua
 grid = {
   {key="u", units={positions.upper50Left50}},
   {key="i", units={positions.upper50}},
@@ -129,11 +129,11 @@ grid = {
   {key=",", units={positions.lower50}},
   {key=".", units={positions.lower50Right50}}
 }
-{% endhighlight %}
+```
 
 Finally, I loop over each entry in the grid and bind the key.
 
-{% highlight lua %}
+```lua
 hs.fnutils.each(grid, function(entry)
   bindKey(entry.key, function()
     local units = entry.units
@@ -153,7 +153,7 @@ hs.fnutils.each(grid, function(entry)
     window:moveToUnit(units[index + 1])
   end)
 end)
-{% endhighlight %}
+```
 
 There are a couple of lines in there that might be confusing but the gist of it should be easy to follow.
 Most of the unknowns involve getting to know how Hammerspoon handles window placement (i.e. geometry).
@@ -163,13 +163,13 @@ It turns out you place a `#` in front of the list.
 Keep in mind that this cycles through the "units".
 If you're alright with a key doing only one thing then it can be greatly simplified.
 
-{% highlight lua %}
+```lua
 hs.fnutils.each(grid, function(entry)
   bindKey(entry.key, function()
     hs.window.focusedWindow():moveToUnit(entry.unit)
   end)
 end)
-{% endhighlight %}
+```
 
 Hammerspoon comes with a grid system out of the box.
 I started with it but decided to pivot and roll my own.
@@ -179,7 +179,7 @@ It wasn't significantly harder and it let me reuse the positioning in my layouts
 
 Hammerspoon has built in support for layouts.
 
-{% highlight lua %}
+```lua
 bindKey('1', function()
   hs.layout.apply({
     {"Firefox", nil, screen, positions.left50,         nil, nil},
@@ -187,7 +187,7 @@ bindKey('1', function()
     {"Slack",   nil, screen, positions.lower50Right50, nil, nil}
   })
 end)
-{% endhighlight %}
+```
 
 That's it.
 
