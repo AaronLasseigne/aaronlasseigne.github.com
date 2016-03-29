@@ -1,5 +1,3 @@
-@import 'variables';
-
 .panel {
   border: 1px solid #d8d8d8;
   margin-bottom: 1.25rem;
@@ -10,10 +8,6 @@
     border-color: #c1e8f8;
     background: #f2fafd;
   }
-}
-
-.subtle {
-  color: $subtle;
 }
 
 .footnotes {

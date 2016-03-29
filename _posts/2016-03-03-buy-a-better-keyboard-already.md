@@ -3,8 +3,6 @@ title: "Buy a Better Keyboard Already"
 date: 2016-03-03 05:03 UTC
 ---
 
-<em class="subtle">No part of this post was paid for however it does contain affiliate links.</em>
-
 Picture a carpenter without a saw.
 A guitarist with no strings.
 A coder with no keyboard.
@@ -179,11 +177,11 @@ Just don't keep using that thing they gave you.
 
 *Take a look at the next part, which [software maximizes your keyboard].*
 
-[key tester]: http://www.amazon.com/gp/product/B00AZQKCD4/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00AZQKCD4&linkCode=as2&tag=aaronla-20&linkId=YW6SXDKSRREGL6DE
-[Truly Ergonomic Model 229]: http://www.amazon.com/gp/product/B00QL2X8UK/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00QL2X8UK&linkCode=as2&tag=aaronla-20&linkId=V2BVM3JWPGWWOOSI
-[Kinesis Advantage]: http://www.amazon.com/gp/product/B000LVJ9W8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000LVJ9W8&linkCode=as2&tag=aaronla-20&linkId=6LZQ3A62TT5GF4H2
+[key tester]: http://amzn.com/B00AZQKCD4
+[Truly Ergonomic Model 229]: https://www.trulyergonomic.com/store/truly-ergonomic-mechanical-keyboard-soft-tactile-kailh-cherry-mx-compatible-brown-keyswitches-229-english
+[Kinesis Advantage]: https://www.kinesis-ergo.com/shop/advantage-for-pc-mac/
 [Keyboardio]: http://shop.keyboard.io/
-[$22 as of now]: http://www.amazon.com/gp/product/B00CEQFPEE/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00CEQFPEE&linkCode=as2&tag=aaronla-20&linkId=NPAZGIQ73I2MWQ4H
-[Code keyboard]: http://www.amazon.com/gp/product/B00UUBIM0E/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00UUBIM0E&linkCode=as2&tag=aaronla-20&linkId=WP4LVADBM2V7M5WS
+[$22 as of now]: http://amzn.com/B000A6PPOK
+[Code keyboard]: https://codekeyboards.com/
 [You can do that.]: http://www.wasdkeyboards.com/index.php/products/printed-keycap-singles/lod-cherry-mx-keycap.html
 [software maximizes your keyboard]: {% post_url 2016-03-18-software-to-maximize-your-keyboard-os-x %}#layout
