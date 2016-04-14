@@ -2,9 +2,10 @@
 title: Don't tie jQuery to the Rails
 date: 2016-04-13 04:38 UTC
 description: It's time for jQuery to go. It's a great library but it's not a part of Rails. I was recently auditing a site for dependencies. Skimming the list of JavaScript libraries I blew right by jQuery.
+image: /images/dont-tie-jquery-to-the-rails/tracks.jpg
 ---
 
-{% include image.html src="/images/dont-tie-jquery-to-the-rails/tracks.jpg" alt="rail road tracks" caption="Photo by <a href=\"https://www.flickr.com/photos/kevisdope/25597390633/in/photolist-EZXjrg-74d5QK-pQidVy-fJqS9d-dC1Qif-nbF7Rf-kku4Np-gTBk5o-nxrtiS-dyQCz6-ps2h9H-9AUKNQ-ocyxtK-qCVBCH-petTtr-qEBJwZ-pDvf18-i2hrMm-9B2Cbx-8jDFey-eaEGiQ-fxUkW1-9omXDs-fs96Gp-6idqms-bDXRU5-bNqyng-2Rho6-dEsJtw-5NPfru-oz44tM-bYjcVG-4i5Dtc-odqgbu-9rEyae-fwz785-gxR9er-jAaDtN-7Vurn1-nZd45Z-bEEK3w-4zABBh-5R8Dp1-bCUoaF-pEn3RB-dttMrZ-huA9Do-6Hbavb-p8M7hg-f4QUXH\">Kevin Moreira</a> licensed under <a href=\"https://creativecommons.org/licenses/by/2.0/\">CC</a>. The photo has been modified." %}
+{% include image.html src=page.image alt="rail road tracks" caption="Photo by <a href=\"https://www.flickr.com/photos/kevisdope/25597390633/in/photolist-EZXjrg-74d5QK-pQidVy-fJqS9d-dC1Qif-nbF7Rf-kku4Np-gTBk5o-nxrtiS-dyQCz6-ps2h9H-9AUKNQ-ocyxtK-qCVBCH-petTtr-qEBJwZ-pDvf18-i2hrMm-9B2Cbx-8jDFey-eaEGiQ-fxUkW1-9omXDs-fs96Gp-6idqms-bDXRU5-bNqyng-2Rho6-dEsJtw-5NPfru-oz44tM-bYjcVG-4i5Dtc-odqgbu-9rEyae-fwz785-gxR9er-jAaDtN-7Vurn1-nZd45Z-bEEK3w-4zABBh-5R8Dp1-bCUoaF-pEn3RB-dttMrZ-huA9Do-6Hbavb-p8M7hg-f4QUXH\">Kevin Moreira</a> licensed under <a href=\"https://creativecommons.org/licenses/by/2.0/\">CC</a>. The photo has been modified." %}
 
 It's time for jQuery to go.
 It's a great library but it's not a part of Rails.

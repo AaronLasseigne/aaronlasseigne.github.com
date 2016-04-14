@@ -12,9 +12,14 @@
     {% assign description = page.content | markdownify | strip_html | replace: '"', '&#x22;' | split: ' ' | join: ' ' | truncate: 200 %}
   {% endif %}
 {% endif %}
+{% if page.image %}
+  {% assign image = site.url | append: page.image %}
+{% else %}
+  {% assign image = site.data.author.image | append: '?s=200' %}
+{% endif %}
 <meta property="og:site_name" content="{{ site.name }}">
 <meta property="og:type" content="{{ type }}">
 <meta property="og:url" content="{{ site.url }}{{ path }}">
 <meta property="og:title" content="{{ title }}">
 <meta property="og:description" content="{{ description }}">
-<meta property="og:image" content="{{ site.data.author.image }}?s=200">
+<meta property="og:image" content="{{ image }}">
