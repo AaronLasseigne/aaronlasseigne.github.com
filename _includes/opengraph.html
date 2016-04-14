@@ -6,7 +6,11 @@
   {% assign type = 'article' %}
   {% assign path = page.url %}
   {% assign title = page.title %}
-  {% assign description = page.content | markdownify | strip_html | replace: '"', '&#x22;' | split: ' ' | join: ' ' | truncate: 200 %}
+  {% if page.description %}
+    {% assign description = page.description %}
+  {% else %}
+    {% assign description = page.content | markdownify | strip_html | replace: '"', '&#x22;' | split: ' ' | join: ' ' | truncate: 200 %}
+  {% endif %}
 {% endif %}
 <meta property="og:site_name" content="{{ site.name }}">
 <meta property="og:type" content="{{ type }}">

@@ -1,5 +1,7 @@
 {% if page.url == "/" %}
   {% assign description = site.description %}
+{% elsif page.description %}
+  {% assign description = page.description %}
 {% else %}
   {% assign description = page.content | markdownify | strip_html | replace: '"', '&#x22;' | split: ' ' | join: ' ' | truncate: 200 %}
 {% endif %}
