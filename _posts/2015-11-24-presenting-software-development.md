@@ -1,7 +1,10 @@
 ---
 title: "Presenting: Software Development"
 date: 2015-11-24 03:25 UTC
+image: /images/presenting-software-development/world.jpg
 ---
+
+{% include image.html src=page.image alt="software is eating the world" %}
 
 Last week I had the honor of presenting to a group of high school students.
 They attend a class at [Brookhaven College][] that introduces JavaScript and for many of them, the very concept of programming.
