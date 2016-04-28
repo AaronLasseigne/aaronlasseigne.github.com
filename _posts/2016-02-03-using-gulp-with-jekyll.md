@@ -79,7 +79,7 @@ gulp.task('default', ['watch']);
 ```
 
 Let's break down the "upper" task.
-It starts by getting all text files from the current direcotry via `gulp.src`.
+It starts by getting all text files from the current directory via `gulp.src`.
 Each file is piped through our `magicUpperCaseConvert` function.
 Then the file is written to the "upper\_files" directory via `gulp.dest`.
 All this can be done from the command line by calling `gulp upper`.
