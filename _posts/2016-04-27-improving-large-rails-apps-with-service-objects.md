@@ -3,6 +3,10 @@ title: Improving Large Rails Apps with Service Objects
 date: 2016-04-27 03:28 UTC
 ---
 
+<div class="panel callout">
+  <a href="http://rubyweekly.com/issues/295">Included in issue #295 of Ruby Weekly.</a>
+</div>
+
 Nothing has improved my Rails apps more than service objects.
 A couple of weeks ago, I was asked to help out with an established Rails app.
 I found a `User` model that included 28 modules.
