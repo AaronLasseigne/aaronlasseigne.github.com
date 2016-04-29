@@ -191,7 +191,7 @@ end
 def create
   @sign_up = SignUp.run(params[:user])
 
-  if sign_up.valid?
+  if @sign_up.valid?
     user = @sign_up.result
     redirect_to(user)
   else
