@@ -6,7 +6,7 @@ redirect_from:
 ---
 
 <div class="panel callout">
-  <a href="http://rubyweekly.com/issues/205">Included in issue #205 of Ruby Weekly</a> and <a href="https://ruby5.envylabs.com/episodes/520-episode-483-july-25nd-2014">episode #483 of Ruby5.</a>
+  <a href="http://rubyweekly.com/issues/205">Included in issue #205 of Ruby Weekly</a> and <a href="https://ruby5.codeschool.com/episodes/520-episode-483-july-25th-2014/stories/4177-clone-and-dup">episode #483 of Ruby5.</a>
 </div>
 
 Are you familiar with `clone` and `dup`?
