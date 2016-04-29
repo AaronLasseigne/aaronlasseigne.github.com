@@ -4,7 +4,7 @@ date: 2012-01-17 14:48 UTC
 ---
 
 <div class="panel callout">
-  <a href="//rubyweekly.com/issues/77">Included in issue #77 of Ruby Weekly.</a>
+  <a href="http://rubyweekly.com/issues/77">Included in issue #77 of Ruby Weekly.</a>
 </div>
 
 All Rubyists should be familiar with the common definitions for `include` and `extend`.
