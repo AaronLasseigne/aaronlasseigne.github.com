@@ -3,6 +3,10 @@ title: Don't Forget About Infinite Enumerators
 date: 2016-05-11 14:05 UTC
 ---
 
+<div class="panel callout">
+  <a href="http://rubyweekly.com/issues/297">Included in issue #297 of Ruby Weekly.</a>
+</div>
+
 When was the last time you created an `Enumerator`?
 We use enumerables all over the place but it's rare to see `Enumerator.new`.
 If I'm being honest, sometimes I forget it's an option.
