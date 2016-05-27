@@ -1,6 +1,7 @@
 ---
 title: Don't Forget About Infinite Enumerators
 date: 2016-05-11 14:05 UTC
+description: When was the last time you created an `Enumerator`? We use enumerables all over the place but it's rare to see `Enumerator.new`. If I'm being honest, sometimes I forget it's an option. I'm guessing you might as well.
 ---
 
 <div class="panel callout">

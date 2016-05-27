@@ -1,6 +1,7 @@
 ---
 title: "Know Ruby: String Accessor"
 date: 2014-06-04 04:38 UTC
+description: Surely you've used the `[]` method but are you aware of all that it can do? Its plethora of signatures make it the Swiss Army Knife of `String` methods. Let's delve in.
 ---
 
 <div class="panel callout">

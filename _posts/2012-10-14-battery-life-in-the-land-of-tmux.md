@@ -1,6 +1,7 @@
 ---
 title: "Battery Life in the Land of Tmux"
 date: 2012-10-15 03:59 UTC
+description: From time to time I find myself immersed in my terminal. Bouncing around in Tmux between vim, console and whatever else I'm doing. With my terminal in fullscreen mode I don't notice the power draining from my battery.
 ---
 
 <div class="panel">

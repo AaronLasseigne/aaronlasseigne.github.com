@@ -1,6 +1,7 @@
 ---
 title: "Have you lost a second of data?"
 date: 2012-02-29 15:42 UTC
+description: One of the gems I'm working on limits a range of data based on a datetime field. You see MySQL stores datetimes to a resolution of one second. Databases like SQLite and PostgreSQL store down to the microsecond (.999999). This leads to a problem.
 ---
 
 <div class="panel">

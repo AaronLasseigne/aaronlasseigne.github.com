@@ -1,6 +1,7 @@
 ---
 title: "Explaining Include and Extend"
 date: 2012-01-17 14:48 UTC
+description: All Rubyists should be familiar with the common definitions for `include` and `extend`. You `include` a module to add instance methods to a class and `extend` to add class methods. Unfortunately, this common definition isn't entirely accurate.
 ---
 
 <div class="panel callout">

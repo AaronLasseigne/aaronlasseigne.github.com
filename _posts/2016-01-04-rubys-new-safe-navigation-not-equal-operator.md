@@ -1,6 +1,7 @@
 ---
 title: "Ruby's New &.!= Operator"
 date: 2016-01-04 05:28 UTC
+description: Well, it's actually two operators. Sue me. The 2.3.0 release of Ruby included the safe navigation operator, `&.`. It does the same thing as `try!` in Rails. You can chain method calls together and bail early if you hit a `nil`. In Ruby some things you don't normally think of as method calls are in fact just that. For example, operators like `!=`.
 ---
 
 <div class="panel callout">
