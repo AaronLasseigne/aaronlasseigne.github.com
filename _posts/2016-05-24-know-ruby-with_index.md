@@ -1,7 +1,12 @@
 ---
 title: "Know Ruby: with_index"
 date: 2016-05-24 03:15 UTC
+description: Have you ever used `with_index`? Not `each_with_index` which is similar but slightly different. Did you know that you can do `map.with_index`?
 ---
+
+<div class="panel callout">
+  <a href="http://rubyweekly.com/issues/299">Included in issue #299 of Ruby Weekly</a> and <a href="https://ruby5.codeschool.com/episodes/685-episode-640-may-27th-2016/stories/5352-know-ruby-with_index">episode #640 of Ruby5.</a>
+</div>
 
 Have you ever used `with_index`?
 Not `each_with_index` which is similar but slightly different.
