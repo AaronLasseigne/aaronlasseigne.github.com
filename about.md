@@ -15,7 +15,7 @@ In my spare time I've coached for [Rails Girls], spoken to [high school students
 I created and maintain [ActiveInteraction] with [Taylor Fausak].
 Nothing has changed the way I work with Rails more than service objects.
 Existing gems didn't integrate as cleanly into Rails as I wanted.
-During a hackathon, Taylor and I built ActiveInteraction and in the time since it's gained a following racking up 500+ stars on GitHub.
+During a hackathon, Taylor and I built ActiveInteraction and in the time since it's gained a following racking up 740+ stars on GitHub.
 
 I also founded [libgrader.com], a site for checking Ruby gem quality and finding alternative gems.
 Designed, built, deployed, and maintained by my own two hands, it has been a labor of love.
