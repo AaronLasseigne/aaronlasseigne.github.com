@@ -186,7 +186,7 @@ Before you decide to write off `Range` entirely, there are three easy rules to c
 Valid beginning positions guarantee a <code>String</code>.
 (Remember, the positions are <code>'(0)A(1)a(2)r(3)o(4)n(5)'</code> and <code>'(-5)A(-4)a(-3)r(-2)o(-1)n'</code>.)
 
-```ruby
+{% highlight ruby %}
 > 'Aaron'[0..2]
 # "Aar"
 
@@ -195,25 +195,25 @@ Valid beginning positions guarantee a <code>String</code>.
 
 > 'Aaron'[3..-10]
 # ""
-```
+{% endhighlight %}
 </li>
 
 <li>
 Invalid beginning positions guarantee a <code>nil</code>.
 
-```ruby
+{% highlight ruby %}
 > 'Aaron'[6..10]
 # nil
 
 > 'Aaron'[-6..10]
 # nil
-```
+{% endhighlight %}
 </li>
 
 <li>
 Valid beginning positions with equal or later ending positions return a non-empty <code>String</code>. (Remember, it's positionally later not numerically higher.)
 
-```ruby
+{% highlight ruby %}
 > 'Aaron'[3..-2] # 3 and -2 are positionally equal
 # "o"
 
@@ -228,7 +228,7 @@ Valid beginning positions with equal or later ending positions return a non-empt
 
 > 'Aaron'[-3..3]
 # "ro"
-```
+{% endhighlight %}
 </li>
 </ol>
 
