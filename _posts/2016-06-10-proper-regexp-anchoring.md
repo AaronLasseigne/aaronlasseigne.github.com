@@ -1,7 +1,12 @@
 ---
 title: "Proper Regexp Anchoring"
 date: 2016-06-10 03:10 UTC
+description: In regular expressions, ^ does not match the start of a string. It might in other languages but not Ruby. That’s part of what makes this mistake so common. While we’re on the topic, $ doesn’t match...
 ---
+
+<div class="panel callout">
+  <a href="http://rubyweekly.com/issues/302">Included in issue #302 of Ruby Weekly.</a>
+</div>
 
 In regular expressions, `^` does **not** match the start of a string.
 It might in other languages but not Ruby.
