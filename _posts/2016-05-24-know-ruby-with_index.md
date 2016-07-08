@@ -115,7 +115,7 @@ Calculating -------------------------------------
 
 Comparison:
      each_with_index:   636247.9 i/s
-     each.with_index:   465312.3 i/s - 1.37x slower 
+     each.with_index:   465312.3 i/s - 1.37x slower
 ```
 
 Any time you see two methods smashed together (e.g. `reverse_each`), it's going to be faster.
@@ -140,7 +140,7 @@ Marvin moved from 1 to 3.
 => [["J'onn J'onzz", 2], ["Mark Watney", 3], ["Marvin", 1]]
 ```
 
-If you chain like this don't forget to destructure the arguments (see the parenthesis in the block arguments).
+If you chain like this don't forget to destructure the arguments (see the parentheses in the block arguments).
 While fun, I don't usually need to write code like that.
 I have gotten some use out of chaining `with_index` and `with_object`.
 Oh yeah, if you didn't know, `with_object` is also its own thing.
