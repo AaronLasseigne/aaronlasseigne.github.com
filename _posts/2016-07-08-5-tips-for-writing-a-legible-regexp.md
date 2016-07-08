@@ -61,7 +61,7 @@ Looking at both of those, I know which one I'd rather come back to in six months
 Of course, there's one thing better than comments.
 Code!
 
-### interpolation
+### Interpolation
 
 Earlier I showed you a regexp that extracted a username from a GitHub URL.
 The focal point of that regexp wasn't the domain, it was extracting the username.
