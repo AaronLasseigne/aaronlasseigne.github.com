@@ -47,13 +47,13 @@ This means spaces need to be called out with `[  ]`.
 
 ```ruby
 doc.scan(/
-  ^[ ]*   # the line can start with whitespace
+  ^[ ]*     # the line can start with whitespace
   (\#{1,6}) # the leading hashes indicating header size
   [ ]*
   (.+?)     # the header name
   [ ]*
   \#*       # optional decorative header closing
-  [ ]*$   # whitespace only until end of the line
+  [ ]*$     # whitespace only until end of the line
 /x)
 ```
 
