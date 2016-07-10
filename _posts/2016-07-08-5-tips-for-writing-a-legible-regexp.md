@@ -37,7 +37,7 @@ The `x` option ignores whitespace and comments inside of a regexp.
 Below I've created a regexp that looks through a markdown document and extracts headers.
 
 ```ruby
-doc.scan(/^[ \t]*(\#{1,6})[ \t]*(.+?)[ \t]*\#*[ \t]*$/i)
+doc.scan(/^ *(\#{1,6}) *(.+?) *\#* *$/)
 ```
 
 It's complicated and could benefit from some explanation.
