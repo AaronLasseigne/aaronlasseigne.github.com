@@ -1,7 +1,12 @@
 ---
 title: 5 Tips for Writing a Legible Regexp
 date: 2016-07-08 05:32 UTC
+description: Regular expressions can be tricky to write and downright impossible to read. They can also be incredibly useful. Striking a balance between power and legibility is achievable. Here are five of the ...
 ---
+
+<div class="panel callout">
+  <a href="http://rubyweekly.com/issues/306">Included in issue #306 of Ruby Weekly.</a>
+</div>
 
 Regular expressions can be tricky to write and downright impossible to read.
 They can also be incredibly useful.
