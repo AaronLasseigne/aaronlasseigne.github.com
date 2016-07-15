@@ -1,13 +1,25 @@
 @import 'variables';
 
 #subscribe {
+  display: flex;
   border: 1px solid #ccc;
   background-color: #eee;
   margin: $spacing * 3 auto 0 auto;
-  max-width: 340px;
+  max-width: 450px;
   padding: $spacing;
   text-align: center;
-  
+  @media only screen and (min-width: $screen-small) {
+    padding: $spacing 0 $spacing $spacing;
+  }
+
+  img {
+    display: none;
+
+    @media only screen and (min-width: $screen-small) {
+      display: block;
+    }
+  }
+
   .title {
     font-size: 1.4em;
     font-weight: bold;
