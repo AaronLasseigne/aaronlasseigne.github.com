@@ -15,7 +15,7 @@
 {% if page.image %}
   {% assign image = site.url | append: page.image %}
 {% else %}
-  {% assign image = site.data.author.image | append: '?s=200' %}
+  {% assign image = site.url | append: site.data.author.image %}
 {% endif %}
 <meta property="og:site_name" content="{{ site.name }}">
 <meta property="og:type" content="{{ type }}">

@@ -32,17 +32,16 @@
 
       @media only screen and (min-width: $screen-small) {
         justify-content: flex-start;
+        margin-left: 5px;
       }
     }
 
     img {
       border-radius: 5%;
       height: 80px;
-      width: 80px;
 
       @media only screen and (min-width: $screen-small) {
         height: 100px;
-        width: 100px;
       }
     }
 
