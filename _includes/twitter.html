@@ -1,12 +1,3 @@
-{% if page.url == "/" %}
-  {% assign description = site.description %}
-{% elsif page.description %}
-  {% assign description = page.description %}
-{% else %}
-  {% assign description = page.content | markdownify | strip_html | replace: '"', '&#x22;' | split: ' ' | join: ' ' | truncate: 200 %}
-{% endif %}
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@{{ site.data.author.twitter }}">
 <meta name="twitter:creator" content="@{{ site.data.author.twitter }}">
-<meta name="twitter:title" content="{{ page.title }}">
-<meta name="twitter:description" content="{{ description }}">
