@@ -21,7 +21,7 @@
     {% endif %}
     {% if paginator.previous_page %}
       {% if paginator.page == 2 %}
-        <link rel="prev" href="/">
+        <link rel="prev" href="/posts/">
       {% else %}
         <link rel="prev" href="{{ paginator.previous_page_path | append: '/' }}">
       {% endif %}
@@ -54,8 +54,8 @@
           <div class="arrow-up"></div>
         </div>
         <ul role="navigation menu" class="menu">
-          <li{% if page.url != '/about/' %} class="current"{% endif %}><a href="/">Posts</a></li>
-          <li{% if page.url == '/about/' %} class="current"{% endif %}><a href="/about">About</a></li>
+          <li{% if page.url == '/posts/' %} class="current"{% endif %}><a href="/posts/">Posts</a></li>
+          <li{% if page.url == '/about/' %} class="current"{% endif %}><a href="/about/">About</a></li>
         </ul>
       </div>
     </div>

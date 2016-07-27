@@ -1,0 +1,47 @@
+---
+title: AaronLasseigne.com
+---
+
+<ol class="posts">
+  {% for post in paginator.posts %}
+    <li>
+      <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
+      {% include time.html date=post.date %}
+
+      <div class="post">
+        {{ post.excerpt }}
+        <a href="{{ post.url }}">Read More</a>
+      </div>
+    </li>
+  {% endfor %}
+</ol>
+
+{% if paginator.total_pages > 1 %}
+<ul role="navigation" aria-label="Pagination" class="pagination">
+  {% if paginator.previous_page %}
+    <li class="arrow">
+      <a href="{{ paginator.previous_page_path }}{% if paginator.previous_page_path != '/' %}/{% endif %}" rel="prev" aria-label="Previous Page">
+        <i class="icon-left"></i>
+      </a>
+    </li>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <li class="current"><a href="" aria-label="Current Page, Page {{ page }}">{{ page }}</a></li>
+    {% elsif page == 1 %}
+      <li><a href="/" aria-label="Page {{ page }}">{{ page }}</a></li>
+    {% else %}
+      <li><a href="{{ site.paginate_path | append: '/' | replace: ':num', page }}" aria-label="Page {{ page }}">{{ page }}</a></li>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <li class="arrow">
+      <a href="{{ paginator.next_page_path | append: '/' }}" rel="next" aria-label="Next Page">
+        <i class="icon-right"></i>
+      </a>
+    </li>
+  {% endif %}
+</ul>
+{% endif %}
