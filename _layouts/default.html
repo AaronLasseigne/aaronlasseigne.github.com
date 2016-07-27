@@ -44,25 +44,7 @@
     {% endif %}
   </head>
   <body>
-    <div id="header">
-      <div class="container">
-        <div class="logo">
-          <a href="/">
-            <img alt="Photo of {{ site.data.author.name }}" src="{{ site.data.author.image }}">
-            <h1>{{ site.data.author.name | replace: ' ', '<br>' }}</h1>
-          </a>
-          <div class="arrow-up"></div>
-        </div>
-        <ul role="navigation menu" class="menu">
-          <li{% if page.url == '/posts/' %} class="current"{% endif %}><a href="/posts/">Posts</a></li>
-          <li{% if page.url == '/about/' %} class="current"{% endif %}><a href="/about/">About</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div id="content" class="container">
-      {{ content }}
-    </div>
+    {{ content }}
 
     <div id="footer" class="container">
       <div class="links">
