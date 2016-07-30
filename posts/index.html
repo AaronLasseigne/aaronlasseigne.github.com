@@ -20,7 +20,7 @@ title: AaronLasseigne.com
 <ul role="navigation" aria-label="Pagination" class="pagination">
   {% if paginator.previous_page %}
     <li class="arrow">
-      <a href="{{ paginator.previous_page_path }}{% if paginator.previous_page_path != '/' %}/{% endif %}" rel="prev" aria-label="Previous Page">
+      <a href="{{ paginator.previous_page_path }}{% if paginator.previous_page_path != '/posts/' %}/{% endif %}" rel="prev" aria-label="Previous Page">
         <i class="icon-left"></i>
       </a>
     </li>
@@ -30,7 +30,7 @@ title: AaronLasseigne.com
     {% if page == paginator.page %}
       <li class="current"><a href="" aria-label="Current Page, Page {{ page }}">{{ page }}</a></li>
     {% elsif page == 1 %}
-      <li><a href="/" aria-label="Page {{ page }}">{{ page }}</a></li>
+      <li><a href="/posts/" aria-label="Page {{ page }}">{{ page }}</a></li>
     {% else %}
       <li><a href="{{ site.paginate_path | append: '/' | replace: ':num', page }}" aria-label="Page {{ page }}">{{ page }}</a></li>
     {% endif %}
