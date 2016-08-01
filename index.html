@@ -3,15 +3,105 @@ title: AaronLasseigne.com
 layout: homepage
 ---
 
-<ol class="posts">
-  {% assign post = site.posts[0] %}
-  <li>
-    <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
-    {% include time.html date=post.date %}
-
-    <div class="post">
-      {{ post.excerpt }}
-      <a href="{{ post.url }}">Read More</a>
+<div class="header">
+  <div class="container homepage-header">
+    <img src="/images/full-me.png" alt="Photo of {{ site.data.author.name }}" />
+    <div>
+      <p>Hi, I'm {{ site.data.author.name }}.</p>
+      <p>I'm a freelance software developer and author.</p>
     </div>
-  </li>
-</ol>
+  </div>
+</div>
+
+<div class="container homepage">
+  <div class="section">
+    <h2>Developer</h2>
+    <p>
+      For more than a decade I've lead projects, maintained legacy code, and managed teams.
+      Most of my professional work has involved building Ruby on Rails applications.
+      I've also built dynamic JavaScript front-ends with jQuery, Backbone, and most recently with React.
+    </p>
+    <p>
+      Outside of my professional career I've explored a variety of languages with two of my favorites being Clojure and Elixir.
+      I enjoy working on open source and tinkering on personal projects.
+    </p>
+    <div class="sub-section">
+      <div>
+        <h3>ActiveInteraction</h3>
+        <div class="description">
+          <div class="logo active-interaction">💼</div>
+          <p>
+            I created <a href="https://github.com/orgsync/active_interaction/">ActiveInteraction</a> with <a href="http://taylor.fausak.me">Taylor Fausak</a> to provide Rails with service objects that fit seemlessly into the existing ecosystem.
+            With 760+ stars on GitHub it's been a great success.
+          </p>
+        </div>
+      </div>
+      <div>
+        <h3>Tables of Stuff</h3>
+        <div class="description">
+          <img src="/images/index/tables_of_stuff.png" class="logo" height="60px" />
+          <p>
+            Built using Middleman and a healthy dose of React, <a href="https://tablesofstuff.com">Tables of Stuff</a> provides easy to search tables for a variety of character encodings.
+            Check out the <a href="https://tablesofstuff.com/encodings/ascii/">ASCII</a> table for an example.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Volunteer</h2>
+    <p>
+      I've been a regular attendee of the <a href="http://www.dallasrb.org">Dallas Ruby Brigade</a> for several years.
+      I've presented a variety of talks to the group and most recently have taken over as a co-organizer.
+      I've also volunteered for Rails Girls, presented to high school students on software development as a career, and sat on the computer science advisory committee for Brookhaven College.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Author</h2>
+    <p>
+      Blogging has helped me grow as a developer and provided another avenue for me to help others learn.
+      I started blogging in 2012.
+      In that time I've been in featured in <strong>Ruby Weekly 10 times</strong> including the top spot for an article covering new methods in Ruby 2.2 which was re-tweeted by Matz (the creator of Ruby).
+      I've had articles appear on the Ruby5 podcast, Ruby Inside, and a variety of other sites.
+      On occasion you'll find my writings on Sitepoint.
+    </p>
+    <div class="sub-section">
+      <div>
+        <h3>Popular Posts</h3>
+        <ul>
+          <li><a href="{% post_url 2016-01-04-rubys-new-safe-navigation-not-equal-operator %}">Ruby's New &.!= Operator</a></li>
+          <li><a href="{% post_url 2016-04-27-improving-large-rails-apps-with-service-objects %}">Improving Large Rails Apps with Service Objects</a></li>
+          <li><a href="{% post_url 2014-07-20-know-ruby-clone-and-dup %}">Know Ruby: clone and dup</a></li>
+          <li><a href="{% post_url 2012-01-17-explaining-include-and-extend %}">Explaining Include and Extend</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Sitepoint</h3>
+        <ul>
+          <li><a href="https://www.sitepoint.com/guard-and-docker/">Happy Ending: An Epic Saga of Guard and Docker</a></li>
+          <li><a href="https://www.sitepoint.com/new-methods-ruby-2-2/">New Methods in Ruby 2.2</a></li>
+          <li><a href="https://www.sitepoint.com/clojure-loops-ruby/">Clojure Loops in Ruby</a></li>
+        </ul>
+      </div>
+      <div class="full">
+        <h3>Newest Post</h3>
+        <ol class="posts">
+          {% assign post = site.posts[0] %}
+          <li>
+            <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
+            {% include time.html date=post.date %}
+
+            <div class="post">
+              {{ post.excerpt }}
+              <a href="{{ post.url }}">Read More</a>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <a href="/posts/" class="all-posts">View All Posts</a>
+  </div>
+</div>
