@@ -1,28 +1,30 @@
 @import 'variables';
 
 #footer {
+  color: $subtle;
   margin-top: $spacing * 4;
-
-  > div {
-    color: $subtle;
-  }
 
   .links {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
     margin-top: $spacing;
     padding: $spacing ($spacing / 2);
 
     a {
       color: $subtle;
-      font-size: 1.6em;
+      font-size: 1.25em;
     }
   }
 
+  p {
+    font-size: .9em;
+    margin: 0px;
+    padding: 0 $spacing;
+  }
+
   .copyright {
-    font-size: 75%;
-    margin-top: $spacing;
+    font-size: .7em;
     padding: $spacing ($spacing / 2);
     text-align: center;
   }
