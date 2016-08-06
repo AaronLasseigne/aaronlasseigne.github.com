@@ -17,14 +17,8 @@ layout: pages
     <div id="subscribe">
       <img alt="Photo of {{ site.data.author.name }}" src="{{ site.data.author.image }}" height="105px">
       <div>
-        <div class="title">Want more knowledge delivered to your inbox?</div>
-        <form action="//aaronlasseigne.us13.list-manage.com/subscribe/post?u=dae92ed61377a2c83656f08aa&amp;id=e40d8ec050" method="post" target="_blank" novalidate>
-          <div style="position: absolute; left: -5000px;" aria-hidden="true">
-            <input type="text" name="b_dae92ed61377a2c83656f08aa_e40d8ec050" tabindex="-1" value="">
-          </div>
-          <input type="email" value="" name="EMAIL" placeholder="your@email.com" aria-label="email address">
-          <input type="submit" value="sign up" name="subscribe" class="button">
-        </form>
+        <div class="title">Sign up to receive my latest blog posts and more!</div>
+        {% include subscription_form.html %}
       </div>
     </div>
 

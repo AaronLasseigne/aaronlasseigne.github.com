@@ -3,22 +3,48 @@
 .header {
   background-color: #393939;
   padding-top: $spacing;
-  margin-bottom: $spacing * 2;
+  margin-bottom: $spacing;
 }
 
 .homepage-header {
   align-items: center;
   color: #fff;
   display: flex;
-  height: 300px;
+
+  picture {
+    margin-right: $spacing * 2;
+
+    height: 150px;
+
+    @media only screen and (min-width: $screen-small) {
+      height: 300px;
+    }
+  }
 
   img {
-    height: 300px;
-    margin-right: $spacing * 2;
+    height: 150px;
+
+    @media only screen and (min-width: $screen-small) {
+      height: 300px;
+    }
+  }
+
+  .not-small {
+    display: none;
+
+    @media only screen and (min-width: $screen-small) {
+      display: inherit;
+    }
   }
 }
 
 .homepage {
+  padding: $spacing;
+
+  @media only screen and (min-width: $screen-medium) {
+    padding: $spacing 0 0 0;
+  }
+
   .section {
     &:not(:first-child) {
       margin-top: $spacing * 3;
@@ -40,7 +66,13 @@
     flex-wrap: wrap;
 
     > div {
-      flex: 0 0 48%;
+      flex: 0 0 100%;
+      margin-top: $spacing;
+
+      @media only screen and (min-width: $screen-small) {
+        flex: 0 0 48%;
+        margin-top: 0;
+      }
 
       &.full {
         flex-basis: 100%;

@@ -27,9 +27,6 @@
   }
 
   input[type=email] {
-    border: 0;
-    padding: 0 8px;
-    height: 36px;
     width: 100%;
 
     @media only screen and (min-width: $screen-small) {
@@ -38,16 +35,6 @@
   }
   
   .button {
-    background-color: #649030;
-    border: 0;
-    color: $white;
-    margin-top: $spacing;
-    padding: 8px;
-
-    &:hover {
-      opacity: 0.75;
-    }
-
     @media only screen and (min-width: $screen-small) {
       margin-left: $spacing / 2;
       margin-top: 0;

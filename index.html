@@ -5,10 +5,25 @@ layout: homepage
 
 <div class="header">
   <div class="container homepage-header">
-    <img src="/images/full-me.png" alt="Photo of {{ site.data.author.name }}" />
+    <picture>
+      <source
+        media="(min-width: 550px)"
+        srcset="/images/index/full_me.png 1x, /images/index/full_me-2x.png 2x"
+      >
+      <source srcset="/images/me.png 1x, /images/me-2x.png 2x">
+      <img src="/images/index/full_me.png" alt="Photo of {{ site.data.author.name }}">
+    </picture>
     <div>
       <p>Hi, I'm {{ site.data.author.name }}.</p>
-      <p>I'm a freelance software developer and author.</p>
+      <div class="not-small">
+        <p>
+          I'm a freelance software developer, an open source maintainer, a Ruby group organizer, and author.
+        </p>
+        <p>
+          Sign up to receive my latest blog posts and more!
+        </p>
+        {% include subscription_form.html %}
+      </div>
     </div>
   </div>
 </div>
@@ -18,8 +33,8 @@ layout: homepage
     <h2>Developer</h2>
     <p>
       For more than a decade I've lead projects, maintained legacy code, and managed teams.
-      Most of my professional work has involved building Ruby on Rails applications.
-      I've also built dynamic JavaScript front-ends with jQuery, Backbone, and most recently with React.
+      Most of my professional work has focused around building Ruby on Rails applications.
+      I've also worked on dynamic JavaScript front-ends using jQuery, Backbone, and most recently with React.
     </p>
     <p>
       Outside of my professional career I've explored a variety of languages with two of my favorites being Clojure and Elixir.

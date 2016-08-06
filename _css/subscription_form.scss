@@ -1,0 +1,17 @@
+@import 'variables';
+
+.subscribe {
+  input[type=email] {
+    border: 0;
+    color: $body-text;
+    padding: 0 8px;
+    height: 36px;
+  }
+  
+  .button {
+    @media only screen and (min-width: $screen-small) {
+      margin-left: $spacing / 2;
+      margin-top: 0;
+    }
+  }
+}
