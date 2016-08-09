@@ -5,13 +5,21 @@ layout: default
   <div class="container">
     <div class="logo">
       <a href="/">
-        <img alt="Photo of {{ site.data.author.name }}" src="{{ site.data.author.image }}">
+        <img
+          src="/images/me.png"
+          srcset="/images/me.png 1x, /images/me-2x.png 2x"
+          alt="Photo of {{ site.data.author.name }}"
+        >
         <h1>{{ site.data.author.name | replace: ' ', '<br>' }}</h1>
       </a>
-      <div class="arrow-up"></div>
     </div>
-    <ul role="navigation menu" class="menu">
+    <ul role="navigation menu">
       <li><a href="/posts/">Posts</a></li>
+      <li>
+        <a href="/atom.atom" rel="subscribe-rss">
+          <i class="icon-rss" aria-label="RSS"></i>
+        </a>
+      </li>
     </ul>
   </div>
 </div>

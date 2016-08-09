@@ -8,13 +8,11 @@
     justify-content: space-between;
     flex-wrap: wrap;
 
-    height: 170px;
-    padding-top: $spacing;
+    padding: $spacing 0 0 0;
     position: relative;
 
     @media only screen and (min-width: $screen-small) {
-      height: 150px;
-      padding: $spacing;
+      padding: $spacing $spacing 0 $spacing;
     }
   }
 
@@ -37,80 +35,37 @@
     }
 
     img {
-      border-radius: 5%;
-      height: 80px;
-
-      @media only screen and (min-width: $screen-small) {
-        height: 100px;
-      }
+      height: 100px;
     }
 
     h1 {
       color: $white;
-      font-size: 2em;
+      font-size: 1.75em;
       margin: 0 0 0 ($spacing / 2);
-    }
-
-    .arrow-up {
-      @media only screen and (min-width: $screen-small) {
-        border-left: 20px solid transparent;
-        border-right: 20px solid transparent;
-        border-bottom: 20px solid $white;
-        height: 0;
-        width: 0;
-
-        position: absolute;
-        left: 45px;
-        top: 130px;
-      }
     }
   }
 
   ul {
+    align-items: flex-end;
+    border-top: 1px solid $subtle;
+    display: flex;
+    font-size: 1.4em;
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: $spacing 0;
+    width: 100%;
 
-    flex: 1;
     @media only screen and (min-width: $screen-small) {
-      flex: 0 1 190px;
+      border-top: 0;
+      width: auto;
     }
 
-    display: flex;
-    @media only screen and (min-width: $screen-small) {
-      align-items: flex-end;
-      justify-content: space-around;
-    }
+    a {
+      padding-left: $spacing;
+      color: $subtle;
 
-    font-size: 1.4em;
-
-    li {
-      flex: 1;
-
-      display: flex;
-      align-items: center;
-
-      text-align: center;
-
-      a {
-        flex: 1;
-
-        color: $subtle;
-      }
-
-      &.current {
-        background-color: $white;
-        font-weight: bold;
-        @media only screen and (min-width: $screen-small) {
-          background-color: transparent;
-        }
-
-        a {
-          color: $body-text;
-          @media only screen and (min-width: $screen-small) {
-            color: $white;
-          }
-        }
+      &:hover {
+        color: $white;
       }
     }
   }
