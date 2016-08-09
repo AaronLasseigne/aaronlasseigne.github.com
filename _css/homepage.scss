@@ -9,31 +9,49 @@
 .homepage-header {
   align-items: center;
   color: #fff;
-  display: flex;
 
-  picture {
-    margin-right: $spacing * 2;
-
-    height: 150px;
-
-    @media only screen and (min-width: $screen-small) {
-      height: 300px;
-    }
+  @media only screen and (min-width: $screen-small) {
+    height: 300px;
   }
 
   img {
+    float: left;
     height: 150px;
+    padding-right: $spacing * 2;
 
     @media only screen and (min-width: $screen-small) {
       height: 300px;
     }
   }
 
-  .not-small {
-    display: none;
+  .intro {
+    align-items: center;
+    display: flex;
+    height: 150px;
+    margin: 0px;
 
     @media only screen and (min-width: $screen-small) {
-      display: inherit;
+      padding-top: $spacing * 4;
+      height: auto;
+    }
+  }
+
+  .sign-up {
+    border-top: 1px solid $subtle;
+    padding: $spacing;
+    text-align: center;
+
+    > p {
+      margin: 0;
+
+      &:not(:last-child) {
+        padding-bottom: $spacing;
+      }
+    }
+
+    @media only screen and (min-width: $screen-small) {
+      border: 0;
+      text-align: inherit;
     }
   }
 }

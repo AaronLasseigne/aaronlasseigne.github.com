@@ -7,23 +7,21 @@ layout: homepage
   <div class="container homepage-header">
     <picture>
       <source
-        media="(min-width: 550px)"
+        media="(min-width: 560px)"
         srcset="/images/index/full_me.png 1x, /images/index/full_me-2x.png 2x"
       >
       <source srcset="/images/me.png 1x, /images/me-2x.png 2x">
       <img src="/images/index/full_me.png" alt="Photo of {{ site.data.author.name }}">
     </picture>
-    <div>
-      <p>Hi, I'm {{ site.data.author.name }}.</p>
-      <div class="not-small">
-        <p>
-          I'm a freelance software developer, an open source maintainer, a Ruby group organizer, and author.
-        </p>
-        <p>
-          Sign up to receive my latest blog posts and more!
-        </p>
-        {% include subscription_form.html %}
-      </div>
+    <div class="intro">Hi, I'm {{ site.data.author.name }}.</div>
+    <div class="sign-up">
+      <p>
+        I'm a freelance software developer, an open source maintainer, a Ruby group organizer, and author.
+      </p>
+      <p>
+        Sign up to receive my latest blog posts and more!
+      </p>
+      {% include subscription_form.html %}
     </div>
   </div>
 </div>
