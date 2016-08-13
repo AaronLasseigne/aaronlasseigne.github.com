@@ -16,7 +16,7 @@
 
   img {
     float: left;
-    height: 150px;
+    height: 120px;
     padding-right: $spacing * 2;
 
     @media only screen and (min-width: $screen-small) {
@@ -27,7 +27,7 @@
   .intro {
     align-items: center;
     display: flex;
-    height: 150px;
+    height: 120px;
     margin: 0px;
 
     @media only screen and (min-width: $screen-small) {
