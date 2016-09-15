@@ -112,6 +112,16 @@
     }
   }
 
+  .posts {
+    p {
+      margin: $spacing 0;
+    }
+
+    .center {
+      text-align: left;
+    }
+  }
+
   .description {
     .logo {
       margin-right: $spacing;
