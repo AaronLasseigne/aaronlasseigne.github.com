@@ -1,6 +1,9 @@
 <div class="image {% if include.align %}{{ include.align }}{% else %}center{% endif %}">
-  <img src="{{ include.src }}" alt="{{ include.alt | escape }}" {% if include.width %}width="{{ include.width }}"{% endif %}>
-  {% if include.caption %}
-  <em>{{ include.caption }}</em>
-  {% endif %}
+  <img
+    src="{{ include.src }}"
+    srcset="{{ include.src }} 1x, {{ include.src | replace: '.', '-2x.' }} 2x"
+    alt="{{ include.alt | escape }}"
+    {% if include.width %}width="{{ include.width }}"{% endif %}
+  >
+  {% if include.caption %}<em>{{ include.caption }}</em>{% endif %}
 </div>

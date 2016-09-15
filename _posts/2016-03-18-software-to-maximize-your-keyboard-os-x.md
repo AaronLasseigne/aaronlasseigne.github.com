@@ -18,7 +18,7 @@ I also recommend trying out [CheatSheet].
 It's a free application that lists out all keyboard shortcuts for any given program.
 It reads the options in the application menu and presents them all at once.
 
-{% include image.html src="/images/software-to-maximize-your-keyboard-os-x/cheatsheet.jpg" alt="CheatSheet screenshot" width=500 %}
+{% include image.html src="/images/software-to-maximize-your-keyboard-os-x/cheatsheet.jpg" alt="CheatSheet screenshot" %}
 
 ### OS X System Options
 
@@ -33,7 +33,7 @@ Notice that these changes are per-keyboard.
 This can be nice for changing the built-in while leaving your [WTF external keyboard] alone.
 I prefer to have my <kbd>caps lock</kbd> act like <kbd>control</kbd>.
 
-{% include image.html src="/images/software-to-maximize-your-keyboard-os-x/modifier_keys.png" alt="modifier key settings" width=600 %}
+{% include image.html src="/images/software-to-maximize-your-keyboard-os-x/modifier_keys.png" alt="modifier key settings" %}
 
 It's rare that I type in all caps but I use <kbd>control</kbd> all the time.
 This makes it easier to reach and not having caps lock is no great loss.
@@ -43,7 +43,7 @@ Here you can change existing system shortcuts to anything you like.
 I wanted to be able to switch spaces using <kbd>control</kbd> + <kbd>H</kbd> to move left and <kbd>control</kbd> + <kbd>L</kbd> to move right.
 Double clicking on the existing shortcut allows you to enter your own key combination.
 
-{% include image.html src="/images/software-to-maximize-your-keyboard-os-x/system_shortcuts.png" alt="system shortcuts highlighting space switching" width=500 %}
+{% include image.html src="/images/software-to-maximize-your-keyboard-os-x/system_shortcuts.png" alt="system shortcuts highlighting space switching" %}
 
 My favorite part of this area is the last section on the left, "App Shortcuts".
 Here you're allowed to override shortcuts in the applications you use.
@@ -51,14 +51,14 @@ For example, most apps can be made full screen using <kbd>&#8984;</kbd> + <kbd>S
 In iTerm you get to full screen via <kbd>&#8984;</kbd> + <kbd>&crarr;</kbd>.
 If you wanted it to work that way everywhere you can change the shortcut for all applications.
 
-{% include image.html src="/images/software-to-maximize-your-keyboard-os-x/app_shortcuts.png" alt="app shortcuts highlighting enter and exit full screen" width=500 %}
+{% include image.html src="/images/software-to-maximize-your-keyboard-os-x/app_shortcuts.png" alt="app shortcuts highlighting enter and exit full screen" %}
 
 The process is simple.
 Press the "+" button to add a new shortcut.
 Select the app, type the text of the menu item, and add the new shortcut key combination.
 If you wanted to go the other way and change iTerm, that's easy enough.
 
-{% include image.html src="/images/software-to-maximize-your-keyboard-os-x/add_app_shortcut.png" alt="adding a shortcut for iTerm" width=400 %}
+{% include image.html src="/images/software-to-maximize-your-keyboard-os-x/add_app_shortcut.png" alt="adding a shortcut for iTerm" %}
 
 Have handy menu items that don't have a shortcut?
 Add one.
@@ -102,7 +102,7 @@ The major addition there is workflows.
 These are extensions, built by the community, that add all sorts of wonderful features.
 You can quickly check [caniuse.com], see what color a hex value is and find its RGB equivalent, generate lorem ipsum text, and the list goes on.
 
-{% include image.html src="/images/software-to-maximize-your-keyboard-os-x/alfred_color_plugin.png" alt="alfred searching for a color" width=500 %}
+{% include image.html src="/images/software-to-maximize-your-keyboard-os-x/alfred_color_plugin.png" alt="alfred searching for a color" %}
 
 #### Any Window Manager
 
@@ -114,7 +114,7 @@ For some, that might be like using a rocket launcher to hunt a duck.
 Simpler solutions like [Divvy] and [SizeUp] will also do a fine job.
 Particularly because they let you setup shortcuts to move windows around.
 
-{% include image.html src="/images/software-to-maximize-your-keyboard-os-x/divvy_shortcuts.png" alt="shorcuts in Divvy" width=250 %}
+{% include image.html src="/images/software-to-maximize-your-keyboard-os-x/divvy_shortcuts.png" alt="shorcuts in Divvy" %}
 
 The advantages here aren't limited to using the keyboard.
 It's faster and more precise than trying to do it with a mouse.

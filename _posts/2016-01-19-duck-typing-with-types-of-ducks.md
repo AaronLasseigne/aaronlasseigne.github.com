@@ -29,7 +29,7 @@ While that is true we can shape the type of duck doing the quacking.
 We can hone our interface to pick the right duck.
 It's not a duck, it's a Muscovy duck.
 
-{% include image.html src="/images/duck-typing-with-types-of-ducks/muscovy.jpg" alt="Muscovy Duck" width=400 %}
+{% include image.html src="/images/duck-typing-with-types-of-ducks/muscovy.jpg" alt="Muscovy Duck" %}
 
 Let's take a moment to consider the [bacon cannon][].
 You'll find that `=~` works with pretty much anything you give it.

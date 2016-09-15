@@ -41,7 +41,7 @@ Apple makes nothing *but* flat key keyboards.
 Laptops, desktops, super powerful trashcans, it doesn't matter.
 All flat keyboards.
 
-{% include image.html src="/images/buy-a-better-keyboard-already/laptop_keyboard.jpg" alt="laptop keyboard" width=600 %}
+{% include image.html src="/images/buy-a-better-keyboard-already/laptop_keyboard.jpg" alt="laptop keyboard" %}
 
 Those who enjoy flat keys usually site two advantages.
 The keys on your laptop match the keys on your external board.

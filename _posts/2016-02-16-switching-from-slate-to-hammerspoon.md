@@ -202,7 +202,7 @@ I've even gone as far as adding sizes to the layouts for my laptop screen vs my 
 Rather than numbering the layouts I've used another feature, the chooser.
 It's basically an [Alfred] window.
 
-{% include image.html src="/images/switching-from-slate-to-hammerspoon/chooser.png" alt="Hammerspoon chooser" width=300 %}
+{% include image.html src="/images/switching-from-slate-to-hammerspoon/chooser.png" alt="Hammerspoon chooser" %}
 
 Eventually I hope to switch to using Alfred directly.
 
