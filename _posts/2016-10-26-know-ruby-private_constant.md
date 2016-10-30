@@ -1,7 +1,12 @@
 ---
 title: "Know Ruby: private_constant"
 date: 2016-10-26 03:46 UTC
+description: Constants are a part of your public interface. They can be an efficient way to share static values. But what if you don’t want to share? Some constants, like some methods, are intended for internal...
 ---
+
+<div class="panel callout">
+  <a href="http://rubyweekly.com/issues/321">Included in issue #321 of Ruby Weekly.</a>
+</div>
 
 Constants are a part of your public interface.
 They can be an efficient way to share static values.
