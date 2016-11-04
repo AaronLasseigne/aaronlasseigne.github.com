@@ -2,7 +2,12 @@
 title: Keep Ruby Weird 2016
 date: 2016-10-31 03:31 UTC
 image: /images/keep-ruby-weird-2016/elevator.jpg
+description: Keep Ruby Weird could easily be called “Remember Ruby’s Fun”. It’s a one day, one track conference in Austin that pays homage to the days of why’s (poignant) Guide to Ruby. Born in Austin, whose sl...
 ---
+
+<div class="panel callout">
+  <a href="http://rubyweekly.com/issues/322">Included in issue #322 of Ruby Weekly.</a>
+</div>
 
 Keep Ruby Weird could easily be called "Remember Ruby's Fun".
 It's a one day, one track conference in Austin that pays homage to the days of _why's (poignant) Guide to Ruby_.
