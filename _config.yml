@@ -15,7 +15,7 @@ kramdown:
   input: GFM
   hard_wrap: false
 
-gems:
+plugins:
   - jekyll-redirect-from
   - jekyll-paginate
 
