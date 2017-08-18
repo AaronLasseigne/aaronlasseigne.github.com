@@ -14,14 +14,6 @@ layout: pages
   {% endif %}
 
   <footer>
-    <div id="subscribe">
-      <img alt="Photo of {{ site.data.author.name }}" src="{{ site.data.author.image }}" height="105px">
-      <div>
-        <div class="title">Sign up to receive my latest blog posts and more!</div>
-        {% include subscription_form.html %}
-      </div>
-    </div>
-
     <div id="share">
       <a href="https://twitter.com/intent/tweet?original_referer={{ site.url }}{{ page.url }}&text={{ page.title | cgi_escape }}&url={{ site.url }}{{ page.url }}&via={{ site.data.author.twitter }}" target="_blank" class="twitter" title="Twitter" role="button">
         <i class="icon-twitter"></i> tweet

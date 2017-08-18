@@ -9,6 +9,8 @@
 .homepage-header {
   align-items: center;
   color: #fff;
+  font-size: 1.3em;
+  line-height: 150%;
 
   @media only screen and (min-width: $screen-small) {
     height: 300px;
@@ -27,31 +29,18 @@
   .intro {
     align-items: center;
     display: flex;
+    font-size: 1.3em;
     height: 120px;
     margin: 0px;
+    margin-bottom: $spacing * 2;
 
     @media only screen and (min-width: $screen-small) {
       padding-top: $spacing * 4;
       height: auto;
     }
-  }
 
-  .sign-up {
-    border-top: 1px solid $subtle;
-    padding: $spacing;
-    text-align: center;
-
-    > p {
-      margin: 0;
-
-      &:not(:last-child) {
-        padding-bottom: $spacing;
-      }
-    }
-
-    @media only screen and (min-width: $screen-small) {
-      border: 0;
-      text-align: inherit;
+    .name {
+      font-weight: 600;
     }
   }
 }
