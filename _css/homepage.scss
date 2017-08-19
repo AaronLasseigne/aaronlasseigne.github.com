@@ -11,6 +11,7 @@
   color: #fff;
   font-size: 1.3em;
   line-height: 150%;
+  min-height: 120px;
 
   @media only screen and (min-width: $screen-small) {
     height: 300px;
@@ -27,20 +28,17 @@
   }
 
   .intro {
-    align-items: center;
-    display: flex;
     font-size: 1.3em;
-    height: 120px;
-    margin: 0px;
-    margin-bottom: $spacing * 2;
+    padding-top: $spacing * 2;
 
     @media only screen and (min-width: $screen-small) {
       padding-top: $spacing * 4;
-      height: auto;
     }
+  }
 
-    .name {
-      font-weight: 600;
+  p {
+    @media only screen and (max-width: $screen-small) {
+      display: none;
     }
   }
 }
