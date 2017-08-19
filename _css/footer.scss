@@ -3,6 +3,11 @@
 #footer {
   color: $subtle;
   margin-top: $spacing * 4;
+  margin-bottom: $spacing * 4;
+
+  @media only screen and (min-width: $screen-small) {
+    margin-bottom: 0;
+  }
 
   .links {
     display: flex;
