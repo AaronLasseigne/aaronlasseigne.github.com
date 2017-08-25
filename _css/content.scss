@@ -1,6 +1,10 @@
 @import 'variables';
 
 #content {
-  margin-top: $spacing;
-  padding: $spacing;
+  margin-top: $spacing * 2;
+  padding: 0 $spacing $spacing $spacing;
+
+  @media only screen and (min-width: $screen-small) {
+    padding: 0;
+  }
 }

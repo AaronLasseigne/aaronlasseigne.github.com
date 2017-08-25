@@ -31,11 +31,11 @@ h3 {
 }
 
 a {
-  color: $primary;
+  color: $link;
   text-decoration: none;
 
   &:hover {
-    color: $primary-dark;
+    color: $link-dark;
   }
 }
 
@@ -83,4 +83,18 @@ kbd {
   border: 1px solid #e0e0e0;
   border-radius: 3px;
   padding: 0.125rem 0.3125rem 0.0625rem;
+}
+
+.button {
+  background-color: $primary;
+  border: 0;
+  color: $white;
+  margin-top: $spacing;
+  padding: $spacing;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $primary-dark;
+    color: $white;
+  }
 }

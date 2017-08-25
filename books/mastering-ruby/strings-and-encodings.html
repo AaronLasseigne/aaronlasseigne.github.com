@@ -1,0 +1,191 @@
+---
+title: "Mastering Ruby: Strings and Encodings"
+layout: default
+---
+
+<div class="header">
+  <div class="container book-header">
+    <picture>
+      <source srcset="/images/books/mastering-ruby/strings-and-encodings/cover.png 1x, /images/books/mastering-ruby/strings-and-encodings/cover-2x.png 2x" >
+      <img src="/images/books/mastering-ruby/strings-and-encodings/cover.png" alt="Cover for Mastering Ruby: Strings and Encodings">
+    </picture>
+    <div class="title1">become<br>an</div>
+    <div class="title2">expert</div>
+
+    <a href="" class="button">Buy Now</a>
+  </div>
+</div>
+
+<div class="container book">
+  <div class="forward">
+    <div class="title">From the forward by Richard Schneeman</div>
+    <img src="https://pbs.twimg.com/profile_images/691455435354681344/LRzneJ_h_400x400.png">
+    <blockquote>
+      If you've been using Ruby for awhile you'll be delighted at all the hidden corners exposed in this book. If you're just getting out, the examples and documentation are quite exhaustive. Either way, if you read this book, you'll be better and faster at working with strings in Ruby.
+    </blockquote>
+  </div>
+  <div>
+    <h2>Why Strings?</h2>
+
+    <p class="subtext">They're <strong>everywhere</strong>!</p>
+
+    <p class="desc">
+      As devs, you and I create <strong>tons of strings</strong>.
+      Probably <strong>more than any other object</strong> on a day to day basis.
+      How much do you really know about strings?
+      How about encodings?
+      How familiar are you with <strong>Unicode and UTF-8</strong>?
+    </p>
+
+    <p class="example">
+      Do you know why this would happen?
+
+      <pre><code>'é' == 'é' <span class="result"># => false</span></code></pre>
+    </p>
+
+    <p class="example">
+      Or why this length might be wrong?
+
+      <pre><code>'à'.length <span class="result"># => 2</span></code></pre>
+    </p>
+
+    <p class="example">
+      Do you know what dummy encodings are?
+
+      <pre><code>Encoding::UTF_16.dummy? <span class="result"># => true</span></code></pre>
+    </p>
+
+    <p class="example">
+      How about what this does?
+
+      <pre><code>[128077, 32, 128078].pack('U*')</code></pre>
+    </p>
+  </div>
+  <div class="learn">
+    <h2>Learn Everything</h2>
+
+    <p class="subtext">Walk away an <strong>expert</strong>!</p>
+
+    <ul>
+      <li>
+        By <strong>manipulating individual bytes</strong> you'll gain a better understanding of how encodings work.
+        You'll also be better equipped to debug strings.
+      </li>
+      <li>
+        You may have used <strong>Unicode and UTF-8</strong> but do you know the difference?
+        Understand what they are and how the most popular encoding in the world works.
+      </li>
+      <li>
+        Not only learn about UTF-8 but know enough to work with any encoding you run across.
+        Understand what <strong>code points</strong> are and how to use them.
+      </li>
+      <li>
+        What are <strong>normalization forms</strong>?
+        How do you work with them?
+        And why are they important?
+      </li>
+      <li>
+        Learn about the <strong>different methods for creating strings</strong>.
+        Find out why you should use one over another.
+        You'll see helpful methods like <code>%q</code> and <code>*</code>.
+        Get the entire story about how best to use heredocs.
+      </li>
+      <li>
+        Should your object provide an <strong>implicit string conversion</strong> or only explicit?
+        Learn the difference between <code>to_s</code> and <code>to_str</code>.
+      </li>
+      <li>
+        Become an expert in <strong>immutable strings via freezing</strong> them.
+        Find out why immutable strings are useful and why it might become the new normal in Ruby 3.0.
+      </li>
+      <li>
+        Go <strong>beyond common methods</strong> so that you know the best method to use at any given moment.
+        You'll see how <code>gsub</code> is overused and how methods like <code>delete</code> and <code>tr</code> can be better.
+      </li>
+      <li>
+        <strong>Explore advanced solutions</strong> like using <code>Encoding::Converter</code> to fix invalid characters within a string.
+      </li>
+    </ul>
+  </div>
+  {% include books/mastering-ruby/strings-and-encodings/cta.html %}
+  <div class="reviews">
+    {% include books/mastering-ruby/strings-and-encodings/review.html
+      photo="https://pbs.twimg.com/profile_images/833076816780861440/WEENKeJx_400x400.jpg"
+      quote="Fusce quis nisi eu nulla. Donec auctor fringilla sapien, feugiat. Nullam quis egestas nunc, vel. Donec ante justo, consectetur sed."
+      from="Barrett Clark, author of Data Visualization Toolkit"
+    %}
+
+    {% include books/mastering-ruby/strings-and-encodings/review.html
+      photo="https://pbs.twimg.com/profile_images/499922284170076162/G55SRk0b_400x400.jpeg"
+      quote="As a guy that makes text based games I can tell you first hand the importance of strings. No matter who you are, you'll learn tons and be better for it."
+      from="Amir Rajan, CEO of RubyMotion and creator of A Dark Room"
+    %}
+
+    {% include books/mastering-ruby/strings-and-encodings/review.html
+      photo="https://pbs.twimg.com/profile_images/866064604249677824/8puAckAn_400x400.jpg"
+      quote="I like how the book builds up concepts, layering one on the next. I've learned a lot about encodings, code points and backward compatibility. And the flow of information and content is really well done."
+      from="Charles Maresh"
+    %}
+
+    {% include books/mastering-ruby/strings-and-encodings/review.html
+      photo="https://pbs.twimg.com/profile_images/590897065061847044/wyrFRUe8_400x400.jpg"
+      quote="I've read and re-read various sections a few times now. I can see myself coming back to the book in an encyclopedic way to look up the stuff I forget. A+ book, excellent!"
+      from="Chris Krailo"
+    %}
+  </div>
+  <div class="faq">
+    <h2>F.A.Q.</h2>
+
+    <p class="question">What if I’m unhappy with the book?</p>
+    <p>
+      There is a 90 day 100% money-back guarantee.
+      Buy the book, give it a try, and if you aren't happy with it, I'll refund your money.
+      With 90 days you should have plenty of time to try it and find out if it's what you want.
+    </p>
+
+    <p class="question">What if I don't learn anything?</p>
+    <p>
+      Impossible.
+      There's so much good information packed into these chapters that I'll bet you learn a lot.
+      If you really don't feel like you got enough out of it, you've always got the 90 days to get a refund.
+    </p>
+
+    <p class="question">Does the book cover internationalization?</p>
+    <p>
+      No.
+      I've done internationalization work and that's its own whole book.
+      However, you can't internationalize your code without understanding encodings.
+      This book will provide you or your team with a rock solid foundation that will let you take on the next step of internationalization with confidence.
+    </p>
+
+    <p class="question">Can I get a discount on a bulk purchase?</p>
+    <p>
+      Absolutely!
+      Send me an email at <a href="mailto:{{ site.data.author.email }}">{{ site.data.author.email }}</a> and I'll make sure you get a discount.
+    </p>
+  </div>
+  {% include books/mastering-ruby/strings-and-encodings/cta.html %}
+  <div class="about">
+    <h2>About the Author</h2>
+
+    <picture>
+      <source
+        media="(min-width: 590px)"
+        srcset="/images/index/full_me.png 1x, /images/index/full_me-2x.png 2x"
+      >
+      <source srcset="/images/me.png 1x, /images/me-2x.png 2x">
+      <img src="/images/index/full_me.png" alt="Photo of {{ site.data.author.name }}">
+    </picture>
+
+    <p>
+      Hi, I'm <strong>{{ site.data.author.name }}</strong>.
+      I've been using Ruby for more than a decade.
+      During that time, I've presented and written about Ruby including 13 articles in Ruby Weekly.
+      I organize the Dallas Ruby Brigade and participate in open source.
+      My most successful contribution is the ActiveInteraction gem with over 900 stars on GitHub.
+    </p>
+    <p>
+      While doing all of this I've gained a strong understanding of Ruby and I'm excited to share what I've learned.
+    </p>
+  </div>
+</div>

@@ -51,9 +51,8 @@
   }
 
   .section {
-    &:not(:first-child) {
-      margin-top: $spacing * 3;
-    }
+    clear: both;
+    margin-top: $spacing * 3;
 
     h2 {
       font-size: 2em;

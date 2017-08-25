@@ -17,12 +17,12 @@ ul.pagination {
     }
 
     &.current a {
-      background-color: $primary;
+      background-color: $link;
       color: $white;
       font-weight: bold;
 
       &:hover {
-        background-color: $primary-dark;
+        background-color: $link-dark;
       }
     }
   }

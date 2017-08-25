@@ -1,0 +1,328 @@
+@import 'variables';
+
+.book-header, .book {
+  .button {
+    display: inline-block;
+    font-size: 1.8em;
+    padding: $spacing * 2;
+  }
+}
+
+.book-header {
+  align-items: center;
+  color: #fff;
+  padding: 0 $spacing $spacing $spacing;
+
+  @media only screen and (min-width: $screen-small) {
+    height: calc(400px + #{$spacing * 2});
+    padding: 0;
+  }
+
+  .button {
+    padding: $spacing*2 $spacing*6;
+    text-align: center;
+    width: 100%;
+
+    @media only screen and (min-width: $screen-small) {
+      margin-top: $spacing * 3;
+      width: initial;
+    }
+  }
+
+  img {
+    float: left;
+    width: 100%;
+
+    @media only screen and (min-width: $screen-small) {
+      height: 400px;
+      padding-right: $spacing * 2;
+      width: initial;
+    }
+  }
+
+  .title1 {
+    display: none;
+
+    @media only screen and (min-width: $screen-small) {
+      display: initial;
+      font-size: 4.5em;
+      font-weight: bold;
+      line-height: 1em;
+      text-transform: uppercase;
+    }
+  }
+
+  .title2 {
+    display: none;
+
+    @media only screen and (min-width: $screen-small) {
+      display: initial;
+      color: $primary;
+      font-size: 5.2em;
+      font-weight: bold;
+      line-height: 1em;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.book {
+  font-size: 1.1em;
+  padding: 0 $spacing;
+
+  @media only screen and (min-width: $screen-small) {
+    padding: 0;
+  }
+
+  > div {
+    margin-bottom: $spacing * 6;
+  }
+
+  h2 {
+    font-size: 3em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .desc {
+    margin-bottom: $spacing * 3;
+  }
+
+  .example {
+    font-size: 1.1em;
+    text-align: center;
+  }
+
+  $codeBackground: #eee;
+  pre {
+    background: $codeBackground;
+    font-size: 1.3em;
+    padding: $spacing * 2;
+    text-align: center;
+
+    code {
+      background: $codeBackground;
+
+      .result {
+        color: #a52121;
+      }
+    }
+  }
+
+  .subtext {
+    color: $subtle;
+    font-size: 1.3em;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .about {
+    h2 {
+      margin-bottom: $spacing * 3;
+    }
+
+    img {
+      float: left;
+      margin-right: $spacing;
+    }
+  }
+
+  .cta {
+    margin: auto;
+    margin-bottom: $spacing * 6;
+    text-align: center;
+
+    @media only screen and (min-width: $screen-small) {
+      width: 450px;
+    }
+
+    .content {
+      text-align: left;
+      margin: auto;
+      margin-bottom: $spacing;
+
+      @media only screen and (min-width: $screen-small) {
+        margin-bottom: $spacing * 5;
+      }
+    }
+
+    img {
+      width: 100%;
+
+      @media only screen and (min-width: $screen-small) {
+        float: left;
+        height: 200px;
+        margin-right: $spacing;
+        width: initial;
+      }
+    }
+
+    p {
+      display: none;
+
+      @media only screen and (min-width: $screen-small) {
+        display: initial;
+        margin: 0;
+        font-size: 3em;
+        font-weight: bold;
+        line-height: 1em;
+        text-transform: uppercase;
+      }
+
+      .standout {
+        color: $primary;
+      }
+    }
+
+    .buy {
+      clear: both;
+      text-align: center;
+
+      ul {
+        padding: 0;
+        margin: auto;
+        width: 250px;
+      }
+
+      li {
+        font-size: 1.25em;
+        list-style: none;
+        text-align: left;
+
+        &:not(:last-child) {
+          margin-bottom: $spacing;
+        }
+
+        &::before {
+          content: "✓";
+          color: $primary;
+          margin-right: $spacing / 2;
+        }
+      }
+
+      .button {
+        font-size: 1.25em;
+        line-height: 1.2em;
+        text-align: center;
+        width: 100%;
+
+        @media only screen and (min-width: $screen-small) {
+          width: initial;
+        }
+      }
+    }
+  }
+
+  .learn {
+    li {
+      list-style: none;
+      margin-top: $spacing * 3;
+      text-indent: -.9em;
+
+      &::before {
+        content: "■";
+        color: $primary;
+      }
+    }
+  }
+
+  .reviews {
+    .review {
+      margin-bottom: $spacing * 3;
+
+      @media only screen and (min-width: $screen-small) {
+        min-height: 100px;
+      }
+
+      img {
+        border-radius: 50%;
+        float: left;
+        height: 100px;
+        margin-right: $spacing;
+      }
+
+      blockquote {
+        border: none;
+        color: $body-text;
+      }
+
+      .from {
+        color: $subtle;
+      }
+    }
+  }
+
+  .faq {
+    .question {
+      font-weight: 600;
+
+      &:not(:first-child) {
+        margin-top: $spacing * 2;
+      }
+    }
+  }
+
+  .forward {
+    .title {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: $spacing * 2;
+    }
+
+    img {
+      border-radius: 50%;
+      float: left;
+      height: 100px;
+      margin-right: $spacing;
+    }
+
+    blockquote {
+      border: none;
+      color: $body-text;
+    }
+  }
+}
+
+.book-lead {
+  background: #e0e0e0;
+  padding: $spacing $spacing $spacing*2 $spacing;
+  text-align: center;
+
+  @media only screen and (min-width: $screen-small) {
+    text-align: left;
+  }
+
+  img {
+    float: left;
+    height: 180px;
+    padding-right: $spacing * 2;
+  }
+
+  .title {
+    font-size: 1.7em;
+    line-height: 1.1em;
+    text-align: left;
+    text-transform: uppercase;
+
+    @media only screen and (min-width: $screen-small) {
+      font-size: 2em;
+      line-height: .95em;
+    }
+
+    .standout {
+      color: $primary;
+    }
+  }
+
+  p {
+    margin-top: 8px;
+    margin-bottom: 28px;
+    text-align: left;
+
+  }
+
+  .button {
+    font-size: 1.5em;
+  }
+}
