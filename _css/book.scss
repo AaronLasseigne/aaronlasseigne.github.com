@@ -66,6 +66,36 @@
   }
 }
 
+.forward {
+  background: #e0e0e0;
+  margin-bottom: $spacing * 4;
+  padding: $spacing*2 $spacing;
+
+  @media only screen and (min-width: $screen-small) {
+    padding: $spacing*2 0;
+  }
+
+  .title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: $spacing * 2;
+  }
+
+  img {
+    border-radius: 50%;
+    float: left;
+    height: 120px;
+    margin-right: $spacing * 2;
+  }
+
+  blockquote {
+    border: none;
+    color: $body-text;
+    margin: 0;
+    padding: 0;
+  }
+}
+
 .book {
   font-size: 1.1em;
   padding: 0 $spacing;
@@ -259,27 +289,6 @@
       &:not(:first-child) {
         margin-top: $spacing * 2;
       }
-    }
-  }
-
-  .forward {
-    .title {
-      font-size: 1.5em;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: $spacing * 2;
-    }
-
-    img {
-      border-radius: 50%;
-      float: left;
-      height: 100px;
-      margin-right: $spacing;
-    }
-
-    blockquote {
-      border: none;
-      color: $body-text;
     }
   }
 }
