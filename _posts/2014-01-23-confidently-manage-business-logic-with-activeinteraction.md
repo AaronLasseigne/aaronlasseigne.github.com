@@ -283,7 +283,7 @@ It's been a great addition to our code base and we hope it helps yours.
 
 Check out the full documentation and more about [ActiveInteraction on GitHub][1].
 
-[1]: https://github.com/orgsync/active_interaction
+[1]: https://github.com/AaronLasseigne/active_interaction
 [2]: http://www.confreaks.com/videos/759-rubymidwest2011-keynote-architecture-the-lost-years
 [3]: https://github.com/cypriss/mutations
 [4]: http://taylor.fausak.me/

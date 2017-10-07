@@ -245,4 +245,4 @@ Piece by piece you can extract functionality and take control.
 Whether you use [ActiveInteraction] or roll your own give it a try.
 You'll have an app that's simpler to maintain and easier to understand.
 
-[Activeinteraction]: https://github.com/orgsync/active_interaction/
+[Activeinteraction]: https://github.com/AaronLasseigne/active_interaction/
