@@ -4,6 +4,10 @@ date: 2017-11-08 15:28 UTC
 description: Avdi Grimm recently wrote a post in which he lambastes the rise of service objects. As an advocate for service objects I was interested in reading about their shortcomings.
 ---
 
+<div class="panel callout">
+  <a href="http://rubyweekly.com/issues/374">Included in issue #374 of Ruby Weekly.</a>
+</div>
+
 {% include image.html src="/images/why-arent-we-using-more-service-objects-already/mushrooms.jpg" alt="Stuffed mushrooms with herbs and goat cheese." caption="<a href=\"https://www.flickr.com/photos/21001756@N06/3660107079\">Taken by Stacy Spensley</a>" %}
 
 Avdi Grimm recently wrote a [post] in which he lambastes the rise of service objects.
