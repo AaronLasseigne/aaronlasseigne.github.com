@@ -1,5 +1,8 @@
 <div class="review">
-  <img src="{{ include.photo }}">
+  <picture>
+    <source srcset="{{ include.photo }} 1x, {{ include.photo | replace: '.', '-2x.' }} 2x" >
+    <img src="{{ include.photo }}" alt="{{ include.from }}">
+  </picture>
   <div>
     <blockquote>{{ include.quote }}</blockquote>
     <div class="from">- {{ include.from }}</div>
