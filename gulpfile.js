@@ -5,7 +5,7 @@ const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
 const concat = require('gulp-concat');
 const css_minify = require('gulp-cssnano');
-const gutil = require('gulp-util');
+const log = require('fancy-log');
 const scss = require('gulp-sass');
 
 const siteRoot = '_site';
@@ -29,7 +29,7 @@ gulp.task('build', () => {
   const jekyllLogger = (buffer) => {
     buffer.toString()
       .split(/\n/)
-      .forEach((message) => gutil.log('Jekyll: ' + message));
+      .forEach((message) => log('Jekyll: ' + message));
   };
 
   jekyll.stdout.on('data', jekyllLogger);
