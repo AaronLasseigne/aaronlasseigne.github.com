@@ -54,8 +54,11 @@
     clear: both;
     margin-top: $spacing * 3;
 
-    h2 {
-      font-size: 2em;
+    > h2 {
+      font-size: 3em;
+      &:first-child {
+        margin-top: $spacing * 5;
+      }
     }
 
     h3 {
