@@ -1,0 +1,65 @@
+@import 'variables';
+
+.ad {
+  background: #e0e0e0;
+
+  padding: $spacing;
+  text-align: center;
+
+  @media only screen and (min-width: $screen-small) {
+    text-align: left;
+  }
+
+  > a {
+    color: inherit;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  .pic img {
+    float: left;
+    padding-right: $spacing * 2;
+  }
+
+  p {
+    margin: 8px 0;
+    text-align: left;
+  }
+
+  &.checkt {
+  }
+
+  &.mrse {
+    padding-bottom: $spacing * 2;
+
+    .pic img {
+      height: 180px;
+    }
+
+    .title {
+      font-size: 1.7em;
+      line-height: 1.1em;
+      text-align: left;
+      text-transform: uppercase;
+
+      @media only screen and (min-width: $screen-small) {
+        font-size: 2em;
+        line-height: .95em;
+      }
+
+      .standout {
+        color: $primary;
+      }
+    }
+
+    p {
+      margin-bottom: 28px;
+    }
+
+    .button {
+      font-size: 1.5em;
+    }
+  }
+}

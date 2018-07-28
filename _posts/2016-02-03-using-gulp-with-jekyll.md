@@ -1,6 +1,7 @@
 ---
 title: "Using Gulp with Jekyll"
 date: 2016-02-03 03:45 UTC
+ad: checkt
 ---
 
 I'm a fan of [Jekyll].

@@ -1,6 +1,7 @@
 ---
 title: "Software to Maximize Your Keyboard (OS X)"
 date: 2016-03-18 02:38 UTC
+ad: checkt
 ---
 
 Last time I talked about buying yourself a [better keyboard].

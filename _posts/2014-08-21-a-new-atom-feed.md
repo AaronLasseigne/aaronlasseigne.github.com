@@ -1,6 +1,7 @@
 ---
 title: "A New Atom Feed"
 date: 2014-08-21 02:15 UTC
+ad: checkt
 ---
 
 I recently changed my subscription feed to use the .atom extension.

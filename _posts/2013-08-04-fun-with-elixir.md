@@ -1,6 +1,7 @@
 ---
 title: "Fun with Elixir"
 date: 2013-08-05 03:22 UTC
+ad: checkt
 ---
 
 Most of the code I write is written in Ruby.

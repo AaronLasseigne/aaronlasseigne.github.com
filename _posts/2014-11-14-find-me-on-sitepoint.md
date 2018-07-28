@@ -1,6 +1,7 @@
 ---
 title: "Find Me On SitePoint"
 date: 2014-11-14 03:20 UTC
+ad: checkt
 ---
 
 I'm proud to announce that you can now follow my work on [SitePoint][1].

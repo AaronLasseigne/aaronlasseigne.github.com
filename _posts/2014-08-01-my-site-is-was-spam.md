@@ -1,6 +1,7 @@
 ---
 title: "My site <del>is</del> was spam."
 date: 2014-08-01 02:58 UTC
+ad: checkt
 ---
 
 One of my recent posts, [Know Ruby: String Accessor][1], met with some success.

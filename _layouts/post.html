@@ -23,6 +23,10 @@ layout: pages
       </a>
     </div>
 
-    {% include books/mastering-ruby/strings-and-encodings/lead.html %}
+    {% if page.ad %}
+      {% include ads/{{page.ad}}.html %}
+    {% else %}
+      {% include ads/mastering-ruby-strings-and-encodings.html %}
+    {% endif %}
   </footer>
 </article>
