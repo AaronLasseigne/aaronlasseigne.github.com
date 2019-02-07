@@ -11,8 +11,8 @@ const scss = require('gulp-sass');
 const siteRoot = '_site';
 const cssFiles = '_css/**/*.?(s)css';
 
-gulp.task('css', () => {
-  gulp.src(cssFiles)
+function css() {
+  return gulp.src(cssFiles)
     .pipe(scss().on('error', scss.logError))
     .pipe(concat('all.css'))
     .pipe(autoprefixer({
@@ -21,10 +21,14 @@ gulp.task('css', () => {
     }))
     .pipe(css_minify())
     .pipe(gulp.dest('assets'));
-});
+}
 
-gulp.task('build', () => {
-  const jekyll = child.spawn('bundle', ['exec', 'jekyll', 'build', '--watch', '--incremental', '--drafts']);
+function jekyll() {
+  const jekyll = child.spawn('bundle', ['exec', 'jekyll', 'build'
+    ,'--watch'
+    ,'--incremental'
+    ,'--drafts'
+  ]);
 
   const jekyllLogger = (buffer) => {
     buffer.toString()
@@ -34,9 +38,11 @@ gulp.task('build', () => {
 
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
-});
 
-gulp.task('serve', () => {
+  return jekyll;
+}
+
+function serve() {
   browserSync.init({
     files: [siteRoot + '/**'],
     notify: false,
@@ -47,7 +53,9 @@ gulp.task('serve', () => {
     }
   });
 
-  gulp.watch(cssFiles, ['css']);
-});
+  gulp.watch(cssFiles, css);
+}
 
-gulp.task('default', ['css', 'build', 'serve']);
+const build = gulp.parallel(jekyll, gulp.series(css, serve));
+
+exports.default = build;
