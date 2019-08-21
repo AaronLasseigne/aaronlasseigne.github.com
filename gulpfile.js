@@ -16,7 +16,6 @@ function css() {
     .pipe(scss().on('error', scss.logError))
     .pipe(concat('all.css'))
     .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
       cascade: false
     }))
     .pipe(css_minify())
