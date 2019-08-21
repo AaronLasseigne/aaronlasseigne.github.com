@@ -2,9 +2,10 @@ const child = require('child_process');
 const browserSync = require('browser-sync').create();
 
 const gulp = require('gulp');
-const autoprefixer = require('gulp-autoprefixer');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 const concat = require('gulp-concat');
-const css_minify = require('gulp-cssnano');
 const log = require('fancy-log');
 const scss = require('gulp-sass');
 
@@ -15,10 +16,10 @@ function css() {
   return gulp.src(cssFiles)
     .pipe(scss().on('error', scss.logError))
     .pipe(concat('all.css'))
-    .pipe(autoprefixer({
-      cascade: false
-    }))
-    .pipe(css_minify())
+    .pipe(postcss([
+      autoprefixer({ cascade: false }),
+      cssnano()
+    ]))
     .pipe(gulp.dest('assets'));
 }
 
