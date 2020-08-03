@@ -1,7 +1,6 @@
 ---
 title: "Buy a Better Keyboard Already"
 date: 2016-03-03 05:03 UTC
-ad: checkt
 ---
 
 Picture a carpenter without a saw.

@@ -1,7 +1,6 @@
 ---
 title: "Tooling Around: MySQL's Client Config File"
 date: 2012-07-29 20:50 UTC
-ad: checkt
 ---
 
 There are several good <abbr title="Graphical User Interface">GUI</abbr> options out there for working with MySQL.

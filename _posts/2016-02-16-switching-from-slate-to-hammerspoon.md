@@ -1,7 +1,6 @@
 ---
 title: "Switching From Slate to Hammerspoon"
 date: 2016-02-16 03:44 UTC
-ad: checkt
 ---
 
 Window management on OS X is... well... not a strong point.

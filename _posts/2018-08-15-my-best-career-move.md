@@ -1,7 +1,6 @@
 ---
 title: My Best Career Move
 date: 2018-08-15 03:30 UTC
-ad: checkt
 ---
 
 {% include image.html src="/images/my-best-career-move/meeting.jpg" alt="A Dallas Ruby Brigade meeting with a speaker talking to a room." %}

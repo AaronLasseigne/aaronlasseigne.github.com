@@ -1,7 +1,6 @@
 ---
 title: "Building Identicons and Playing with Clojure"
 date: 2013-08-18 18:58 UTC
-ad: checkt
 ---
 
 I've been playing with Clojure on and off for a little while now.

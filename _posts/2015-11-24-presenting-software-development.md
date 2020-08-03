@@ -2,7 +2,6 @@
 title: "Presenting: Software Development"
 date: 2015-11-24 03:25 UTC
 image: /images/presenting-software-development/world.jpg
-ad: checkt
 ---
 
 {% include image.html src=page.image alt="software is eating the world" %}
